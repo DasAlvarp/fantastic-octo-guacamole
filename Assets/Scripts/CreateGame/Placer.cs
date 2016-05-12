@@ -28,16 +28,24 @@ public class Placer : MonoBehaviour {
                 PlaceBlock(cubeBlock);
             if (Input.GetButtonDown("SpinRight"))
                 DeleteBlock(inFront);
-            PlaceWire(wireMan, inFront.point);
+            PlaceWire(inFront);
 
         }
     }
 
     //places wirefraem block
-    void PlaceWire(GameObject block, Vector3 pos)
+    void PlaceWire(RaycastHit ray)
     {
-        pos = SetProperValues(pos);
-        Instantiate(block, pos, Quaternion.identity);
+        Vector3 pos = SetProperValues(ray.collider.transform.position);
+        for (int x = 0; x < maxBlockTypes; x++)
+        {
+            if (ray.collider.gameObject.tag == "block " + x)
+            {
+                pos = SetProperValues(ray.collider.transform.position) + ray.collider.gameObject.GetComponent<PlaneDirection>().GetDirection();
+            }
+        }
+        Instantiate(wireMan, pos, Quaternion.identity);
+
     }
 
     //places a block where the wireframe block is
@@ -64,9 +72,9 @@ public class Placer : MonoBehaviour {
 
     Vector3 SetProperValues(Vector3 pos)
     {
-        pos.x = Mathf.Round(pos.x) + 0;
-        pos.y = Mathf.Round(pos.y) + 0;
-        pos.z = Mathf.Round(pos.z) + 0;
+        pos.x = Mathf.Floor(pos.x) + 0;
+        pos.y = Mathf.Floor(pos.y) + 0;
+        pos.z = Mathf.Floor(pos.z) + 0;
         return pos;
     }
 
@@ -76,7 +84,6 @@ public class Placer : MonoBehaviour {
         {
             if (other.collider.gameObject.tag == "block " + x)
             {
-                print("hi");
 
                 other.collider.gameObject.GetComponent<DeleteParent>().Delete();
             }
