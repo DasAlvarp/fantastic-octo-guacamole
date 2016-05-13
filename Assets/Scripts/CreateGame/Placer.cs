@@ -3,31 +3,57 @@ using System.Collections;
 
 public class Placer : MonoBehaviour {
     public GameObject cubeBlock;
+    public GameObject button;
+    public GameObject exit;
+
+    public GameObject radialMenu;
+    int selected;
+
+    GameObject selectedObject;
+
     public GameObject wireMan;
     public int maxBlockTypes;
 	// Use this for initialization
 	void Start () {
-	
-	}
+        selectedObject = cubeBlock;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-
-        
+        //have to adjust camera up/down, but don't want it to affect movement, this script is conveniently attatched to the camera
+        transform.Rotate(new Vector3(Input.GetAxis("CamRotUp"), 0));
+        selected = radialMenu.GetComponent<RadialMenuAndHold>().value;
+        selectedObject = SelectOptions(selected);
         DoThings();
-        
 	}
+
+    GameObject SelectOptions(int selections)
+    {
+        if(selections == -2)
+        {
+            return exit;
+        }
+        if(selections == -3)
+        {
+            return button;
+        }
+        if(selections == -1)
+        {
+            return cubeBlock;
+        }
+        return selectedObject;
+    }
 
     void DoThings()
     {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         RaycastHit inFront;
 
-        transform.Rotate(new Vector3(Input.GetAxis("CamRotUp"), 0));
         if (Physics.Raycast(transform.position, forward, out inFront, 200, 31))
         {
             if (Input.GetButtonDown("SpinDown"))
-                PlaceBlock(cubeBlock);
+                PlaceBlock(selectedObject);
             if (Input.GetButtonDown("SpinRight"))
                 DeleteBlock(inFront);
             if (Input.GetButtonDown("SpinLeft"))
@@ -73,7 +99,7 @@ public class Placer : MonoBehaviour {
         Instantiate(block, pos, Quaternion.identity);
     }
 
-
+    //adjusting values so thing snap into a grid.
     Vector3 SetProperValues(Vector3 pos)
     {
         pos.x = Mathf.Floor(pos.x) + 0;
@@ -88,7 +114,6 @@ public class Placer : MonoBehaviour {
         {
             if (other.collider.gameObject.tag == "block " + x)
             {
-
                 other.collider.gameObject.GetComponent<DeleteParent>().Delete();
             }
         }
