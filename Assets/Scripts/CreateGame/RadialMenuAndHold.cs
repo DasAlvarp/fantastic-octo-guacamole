@@ -6,6 +6,7 @@ public class RadialMenuAndHold : MonoBehaviour {
     // Use this for initialization
     public GameObject otherThing;
     public GameObject selector;
+    public int value;
 	void Start () {
         otherThing.active = false;
 	
@@ -19,6 +20,7 @@ public class RadialMenuAndHold : MonoBehaviour {
         }
         else if(Input.GetButtonUp("SpinUp"))
         {
+            value = GetEigth();
             otherThing.active = false;
         }
         if(otherThing.active)

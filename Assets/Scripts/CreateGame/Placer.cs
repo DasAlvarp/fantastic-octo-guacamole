@@ -22,6 +22,8 @@ public class Placer : MonoBehaviour {
     {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         RaycastHit inFront;
+
+        transform.Rotate(new Vector3(Input.GetAxis("CamRotUp"), 0));
         if (Physics.Raycast(transform.position, forward, out inFront, 200, 31))
         {
             if (Input.GetButtonDown("SpinDown"))
