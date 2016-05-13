@@ -12,7 +12,9 @@ public class ChangeOptions : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if(Input.GetAxis("DpadDown") == -1)
+        selectionMenu.GetComponent<SetText>().TextIt(gameObject.tag);
+
+        if (Input.GetAxis("DpadDown") == -1)
         {
             gameObject.tag = "block 31";
             Disappear();

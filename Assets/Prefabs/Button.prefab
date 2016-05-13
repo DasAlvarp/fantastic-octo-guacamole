@@ -112,9 +112,10 @@ GameObject:
   - 4: {fileID: 419638}
   - 65: {fileID: 6590702}
   - 114: {fileID: 11453524}
+  - 114: {fileID: 11436962}
   m_Layer: 0
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: block 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -419,6 +420,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11436962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c68f148cc8d37fe4c940cdfc4d970545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionMenu: {fileID: 0}
 --- !u!114 &11453524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -430,6 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea0cc69227142c449beb0936ce53d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blocks: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

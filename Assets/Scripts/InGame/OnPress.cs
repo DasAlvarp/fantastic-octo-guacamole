@@ -5,11 +5,10 @@ public class OnPress : MonoBehaviour {
     bool pressed = false;
 
     public GameObject[] blocks;
-    public int blockNumber;
 
     // Use this for initialization
     void Start () {
-        blocks = GameObject.FindGameObjectsWithTag("block " + blockNumber);
+        blocks = GameObject.FindGameObjectsWithTag(gameObject.tag);
 	
 	}
 	

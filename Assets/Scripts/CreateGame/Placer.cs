@@ -18,6 +18,7 @@ public class Placer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         cubeBlock.GetComponent<ChangeOptions>().selectionMenu = selectedOption ;
+        button.GetComponent<ChangeOptions>().selectionMenu = selectedOption;
         selectedObject = cubeBlock;
     }
 	
