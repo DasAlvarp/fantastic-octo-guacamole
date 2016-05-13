@@ -6,6 +6,8 @@ public class Placer : MonoBehaviour {
     public GameObject button;
     public GameObject exit;
 
+    public GameObject selectedOption;
+
     public GameObject radialMenu;
     int selected;
 
@@ -15,19 +17,21 @@ public class Placer : MonoBehaviour {
     public int maxBlockTypes;
 	// Use this for initialization
 	void Start () {
+        cubeBlock.GetComponent<ChangeOptions>().selectionMenu = selectedOption ;
         selectedObject = cubeBlock;
-
     }
 	
 	// Update is called once per frame
 	void Update () {
         //have to adjust camera up/down, but don't want it to affect movement, this script is conveniently attatched to the camera
-        transform.Rotate(new Vector3(Input.GetAxis("CamRotUp"), 0));
+        if (!Input.GetButton("SpinUp") && !Input.GetButton("RotateLeft"))
+            transform.Rotate(new Vector3(Input.GetAxis("CamRotUp"), 0));
         selected = radialMenu.GetComponent<RadialMenuAndHold>().value;
         selectedObject = SelectOptions(selected);
         DoThings();
 	}
 
+    //converts ints fron radial menu into selected blocks
     GameObject SelectOptions(int selections)
     {
         if(selections == -2)
@@ -45,6 +49,7 @@ public class Placer : MonoBehaviour {
         return selectedObject;
     }
 
+    //manages raycast
     void DoThings()
     {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
@@ -58,8 +63,27 @@ public class Placer : MonoBehaviour {
                 DeleteBlock(inFront);
             if (Input.GetButtonDown("SpinLeft"))
                 PushWalls(inFront);
+            CheckCubes(inFront);
             PlaceWire(inFront);
 
+        }
+    }
+
+    void CheckCubes(RaycastHit inFront)
+    {
+        for (int x = 0; x < maxBlockTypes; x++)
+        {
+            if (inFront.collider.gameObject.tag == "block " + x)
+            {
+                if (Input.GetButtonDown("RotateLeft"))
+                {
+                    inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Edit();
+                }
+                if (Input.GetButtonUp("RotateLeft"))
+                {
+                    inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Disappear();
+                }
+            }
         }
     }
 
@@ -96,7 +120,17 @@ public class Placer : MonoBehaviour {
             }
 
         }
-        Instantiate(block, pos, Quaternion.identity);
+        for (int x = 0; x < maxBlockTypes; x++)
+        {
+            if(block.tag == "block " + x)
+            {
+                block.GetComponent<ChangeOptions>().selectionMenu = selectedOption;
+                Instantiate(block, pos, Quaternion.identity);
+
+            }
+
+        }
+        
     }
 
     //adjusting values so thing snap into a grid.

@@ -16,7 +16,7 @@ public class CameraCTRL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Input.GetButton("SpinUp"))
+        if (!Input.GetButton("SpinUp") && !Input.GetButton("RotateLeft"))
         {
             thisGuy.Translate(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("CameraUp"), Input.GetAxis("Vertical")), Space.Self);
             thisGuy.transform.Rotate(new Vector3(0, Input.GetAxis("CamSpin")));
