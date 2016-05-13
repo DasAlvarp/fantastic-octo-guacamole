@@ -8,6 +8,7 @@ TagManager:
   - block 1
   - WireBlock
   - Character
+  - Wall
   layers:
   - Default
   - TransparentFX

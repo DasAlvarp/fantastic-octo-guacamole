@@ -28,6 +28,8 @@ public class Placer : MonoBehaviour {
                 PlaceBlock(cubeBlock);
             if (Input.GetButtonDown("SpinRight"))
                 DeleteBlock(inFront);
+            if (Input.GetButtonDown("SpinLeft"))
+                PushWalls(inFront);
             PlaceWire(inFront);
 
         }
@@ -39,7 +41,7 @@ public class Placer : MonoBehaviour {
         Vector3 pos = SetProperValues(ray.collider.transform.position);
         for (int x = 0; x < maxBlockTypes; x++)
         {
-            if (ray.collider.gameObject.tag == "block " + x)
+            if (ray.collider.gameObject.tag == "block " + x || ray.collider.gameObject.tag == "Wall")
             {
                 pos = SetProperValues(ray.collider.transform.position) + ray.collider.gameObject.GetComponent<PlaneDirection>().GetDirection();
             }
@@ -88,5 +90,25 @@ public class Placer : MonoBehaviour {
                 other.collider.gameObject.GetComponent<DeleteParent>().Delete();
             }
         }
+    }
+
+    void PushWalls(RaycastHit ray)
+    {
+        if(ray.collider.gameObject.tag == "Wall")
+        {
+            GameObject bigBox = ray.collider.gameObject.transform.parent.gameObject;            
+
+            bigBox.transform.localScale += GetMagnitudes(ray.collider.gameObject.transform.up);
+            bigBox.transform.Translate(ray.collider.transform.up * 5);
+
+        }
+    }
+
+    Vector3 GetMagnitudes(Vector3 vec)
+    {
+        float x = Mathf.Abs(vec.x);
+        float y = Mathf.Abs(vec.y);
+        float z = Mathf.Abs(vec.z);
+        return new Vector3(x, y, z);
     }
 }
