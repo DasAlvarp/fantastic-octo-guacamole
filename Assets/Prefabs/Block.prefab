@@ -110,7 +110,7 @@ GameObject:
   - 4: {fileID: 446882}
   m_Layer: 0
   m_Name: Block
-  m_TagString: block 0
+  m_TagString: block 31
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
