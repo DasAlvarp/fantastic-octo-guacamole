@@ -40,6 +40,8 @@ TagManager:
   - Character
   - WireBlock
   - Exit
+  - Stage
+  - ExitCenter
   layers:
   - Default
   - TransparentFX

@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2389406}
   - 114: {fileID: 11455270}
   - 114: {fileID: 11431710}
+  - 64: {fileID: 6406116}
   m_Layer: 0
   m_Name: face5
   m_TagString: block 0
@@ -31,6 +32,7 @@ GameObject:
   - 23: {fileID: 2343602}
   - 114: {fileID: 11470172}
   - 114: {fileID: 11484244}
+  - 64: {fileID: 6405434}
   m_Layer: 0
   m_Name: face3
   m_TagString: block 0
@@ -68,6 +70,7 @@ GameObject:
   - 23: {fileID: 2369010}
   - 114: {fileID: 11432134}
   - 114: {fileID: 11493154}
+  - 64: {fileID: 6428694}
   m_Layer: 0
   m_Name: face6
   m_TagString: block 0
@@ -87,6 +90,7 @@ GameObject:
   - 23: {fileID: 2346086}
   - 114: {fileID: 11492890}
   - 114: {fileID: 11474702}
+  - 64: {fileID: 6448084}
   m_Layer: 0
   m_Name: face2
   m_TagString: block 0
@@ -106,6 +110,7 @@ GameObject:
   - 23: {fileID: 2319638}
   - 114: {fileID: 11420404}
   - 114: {fileID: 11410688}
+  - 64: {fileID: 6466382}
   m_Layer: 0
   m_Name: face4
   m_TagString: block 0
@@ -125,6 +130,7 @@ GameObject:
   - 23: {fileID: 2347330}
   - 114: {fileID: 11483952}
   - 114: {fileID: 11486614}
+  - 64: {fileID: 6407776}
   m_Layer: 0
   m_Name: face1
   m_TagString: block 0
@@ -420,13 +426,85 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112536}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &6405434
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113788}
+  m_Material: {fileID: 13400000, guid: 985522af8976ec14d946cd270ecf2f4f, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &6406116
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112536}
+  m_Material: {fileID: 13400000, guid: 985522af8976ec14d946cd270ecf2f4f, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &6407776
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195332}
+  m_Material: {fileID: 13400000, guid: 985522af8976ec14d946cd270ecf2f4f, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &6428694
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147582}
+  m_Material: {fileID: 13400000, guid: 985522af8976ec14d946cd270ecf2f4f, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &6448084
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180172}
+  m_Material: {fileID: 13400000, guid: 985522af8976ec14d946cd270ecf2f4f, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &6466382
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183530}
+  m_Material: {fileID: 13400000, guid: 985522af8976ec14d946cd270ecf2f4f, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &6591384
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121304}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 985522af8976ec14d946cd270ecf2f4f, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2

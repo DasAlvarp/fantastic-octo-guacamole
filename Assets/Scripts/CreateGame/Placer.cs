@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 using System.Collections;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class Placer : MonoBehaviour {
     public GameObject cubeBlock;
@@ -101,7 +104,7 @@ public class Placer : MonoBehaviour {
         Vector3 pos = SetProperValues(ray.collider.transform.position);
         for (int x = 0; x < maxBlockTypes; x++)
         {
-            if (ray.collider.gameObject.tag == "block " + x || ray.collider.gameObject.tag == "Wall" || ray.collider.gameObject.tag == "Player" || ray.collider.gameObject.tag == "Exit")
+            if (ray.collider.gameObject.tag == "block " + x || ray.collider.gameObject.tag == "Wall" || ray.collider.gameObject.tag == "Exit" || ray.collider.gameObject.tag == "Player")
             {
                 pos = SetProperValues(ray.collider.transform.position) + ray.collider.gameObject.GetComponent<PlaneDirection>().GetDirection();
             }
@@ -134,10 +137,12 @@ public class Placer : MonoBehaviour {
         }
         for (int x = 0; x < maxBlockTypes; x++)
         {
-            if(block.tag == "block " + x  || block.tag == "Player" || block.tag == "Exit")
+            if(block.tag == "block " + x  || block.tag == "Player" || block.tag == "ExitCenter")
             {
+
                 GameObject placedBlock = (GameObject)Instantiate(block, pos, Quaternion.identity);
                 placedBlock.transform.parent = GameObject.FindGameObjectWithTag("Stage").transform;
+                GameObject.FindGameObjectWithTag("Stage").GetComponent<Saver>().Save();
             }
 
         }
