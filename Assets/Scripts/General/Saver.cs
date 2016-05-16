@@ -43,7 +43,6 @@ public class Saver : MonoBehaviour{
             LevelData data = (LevelData)bf.Deserialize(file);
             file.Close();
 
-            stage = data.center;
         }
     }
 }
@@ -51,9 +50,9 @@ public class Saver : MonoBehaviour{
 [Serializable]
 class LevelData
 {
-    public Vector3 centerScale;
-    public Vector3 charLocation;
-    public Vector3 exitLocation;
+    public float[] centerScale;
+    public float[] charLoc;
+    public float[] exitLoc;
 
     public ArrayList buttonLocations;
     public ArrayList buttonNumbers;
@@ -61,7 +60,6 @@ class LevelData
     public ArrayList blockLocations;
     public ArrayList blockNumbers;
 
-    public GameObject center;
     public void SaveStage(GameObject stage, int maxBlock)
     {
         buttonLocations = new ArrayList();
@@ -70,23 +68,33 @@ class LevelData
         blockLocations = new ArrayList();
         blockNumbers = new ArrayList();
 
-        centerScale = stage.transform.localScale;
         foreach (GameObject block in stage.transform)
         {
             if(block.tag == "Player")
             {
-                charLocation = block.transform.position;
+                charLoc = FromVector3(block.transform.position);
             }
             else if(block.tag == "ExitCenter")
             {
-                exitLocation = block.transform.position;
+                exitLoc = FromVector3(block.transform.position);
             }
-            for(int x = 0; x < maxBlock; x++)
+            else if(block.name == "Block")
             {
-                if (block.tag == "block") ;
-
+                blockLocations.Add(block.transform.position);
+                blockNumbers.Add(block.tag);
+            }
+            else if(block.name == "Button")
+            {
+                buttonLocations.Add(block.transform.position);
+                buttonNumbers.Add(block.tag);
             }
         }
+        centerScale = FromVector3(stage.transform.localScale);
     } 
+
+    float[] FromVector3(Vector3 vectahr)
+    {
+        return new float[3] { vectahr.x, vectahr.y, vectahr.z };
+    }
 
 }
