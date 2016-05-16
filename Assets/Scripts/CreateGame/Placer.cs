@@ -5,6 +5,7 @@ public class Placer : MonoBehaviour {
     public GameObject cubeBlock;
     public GameObject button;
     public GameObject exit;
+    public GameObject character;
 
     public GameObject selectedOption;
 
@@ -19,6 +20,7 @@ public class Placer : MonoBehaviour {
 	void Start () {
         cubeBlock.GetComponent<ChangeOptions>().selectionMenu = selectedOption ;
         button.GetComponent<ChangeOptions>().selectionMenu = selectedOption;
+        
         selectedObject = cubeBlock;
     }
 	
@@ -46,6 +48,10 @@ public class Placer : MonoBehaviour {
         if(selections == -1)
         {
             return cubeBlock;
+        }
+        if(selections == 0)
+        {
+            return character;
         }
         return selectedObject;
     }
@@ -94,7 +100,7 @@ public class Placer : MonoBehaviour {
         Vector3 pos = SetProperValues(ray.collider.transform.position);
         for (int x = 0; x < maxBlockTypes; x++)
         {
-            if (ray.collider.gameObject.tag == "block " + x || ray.collider.gameObject.tag == "Wall")
+            if (ray.collider.gameObject.tag == "block " + x || ray.collider.gameObject.tag == "Wall" || ray.collider.gameObject.tag == "Player" || ray.collider.gameObject.tag == "Exit")
             {
                 pos = SetProperValues(ray.collider.transform.position) + ray.collider.gameObject.GetComponent<PlaneDirection>().GetDirection();
             }
@@ -110,6 +116,10 @@ public class Placer : MonoBehaviour {
         Vector3 pos = GameObject.FindGameObjectWithTag("WireBlock").transform.position;
         for (int x = 0; x < maxBlockTypes; x++)
         {
+            if(block.tag == "Player" || block.tag == "Exit")
+            {
+                break;
+            }
             GameObject[] otherStuff = GameObject.FindGameObjectsWithTag("block " + x);
             for (int y = 0; y < otherStuff.Length; y++)
             {
@@ -123,11 +133,10 @@ public class Placer : MonoBehaviour {
         }
         for (int x = 0; x < maxBlockTypes; x++)
         {
-            if(block.tag == "block " + x)
+            if(block.tag == "block " + x  || block.tag == "Player" || block.tag == "Exit")
             {
-                block.GetComponent<ChangeOptions>().selectionMenu = selectedOption;
-                Instantiate(block, pos, Quaternion.identity);
-
+                GameObject placedBlock = (GameObject)Instantiate(block, pos, Quaternion.identity);
+                placedBlock.transform.parent = GameObject.FindGameObjectWithTag("Stage").transform;
             }
 
         }

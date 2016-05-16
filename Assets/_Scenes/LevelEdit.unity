@@ -1673,7 +1673,7 @@ GameObject:
   - 114: {fileID: 1639224347}
   m_Layer: 0
   m_Name: Stage
-  m_TagString: Untagged
+  m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2511,6 +2511,7 @@ MonoBehaviour:
   cubeBlock: {fileID: 167808, guid: 849f3ed4e3a559a4aa6b903a2e96c475, type: 2}
   button: {fileID: 121304, guid: bc6096488c819cc448da87f0e03968f7, type: 2}
   exit: {fileID: 120796, guid: 4e3917502c9433b44bff1e80835a44ab, type: 2}
+  character: {fileID: 111058, guid: 6eb4c70c87270464bb648ccccaf7e62f, type: 2}
   selectedOption: {fileID: 1934469528}
   radialMenu: {fileID: 256454958}
   wireMan: {fileID: 184136, guid: 44e4590ca37beaf47b402afb34e756dd, type: 2}
