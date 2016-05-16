@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11426530}
   m_Layer: 0
   m_Name: face3
-  m_TagString: block 0
+  m_TagString: block 31
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +35,7 @@ GameObject:
   - 114: {fileID: 11403678}
   m_Layer: 0
   m_Name: face6
-  m_TagString: block 0
+  m_TagString: block 31
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ GameObject:
   - 114: {fileID: 11408348}
   m_Layer: 0
   m_Name: face2
-  m_TagString: block 0
+  m_TagString: block 31
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +75,7 @@ GameObject:
   - 114: {fileID: 11403706}
   m_Layer: 0
   m_Name: face1
-  m_TagString: block 0
+  m_TagString: block 31
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ GameObject:
   - 114: {fileID: 11414766}
   m_Layer: 0
   m_Name: face4
-  m_TagString: block 0
+  m_TagString: block 31
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +131,7 @@ GameObject:
   - 114: {fileID: 11407012}
   m_Layer: 0
   m_Name: face5
-  m_TagString: block 0
+  m_TagString: block 31
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

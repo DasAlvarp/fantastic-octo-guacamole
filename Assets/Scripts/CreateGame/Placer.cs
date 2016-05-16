@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 using System.Collections;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
+
 
 public class Placer : MonoBehaviour {
     public GameObject cubeBlock;
@@ -139,7 +137,6 @@ public class Placer : MonoBehaviour {
         {
             if(block.tag == "block " + x  || block.tag == "Player" || block.tag == "ExitCenter")
             {
-
                 GameObject placedBlock = (GameObject)Instantiate(block, pos, Quaternion.identity);
                 placedBlock.transform.parent = GameObject.FindGameObjectWithTag("Stage").transform;
                 GameObject.FindGameObjectWithTag("Stage").GetComponent<Saver>().Save();
@@ -196,10 +193,6 @@ public class Placer : MonoBehaviour {
             {
                 saved.transform.SetParent(bigBox.transform);
             }
-
-
-
-            
 
         }
     }

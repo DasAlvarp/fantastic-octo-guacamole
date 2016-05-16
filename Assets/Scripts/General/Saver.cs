@@ -2,10 +2,12 @@
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Collections;
 
 public class Saver : MonoBehaviour{
 
     public GameObject stage;
+    public int maxBlockNum;
 
 
 	// Use this for initialization
@@ -26,7 +28,7 @@ public class Saver : MonoBehaviour{
         FileStream file = File.Create(Application.persistentDataPath + "/stageToLoad.dat");
 
         LevelData datasave = new LevelData();
-        datasave.center = stage;
+        datasave.SaveStage(stage, maxBlockNum);
         bf.Serialize(file, datasave);
         file.Close();
 
@@ -49,5 +51,42 @@ public class Saver : MonoBehaviour{
 [Serializable]
 class LevelData
 {
+    public Vector3 centerScale;
+    public Vector3 charLocation;
+    public Vector3 exitLocation;
+
+    public ArrayList buttonLocations;
+    public ArrayList buttonNumbers;
+
+    public ArrayList blockLocations;
+    public ArrayList blockNumbers;
+
     public GameObject center;
+    public void SaveStage(GameObject stage, int maxBlock)
+    {
+        buttonLocations = new ArrayList();
+        buttonNumbers = new ArrayList();
+
+        blockLocations = new ArrayList();
+        blockNumbers = new ArrayList();
+
+        centerScale = stage.transform.localScale;
+        foreach (GameObject block in stage.transform)
+        {
+            if(block.tag == "Player")
+            {
+                charLocation = block.transform.position;
+            }
+            else if(block.tag == "ExitCenter")
+            {
+                exitLocation = block.transform.position;
+            }
+            for(int x = 0; x < maxBlock; x++)
+            {
+                if (block.tag == "block") ;
+
+            }
+        }
+    } 
+
 }

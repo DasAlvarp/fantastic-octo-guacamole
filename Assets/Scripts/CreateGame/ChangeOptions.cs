@@ -16,26 +16,56 @@ public class ChangeOptions : MonoBehaviour {
         if (SceneManager.GetActiveScene().name == "LevelEdit")
         {
             selectionMenu.GetComponent<SetText>().TextIt(gameObject.tag);
+            ArrayList walls = new ArrayList();
+            foreach(Transform wall in gameObject.transform.GetComponentsInChildren<Transform>())
+            {
+                walls.Add(wall);
+            }
+             
 
             if (Input.GetAxis("DpadDown") == -1)
             {
                 gameObject.tag = "block 31";
+                foreach(Transform wall in walls)
+                {
+                    wall.tag = gameObject.tag;
+
+                }
+                gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 31";
                 Disappear();
             }
             else if (Input.GetAxis("DpadDown") == 1)
             {
                 gameObject.tag = "block 1";
+                gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 1";
+                foreach (Transform wall in walls)
+                {
+                    wall.tag = gameObject.tag;
+
+                }
                 Disappear();
             }
 
             if (Input.GetAxis("DpadLeft") == -1)
             {
                 gameObject.tag = "block 0";
+                gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 0";
+                foreach (Transform wall in walls)
+                {
+                    wall.tag = gameObject.tag;
+
+                }
                 Disappear();
             }
             else if (Input.GetAxis("DpadLeft") == 1)
             {
                 gameObject.tag = "block 2";
+                gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 2";
+                foreach(Transform wall in walls)
+                {
+                    wall.tag = gameObject.tag;
+
+                }
                 Disappear();
             }
         }
