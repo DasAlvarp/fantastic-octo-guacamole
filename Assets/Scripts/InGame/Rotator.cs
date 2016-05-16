@@ -16,6 +16,8 @@ public class Rotator : MonoBehaviour {
 
     }
 
+
+    //spins stage + children based on controller inputs.
     void Spin()
     {
         Vector3 rotateTo;

@@ -14,6 +14,7 @@ public class CharacterCTRL : MonoBehaviour
     }
 
     // Update is called once per frame
+    //moves char left and right
     void Update()
     {
         if (!locked)
@@ -37,6 +38,7 @@ public class CharacterCTRL : MonoBehaviour
         locked = false;
     }
 
+    //jumping is a bit stranger than I thought it would be.
     void Jump()
     {
         if(Input.GetAxis("Vertical") > .5 && canJump)

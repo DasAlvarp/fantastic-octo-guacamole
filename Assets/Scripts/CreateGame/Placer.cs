@@ -76,6 +76,7 @@ public class Placer : MonoBehaviour {
         }
     }
 
+    //changes block number types.
     void CheckCubes(RaycastHit inFront)
     {
         for (int x = 0; x < maxBlockTypes; x++)
@@ -156,7 +157,7 @@ public class Placer : MonoBehaviour {
     {
         for(int x = 0; x < maxBlockTypes; x++)
         {
-            if (other.collider.gameObject.tag == "block " + x)
+            if (other.collider.gameObject.tag == "block " + x || other.collider.gameObject.tag == "Exit" || other.collider.gameObject.tag == "Player")
             {
                 other.collider.gameObject.GetComponent<DeleteParent>().Delete();
             }
@@ -165,12 +166,35 @@ public class Placer : MonoBehaviour {
 
     void PushWalls(RaycastHit ray)
     {
-        if(ray.collider.gameObject.tag == "Wall")
-        {
-            GameObject bigBox = ray.collider.gameObject.transform.parent.gameObject;            
 
+        if (ray.collider.gameObject.tag == "Wall")
+        {
+            GameObject bigBox = ray.collider.gameObject.transform.parent.gameObject;
+            ArrayList childSafe = new ArrayList();
+            
+            foreach (Transform child in bigBox.transform)
+            {
+                if (child.tag != "Wall")
+                {
+                    childSafe.Add(child);
+                }
+            }
+            bigBox.transform.DetachChildren();
+
+            foreach(GameObject wall in GameObject.FindGameObjectsWithTag("Wall"))
+            {
+                wall.transform.SetParent(bigBox.transform);
+            }
             bigBox.transform.localScale += GetMagnitudes(ray.collider.gameObject.transform.up);
             bigBox.transform.Translate(ray.collider.transform.up * 5);
+            foreach(Transform saved in childSafe)
+            {
+                saved.transform.SetParent(bigBox.transform);
+            }
+
+
+
+            
 
         }
     }

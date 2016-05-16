@@ -4,6 +4,7 @@ using System.Collections;
 public class Unique : MonoBehaviour {
 
 	// Use this for initialization
+    //deletes every other object with the same tag.
 	void Start () {
         var others = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
         foreach (GameObject o in others)
@@ -15,11 +16,7 @@ public class Unique : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-      /*  GameObject[] others = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
-        if(others.Length > 1)
-        {
-            Destroy(gameObject);
-        }*/
+
     }
 
 

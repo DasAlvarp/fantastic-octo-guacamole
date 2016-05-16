@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3387512}
   - 23: {fileID: 2389406}
   - 114: {fileID: 11455270}
+  - 114: {fileID: 11431710}
   m_Layer: 0
   m_Name: face5
   m_TagString: block 0
@@ -29,6 +30,7 @@ GameObject:
   - 33: {fileID: 3324822}
   - 23: {fileID: 2343602}
   - 114: {fileID: 11470172}
+  - 114: {fileID: 11484244}
   m_Layer: 0
   m_Name: face3
   m_TagString: block 0
@@ -65,6 +67,7 @@ GameObject:
   - 33: {fileID: 3301922}
   - 23: {fileID: 2369010}
   - 114: {fileID: 11432134}
+  - 114: {fileID: 11493154}
   m_Layer: 0
   m_Name: face6
   m_TagString: block 0
@@ -83,6 +86,7 @@ GameObject:
   - 33: {fileID: 3382416}
   - 23: {fileID: 2346086}
   - 114: {fileID: 11492890}
+  - 114: {fileID: 11474702}
   m_Layer: 0
   m_Name: face2
   m_TagString: block 0
@@ -101,6 +105,7 @@ GameObject:
   - 33: {fileID: 3317664}
   - 23: {fileID: 2319638}
   - 114: {fileID: 11420404}
+  - 114: {fileID: 11410688}
   m_Layer: 0
   m_Name: face4
   m_TagString: block 0
@@ -119,6 +124,7 @@ GameObject:
   - 33: {fileID: 3321140}
   - 23: {fileID: 2347330}
   - 114: {fileID: 11483952}
+  - 114: {fileID: 11486614}
   m_Layer: 0
   m_Name: face1
   m_TagString: block 0
@@ -426,6 +432,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11410688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058d127aace309d47a99d8898ece8064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 121304}
 --- !u!114 &11414242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -450,6 +468,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
+--- !u!114 &11431710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058d127aace309d47a99d8898ece8064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 121304}
 --- !u!114 &11432134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -498,6 +528,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 1, y: 0, z: 0}
+--- !u!114 &11474702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058d127aace309d47a99d8898ece8064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 121304}
 --- !u!114 &11483952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -510,6 +552,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
+--- !u!114 &11484244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058d127aace309d47a99d8898ece8064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 121304}
+--- !u!114 &11486614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058d127aace309d47a99d8898ece8064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 121304}
 --- !u!114 &11492890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -522,6 +588,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 1, z: 0}
+--- !u!114 &11493154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058d127aace309d47a99d8898ece8064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 121304}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
