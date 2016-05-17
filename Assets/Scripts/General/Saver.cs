@@ -120,7 +120,6 @@ class LevelData
             {
                 blockLocations.Add(FromVector3(block.position));
                 blockNumbers.Add(block.gameObject.tag);
-                Debug.LogError("hi");
             }
             else if(block.gameObject.name == "Button(Clone)")
             {

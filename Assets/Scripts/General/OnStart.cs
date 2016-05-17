@@ -7,7 +7,8 @@ public class OnStart : MonoBehaviour {
     public GameObject camCont;
     void Start () {
         stage.GetComponent<Saver>().Load();
-        camCont.GetComponent<CameraBoss>().thisGuy = stage.GetComponent<Saver>().character.transform;
+        camCont.GetComponent<CameraBoss>().character = GameObject.FindGameObjectWithTag("Player").transform;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
