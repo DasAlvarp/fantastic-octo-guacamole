@@ -609,6 +609,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage: {fileID: 182184}
+  blankStage: {fileID: 182184}
+  blankBlock: {fileID: 167808, guid: 849f3ed4e3a559a4aa6b903a2e96c475, type: 2}
+  blankButton: {fileID: 121304, guid: bc6096488c819cc448da87f0e03968f7, type: 2}
+  blankExit: {fileID: 120796, guid: 4e3917502c9433b44bff1e80835a44ab, type: 2}
+  character: {fileID: 111058, guid: 6eb4c70c87270464bb648ccccaf7e62f, type: 2}
 --- !u!114 &11460758
 MonoBehaviour:
   m_ObjectHideFlags: 1

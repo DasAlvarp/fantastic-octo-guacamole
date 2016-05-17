@@ -2,15 +2,16 @@
 using System.Collections;
 
 public class OnStart : MonoBehaviour {
+    // Use this for initialization
+    public GameObject stage;
+    public GameObject camCont;
+    void Start () {
+        stage.GetComponent<Saver>().Load();
+        camCont.GetComponent<CameraBoss>().thisGuy = stage.GetComponent<Saver>().character.transform;
+    }
 
-	// Use this for initialization
-	void Start () {
-        gameObject.GetComponent<Saver>().Load();
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
 	
 	}
 }

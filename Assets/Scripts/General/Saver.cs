@@ -7,7 +7,6 @@ using System.Collections;
 public class Saver : MonoBehaviour{
 
     public GameObject stage;
-    public int maxBlockNum;
 
     public GameObject blankStage;
     public GameObject blankBlock;
@@ -18,7 +17,6 @@ public class Saver : MonoBehaviour{
 
 	// Use this for initialization
 	void Start () {
-        stage = new GameObject();
 	
 	}
 	
@@ -34,7 +32,7 @@ public class Saver : MonoBehaviour{
         FileStream file = File.Create(Application.persistentDataPath + "/stageToLoad.dat");
 
         LevelData datasave = new LevelData();
-        datasave.SaveStage(stage, maxBlockNum);
+        datasave.SaveStage(stage);
         bf.Serialize(file, datasave);
         file.Close();
 
@@ -49,8 +47,25 @@ public class Saver : MonoBehaviour{
             LevelData data = (LevelData)bf.Deserialize(file);
 
             //set center properly
-            GameObject center = (GameObject)Instantiate(blankStage, data.ToVector3(data.centerScale), Quaternion.identity);
+            GameObject center = (GameObject)Instantiate(blankStage, new Vector3(.5f,5.5f,.5f), Quaternion.identity);
 
+            center.transform.localScale = data.ToVector3(data.centerScale);
+
+            //getting block types
+            for (int x = 0; x < data.blockLocations.Count; x++)
+            {
+                GameObject block = (GameObject)Instantiate(blankBlock, data.ToVector3((float[])data.blockLocations[x]), Quaternion.identity);
+                block.transform.SetParent(center.transform);
+                block.tag = (String)data.blockNumbers[x];
+            }
+
+            //getting button types
+            for (int x = 0; x < data.blockLocations.Count; x++)
+            {
+                GameObject button = (GameObject)Instantiate(blankButton, data.ToVector3((float[])data.buttonLocations[x]), Quaternion.identity);
+                button.transform.SetParent(center.transform);
+                button.tag = (String)data.buttonNumbers[x];
+            }
             //set character
             GameObject player = (GameObject)Instantiate(character, data.ToVector3(data.charLoc), Quaternion.identity);
             player.transform.SetParent(center.transform);
@@ -59,28 +74,13 @@ public class Saver : MonoBehaviour{
             GameObject exit = (GameObject)Instantiate(blankExit, data.ToVector3(data.exitLoc), Quaternion.identity);
             exit.transform.SetParent(center.transform);
 
-            //getting block types
-            for(int x = 0; x < data.blockLocations.Count; x++)
-            {
-                GameObject block = (GameObject)Instantiate(blankBlock, (Vector3)data.blockLocations[x], Quaternion.identity);
-                block.transform.SetParent(center.transform);
-                block.tag = (String)data.blockNumbers[x];
-            }
-
-            //getting button types
-            for (int x = 0; x < data.blockLocations.Count; x++)
-            {
-                GameObject button = (GameObject)Instantiate(blankButton, (Vector3)data.buttonLocations[x], Quaternion.identity);
-                button.transform.SetParent(center.transform);
-                button.tag = (String)data.buttonNumbers[x];
-            }
-
             file.Close();
 
         }
     }
 }
 
+//saving stuff
 [Serializable]
 class LevelData
 {
@@ -94,7 +94,9 @@ class LevelData
     public ArrayList blockLocations;
     public ArrayList blockNumbers;
 
-    public void SaveStage(GameObject stage, int maxBlock)
+
+    //saves it. duh.
+    public void SaveStage(GameObject stage)
     {
         buttonLocations = new ArrayList();
         buttonNumbers = new ArrayList();
@@ -102,25 +104,28 @@ class LevelData
         blockLocations = new ArrayList();
         blockNumbers = new ArrayList();
 
-        foreach (GameObject block in stage.transform)
+
+        //every child of stage.transform
+        foreach (Transform block in stage.transform)
         {
-            if(block.tag == "Player")
+            if(block.gameObject.tag == "Player")
             {
                 charLoc = FromVector3(block.transform.position);
             }
-            else if(block.tag == "ExitCenter")
+            else if(block.gameObject.tag == "ExitCenter")
             {
-                exitLoc = FromVector3(block.transform.position);
+                exitLoc = FromVector3(block.position);
             }
-            else if(block.name == "Block(Clone)")
+            else if(block.gameObject.name == "Block(Clone)")
             {
-                blockLocations.Add(block.transform.position);
-                blockNumbers.Add(block.tag);
+                blockLocations.Add(FromVector3(block.position));
+                blockNumbers.Add(block.gameObject.tag);
+                Debug.LogError("hi");
             }
-            else if(block.name == "Button(Clone)")
+            else if(block.gameObject.name == "Button(Clone)")
             {
-                buttonLocations.Add(block.transform.position);
-                buttonNumbers.Add(block.tag);
+                buttonLocations.Add(FromVector3(block.position));
+                buttonNumbers.Add(block.gameObject.tag);
             }
         }
         centerScale = FromVector3(stage.transform.localScale);
