@@ -1155,6 +1155,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11455092, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
+      propertyPath: blankStage
+      value: 
+      objectReference: {fileID: 182184, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
+    - target: {fileID: 11455092, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
+      propertyPath: blankBlock
+      value: 
+      objectReference: {fileID: 167808, guid: 849f3ed4e3a559a4aa6b903a2e96c475, type: 2}
+    - target: {fileID: 11455092, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
+      propertyPath: blankButton
+      value: 
+      objectReference: {fileID: 121304, guid: bc6096488c819cc448da87f0e03968f7, type: 2}
+    - target: {fileID: 11455092, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
+      propertyPath: blankExit
+      value: 
+      objectReference: {fileID: 120796, guid: 4e3917502c9433b44bff1e80835a44ab, type: 2}
+    - target: {fileID: 11455092, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 111058, guid: 6eb4c70c87270464bb648ccccaf7e62f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
   m_IsPrefabParent: 0
@@ -1241,6 +1261,7 @@ GameObject:
   - 224: {fileID: 1660234223}
   - 222: {fileID: 1660234225}
   - 114: {fileID: 1660234224}
+  - 114: {fileID: 1660234226}
   m_Layer: 0
   m_Name: Controls
   m_TagString: Untagged
@@ -1303,6 +1324,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1660234222}
+--- !u!114 &1660234226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1660234222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308265d3baff85a4a84b3910e65622c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1692864078
 GameObject:
   m_ObjectHideFlags: 0

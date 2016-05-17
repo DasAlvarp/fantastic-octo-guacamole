@@ -42,37 +42,29 @@ public class Saver : MonoBehaviour{
 
     public void Load()
     {
-        if(File.Exists(Application.persistentDataPath + "/stageToLoad.dat"))
+        if(File.Exists(Application.persistentDataPath + "stageToLoad.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/stageToLoad.dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "stageToLoad.dat", FileMode.Open);
             LevelData data = (LevelData)bf.Deserialize(file);
 
             //set center properly
-            GameObject center = (GameObject)Instantiate(blankStage, data.ToVector3(data.centerScale), Quaternion.identity);
+            GameObject center = blankStage;
+            center.transform.localScale = data.ToVector3(data.centerScale);
 
             //set character
-            GameObject player = (GameObject)Instantiate(character, data.ToVector3(data.charLoc), Quaternion.identity);
+            GameObject player = character;
+            player.transform.position = data.ToVector3(data.charLoc);
             player.transform.SetParent(center.transform);
 
             //set exit
-            GameObject exit = (GameObject)Instantiate(blankExit, data.ToVector3(data.exitLoc), Quaternion.identity);
+            GameObject exit = blankExit;
+            exit.transform.position = data.ToVector3(data.exitLoc);
             exit.transform.SetParent(center.transform);
 
-            //getting block types
             for(int x = 0; x < data.blockLocations.Count; x++)
             {
-                GameObject block = (GameObject)Instantiate(blankBlock, (Vector3)data.blockLocations[x], Quaternion.identity);
-                block.transform.SetParent(center.transform);
-                block.tag = (String)data.blockNumbers[x];
-            }
 
-            //getting button types
-            for (int x = 0; x < data.blockLocations.Count; x++)
-            {
-                GameObject button = (GameObject)Instantiate(blankButton, (Vector3)data.buttonLocations[x], Quaternion.identity);
-                button.transform.SetParent(center.transform);
-                button.tag = (String)data.buttonNumbers[x];
             }
 
             file.Close();
@@ -112,12 +104,12 @@ class LevelData
             {
                 exitLoc = FromVector3(block.transform.position);
             }
-            else if(block.name == "Block(Clone)")
+            else if(block.name == "Block")
             {
                 blockLocations.Add(block.transform.position);
                 blockNumbers.Add(block.tag);
             }
-            else if(block.name == "Button(Clone)")
+            else if(block.name == "Button")
             {
                 buttonLocations.Add(block.transform.position);
                 buttonNumbers.Add(block.tag);

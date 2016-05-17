@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisGuy: {fileID: 839298753}
-  character: {fileID: 0}
+  character: {fileID: 1016143990}
 --- !u!1001 &1016143986
 Prefab:
   m_ObjectHideFlags: 0
@@ -235,3 +235,40 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ff8bebf7c638834d86c1ad587fd0e0b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1016143987 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 108778, guid: 8ff8bebf7c638834d86c1ad587fd0e0b, type: 2}
+  m_PrefabInternal: {fileID: 1016143986}
+--- !u!114 &1016143988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1016143987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0594788755c3d14eb35fc46b6d26d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: {fileID: 182184, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
+  maxBlockNum: 32
+  blankStage: {fileID: 182184, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
+  blankBlock: {fileID: 167808, guid: 849f3ed4e3a559a4aa6b903a2e96c475, type: 2}
+  blankButton: {fileID: 121304, guid: bc6096488c819cc448da87f0e03968f7, type: 2}
+  blankExit: {fileID: 120796, guid: 4e3917502c9433b44bff1e80835a44ab, type: 2}
+  character: {fileID: 111058, guid: 6eb4c70c87270464bb648ccccaf7e62f, type: 2}
+--- !u!114 &1016143989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1016143987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c100e891038114e409220c2a07b7eef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1016143990 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 470876, guid: 8ff8bebf7c638834d86c1ad587fd0e0b, type: 2}
+  m_PrefabInternal: {fileID: 1016143986}
