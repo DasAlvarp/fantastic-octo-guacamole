@@ -55,7 +55,5 @@ public class CharacterCTRL : MonoBehaviour
     void OnCollisionEnter(Collision collide)
     {
         canJump = true;
-        print("hi");
-
     }
 }

@@ -60,7 +60,7 @@ public class Saver : MonoBehaviour{
             }
 
             //getting button types
-            for (int x = 0; x < data.blockLocations.Count; x++)
+            for (int x = 0; x < data.buttonLocations.Count; x++)
             {
                 GameObject button = (GameObject)Instantiate(blankButton, data.ToVector3((float[])data.buttonLocations[x]), Quaternion.identity);
                 button.transform.SetParent(center.transform);
