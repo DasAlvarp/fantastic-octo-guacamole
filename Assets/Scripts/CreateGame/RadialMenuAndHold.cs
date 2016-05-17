@@ -14,11 +14,11 @@ public class RadialMenuAndHold : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetButtonDown("SpinUp"))
+        if(Input.GetButtonDown("SpinUp") || Input.GetKeyDown("q"))
         {
             otherThing.active = true;
         }
-        else if(Input.GetButtonUp("SpinUp"))
+        else if(Input.GetButtonUp("SpinUp") || Input.GetKeyUp("q"))
         {
             value = GetEigth();
             otherThing.active = false;
@@ -33,7 +33,7 @@ public class RadialMenuAndHold : MonoBehaviour {
 
     int GetEigth()
     {
-        float rad = Mathf.Atan2(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
+        float rad = Mathf.Atan2(Input.GetAxis("Vertical") - Input.GetAxis("CamRotUp") / 2, Input.GetAxis("CamSpin") / 2 + Input.GetAxis("Horizontal"));
         rad += Mathf.PI;
         rad *= 4 / Mathf.PI;
         return Mathf.FloorToInt(rad) - 5;

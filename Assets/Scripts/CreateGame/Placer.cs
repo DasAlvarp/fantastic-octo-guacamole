@@ -28,7 +28,7 @@ public class Placer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //have to adjust camera up/down, but don't want it to affect movement, this script is conveniently attatched to the camera
-        if (!Input.GetButton("SpinUp") && !Input.GetButton("RotateLeft"))
+        if (!Input.GetButton("SpinUp") && !Input.GetButton("RotateLeft") && !Input.GetKey("q"))
             transform.Rotate(new Vector3(Input.GetAxis("CamRotUp"), 0));
         selected = radialMenu.GetComponent<RadialMenuAndHold>().value;
         selectedObject = SelectOptions(selected);
@@ -65,11 +65,11 @@ public class Placer : MonoBehaviour {
 
         if (Physics.Raycast(transform.position, forward, out inFront, 200, 31))
         {
-            if (Input.GetButtonDown("SpinDown"))
+            if (Input.GetButtonDown("SpinDown") || Input.GetKeyDown("mouse 0"))
                 PlaceBlock(selectedObject);
-            if (Input.GetButtonDown("SpinRight"))
+            if (Input.GetButtonDown("SpinRight") || Input.GetKeyDown("mouse 1"))
                 DeleteBlock(inFront);
-            if (Input.GetButtonDown("SpinLeft"))
+            if (Input.GetButtonDown("SpinLeft") || Input.GetKeyDown("mouse 2"))
                 PushWalls(inFront);
             CheckCubes(inFront);
             PlaceWire(inFront);
@@ -84,11 +84,11 @@ public class Placer : MonoBehaviour {
         {
             if (inFront.collider.gameObject.tag == "block " + x)
             {
-                if (Input.GetButtonDown("RotateLeft"))
+                if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
                 {
                     inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Edit();
                 }
-                if (Input.GetButtonUp("RotateLeft"))
+                if (Input.GetButtonUp("RotateLeft") || Input.GetKeyDown("e"))
                 {
                     inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Disappear();
                 }
