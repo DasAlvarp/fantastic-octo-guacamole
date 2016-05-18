@@ -30,10 +30,9 @@ public class Saver : MonoBehaviour{
     {
         int x = 0;
         for (x = 0; File.Exists(Application.persistentDataPath + "/" + x + ".dat"); x++)
-        {
-            print("hi" + x); 
+        {//count thru all stages
         }
-        Save("" + (x + 1));
+        Save("" + (x));
     }
     //saves stuff
     public void Save(string name)
@@ -55,9 +54,8 @@ public class Saver : MonoBehaviour{
         int x = 0;
         for(x = 0; File.Exists(Application.persistentDataPath + "/" + x + ".dat"); x++)
         {
-            print("bye" + x);
         }
-        Load(4 + "");
+        Load((x-1) + "");
     }
     public void Load(string name)
     {
