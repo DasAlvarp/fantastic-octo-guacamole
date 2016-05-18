@@ -18,6 +18,7 @@ public class CameraCTRL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //all sittuations for camera lock
         if (!Input.GetButton("SpinUp") && !Input.GetButton("RotateLeft") && !Input.GetKey("q"))
         {
             Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("CameraUp"), Input.GetAxis("Vertical"));
@@ -51,7 +52,7 @@ public class CameraCTRL : MonoBehaviour
             thisGuy.Translate(movement, Space.Self);
             thisGuy.transform.Rotate(new Vector3(0, Input.GetAxis("CamSpin")));
         }
-        
+        //lock/release camera
         if(Input.GetKeyDown("escape"))
         {
             Cursor.lockState = CursorLockMode.None;

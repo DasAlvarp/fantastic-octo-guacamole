@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class OnStart : MonoBehaviour {
+    //place for "global global" variables
+
     // Use this for initialization
     public GameObject stage;
     public GameObject camCont;

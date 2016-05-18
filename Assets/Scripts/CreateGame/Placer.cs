@@ -3,6 +3,8 @@ using System.Collections;
 
 
 public class Placer : MonoBehaviour {
+
+    //way too big of a class to place things
     public GameObject cubeBlock;
     public GameObject button;
     public GameObject exit;
@@ -30,8 +32,12 @@ public class Placer : MonoBehaviour {
         //have to adjust camera up/down, but don't want it to affect movement, this script is conveniently attatched to the camera
         if (!Input.GetButton("SpinUp") && !Input.GetButton("RotateLeft") && !Input.GetKey("q"))
             transform.Rotate(new Vector3(Input.GetAxis("CamRotUp"), 0));
+
+        //selected block type
         selected = radialMenu.GetComponent<RadialMenuAndHold>().value;
         selectedObject = SelectOptions(selected);
+
+        //basically the update method here.
         DoThings();
 	}
 
@@ -63,6 +69,7 @@ public class Placer : MonoBehaviour {
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         RaycastHit inFront;
 
+        //mouse placement controls. Other controls are very much WIP
         if (Physics.Raycast(transform.position, forward, out inFront, 200, 31))
         {
             if (Input.GetButtonDown("SpinDown") || Input.GetKeyDown("mouse 0"))
@@ -77,7 +84,7 @@ public class Placer : MonoBehaviour {
         }
     }
 
-    //changes block number types.
+    //changes block channel.
     void CheckCubes(RaycastHit inFront)
     {
         for (int x = 0; x < maxBlockTypes; x++)
@@ -118,6 +125,7 @@ public class Placer : MonoBehaviour {
         Vector3 pos = GameObject.FindGameObjectWithTag("WireBlock").transform.position;
         for (int x = 0; x < maxBlockTypes; x++)
         {
+            //get proper channel etc.
             if(block.tag == "Player" || block.tag == "Exit")
             {
                 break;
@@ -125,14 +133,13 @@ public class Placer : MonoBehaviour {
             GameObject[] otherStuff = GameObject.FindGameObjectsWithTag("block " + x);
             for (int y = 0; y < otherStuff.Length; y++)
             {
-
                 if(otherStuff[y].transform.position == pos)
                 {
                     return;
                 }
             }
-
         }
+
         for (int x = 0; x < maxBlockTypes; x++)
         {
             if(block.tag == "block " + x  || block.tag == "Player" || block.tag == "ExitCenter")
@@ -140,9 +147,7 @@ public class Placer : MonoBehaviour {
                 GameObject placedBlock = (GameObject)Instantiate(block, pos, Quaternion.identity);
                 placedBlock.transform.parent = GameObject.FindGameObjectWithTag("Stage").transform;
             }
-
         }
-        
     }
 
     //adjusting values so thing snap into a grid.
@@ -154,6 +159,7 @@ public class Placer : MonoBehaviour {
         return pos;
     }
 
+    //deletes non-wall object targeted by raycast.
     void DeleteBlock(RaycastHit other)
     {
         for(int x = 0; x < maxBlockTypes; x++)
@@ -165,14 +171,15 @@ public class Placer : MonoBehaviour {
         }
     }
 
+    //pushes wall targeted by raycast
     void PushWalls(RaycastHit ray)
     {
-
         if (ray.collider.gameObject.tag == "Wall")
         {
             GameObject bigBox = ray.collider.gameObject.transform.parent.gameObject;
             ArrayList childSafe = new ArrayList();
-            
+
+            //adding everything that isn't a wall to not be scaled
             foreach (Transform child in bigBox.transform)
             {
                 if (child.tag != "Wall")
@@ -188,6 +195,8 @@ public class Placer : MonoBehaviour {
             }
             bigBox.transform.localScale += GetMagnitudes(ray.collider.gameObject.transform.up);
             bigBox.transform.Translate(ray.collider.transform.up * 5);
+
+            //reattach children
             foreach(Transform saved in childSafe)
             {
                 saved.transform.SetParent(bigBox.transform);
@@ -195,7 +204,7 @@ public class Placer : MonoBehaviour {
 
         }
     }
-
+    //why is this here? Oh well.
     Vector3 GetMagnitudes(Vector3 vec)
     {
         float x = Mathf.Abs(vec.x);

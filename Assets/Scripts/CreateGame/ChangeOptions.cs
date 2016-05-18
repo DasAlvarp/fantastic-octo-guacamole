@@ -17,19 +17,19 @@ public class ChangeOptions : MonoBehaviour {
         {
             selectionMenu.GetComponent<SetText>().TextIt(gameObject.tag);
             ArrayList walls = new ArrayList();
+            //saving walls of block
             foreach(Transform wall in gameObject.transform.GetComponentsInChildren<Transform>())
             {
                 walls.Add(wall);
             }
              
-
+            //if one block wall's channel is changed, all block wall channels should be changed. Disappear after input given.
             if (Input.GetAxis("DpadDown") == -1)
             {
                 gameObject.tag = "block 31";
                 foreach(Transform wall in walls)
                 {
                     wall.tag = gameObject.tag;
-
                 }
                 gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 31";
                 Disappear();
@@ -72,6 +72,7 @@ public class ChangeOptions : MonoBehaviour {
 
     }
 
+    //menu for block channel
     public void Edit()
     {
         selectionMenu.active = true;

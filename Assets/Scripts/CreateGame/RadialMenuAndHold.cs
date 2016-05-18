@@ -14,6 +14,7 @@ public class RadialMenuAndHold : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //otherTHing = inverted toggle
         if(Input.GetButtonDown("SpinUp") || Input.GetKeyDown("q"))
         {
             otherThing.active = true;
@@ -33,6 +34,7 @@ public class RadialMenuAndHold : MonoBehaviour {
 
     int GetEigth()
     {
+        //get eight that joystick is on. Mouse doesn't really work.
         float rad = Mathf.Atan2(Input.GetAxis("Vertical") - Input.GetAxis("CamRotUp") / 2, Input.GetAxis("CamSpin") / 2 + Input.GetAxis("Horizontal"));
         rad += Mathf.PI;
         rad *= 4 / Mathf.PI;

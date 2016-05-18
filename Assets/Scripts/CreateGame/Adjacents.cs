@@ -15,6 +15,7 @@ public class Adjacents : MonoBehaviour {
 	
 	}
 
+    //adjacent faces.
     public GameObject[] GetAdjacents()
     {
         return adjacents;

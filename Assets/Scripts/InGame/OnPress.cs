@@ -17,6 +17,7 @@ public class OnPress : MonoBehaviour {
 	
 	}
     
+    //button triggering script. Might switch to toggle/add lever at some point
     void OnTriggerEnter(Collider col)
     {
         if(!pressed)

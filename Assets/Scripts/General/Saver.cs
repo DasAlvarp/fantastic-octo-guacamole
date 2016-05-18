@@ -6,6 +6,7 @@ using System.Collections;
 
 public class Saver : MonoBehaviour{
 
+    //info for rebuilding stage.
     public GameObject stage;
 
     public GameObject blankStage;
@@ -26,6 +27,7 @@ public class Saver : MonoBehaviour{
 	}
 
 
+    //default save, saves on last number.
     public void Save()
     {
         int x = 0;
@@ -34,6 +36,7 @@ public class Saver : MonoBehaviour{
         }
         Save("" + (x));
     }
+
     //saves stuff
     public void Save(string name)
     {
@@ -57,9 +60,10 @@ public class Saver : MonoBehaviour{
         }
         Load((x) + "");
     }
+
     public void Load(string name)
     {
-        if(File.Exists(Application.persistentDataPath + "/" + name + ".dat"))
+        if(File.Exists(Application.persistentDataPath + "/" + name + ".dat"))//make sure i can load that file.
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/" + name + ".dat", FileMode.Open);
@@ -67,7 +71,7 @@ public class Saver : MonoBehaviour{
 
             //set center properly
             GameObject center = (GameObject)Instantiate(blankStage, new Vector3(.5f,5.5f,.5f), Quaternion.identity);
-
+            //default start location for stage
             center.transform.localScale = data.ToVector3(data.centerScale);
 
             //getting block types
@@ -128,6 +132,7 @@ class LevelData
         charLoc = new float[] { 0f, 0f, 0f };
 
         //every child of stage.transform
+        //saves and conversion.
         foreach (Transform block in stage.transform)
         {
             if(block.gameObject.tag == "Player")
@@ -152,6 +157,7 @@ class LevelData
         centerScale = FromVector3(stage.transform.localScale);
     } 
 
+    //converting these things back and forth.
     float[] FromVector3(Vector3 vectahr)
     {
         return new float[3] { vectahr.x, vectahr.y, vectahr.z };
