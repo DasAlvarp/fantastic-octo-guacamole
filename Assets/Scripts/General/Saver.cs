@@ -24,13 +24,16 @@ public class Saver : MonoBehaviour{
 	void Update () {
 	
 	}
+
+
     public void Save()
     {
         int x = 0;
         for (x = 0; File.Exists(Application.persistentDataPath + "/" + x + ".dat"); x++)
         {
+            print("hi" + x); 
         }
-        Save("" + x);
+        Save("" + (x + 1));
     }
     //saves stuff
     public void Save(string name)
@@ -45,14 +48,16 @@ public class Saver : MonoBehaviour{
 
     }
 
+
     //loads = conversts stage load to file
     public void Load()
     {
         int x = 0;
         for(x = 0; File.Exists(Application.persistentDataPath + "/" + x + ".dat"); x++)
         {
+            print("bye" + x);
         }
-        Load("" + (x-1));
+        Load(4 + "");
     }
     public void Load(string name)
     {
@@ -121,7 +126,8 @@ class LevelData
 
         blockLocations = new ArrayList();
         blockNumbers = new ArrayList();
-        
+        exitLoc = new float[]{ 0f,0f,0f};
+        charLoc = new float[] { 0f, 0f, 0f };
 
         //every child of stage.transform
         foreach (Transform block in stage.transform)

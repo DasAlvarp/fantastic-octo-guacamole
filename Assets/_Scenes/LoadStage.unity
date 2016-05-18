@@ -252,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: {fileID: 182184, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
   camCont: {fileID: 839298748}
+  level: 0
 --- !u!4 &1016143990 stripped
 Transform:
   m_PrefabParentObject: {fileID: 470876, guid: 8ff8bebf7c638834d86c1ad587fd0e0b, type: 2}
