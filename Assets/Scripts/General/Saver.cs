@@ -24,12 +24,19 @@ public class Saver : MonoBehaviour{
 	void Update () {
 	
 	}
-
-    //saves stuff
     public void Save()
     {
+        int x = 0;
+        for (x = 0; File.Exists(Application.persistentDataPath + "/" + x + ".dat"); x++)
+        {
+        }
+        Save("" + x);
+    }
+    //saves stuff
+    public void Save(string name)
+    {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/stageToLoad.dat");
+        FileStream file = File.Create(Application.persistentDataPath + "/" + name + ".dat");
 
         LevelData datasave = new LevelData();
         datasave.SaveStage(stage);
@@ -38,12 +45,21 @@ public class Saver : MonoBehaviour{
 
     }
 
+    //loads = conversts stage load to file
     public void Load()
     {
-        if(File.Exists(Application.persistentDataPath + "/stageToLoad.dat"))
+        int x = 0;
+        for(x = 0; File.Exists(Application.persistentDataPath + "/" + x + ".dat"); x++)
+        {
+        }
+        Load("" + (x-1));
+    }
+    public void Load(string name)
+    {
+        if(File.Exists(Application.persistentDataPath + "/" + name + ".dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/stageToLoad.dat", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/" + name + ".dat", FileMode.Open);
             LevelData data = (LevelData)bf.Deserialize(file);
 
             //set center properly

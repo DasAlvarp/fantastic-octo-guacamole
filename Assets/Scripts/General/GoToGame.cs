@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class GoToGame : MonoBehaviour {
+    public GameObject stage;
+    public GameObject typeThing;
 
 	// Use this for initialization
 	void Start () {
@@ -12,6 +14,7 @@ public class GoToGame : MonoBehaviour {
 	void Update () {
 	    if(Input.GetButtonDown("Start"))
         {
+            stage.GetComponent<Saver>().Save();
             Application.LoadLevel("LoadStage");
         }
 	}

@@ -1695,6 +1695,10 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1332493721}
+--- !u!1 &1353610361 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 182184, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
+  m_PrefabInternal: {fileID: 1612899854}
 --- !u!1 &1359220917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,7 +2132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1660234223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2197,6 +2201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308265d3baff85a4a84b3910e65622c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stage: {fileID: 1353610361}
+  typeThing: {fileID: 0}
 --- !u!1 &1692864078
 GameObject:
   m_ObjectHideFlags: 0
