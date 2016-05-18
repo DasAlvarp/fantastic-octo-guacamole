@@ -8,7 +8,14 @@ public class OnStart : MonoBehaviour {
     public string level;
     
     void Start () {
-        stage.GetComponent<Saver>().Load();
+        if (level == "")
+        {
+            stage.GetComponent<Saver>().Load();
+        }
+        else
+        {
+            stage.GetComponent<Saver>().Load(level);
+        }
         camCont.GetComponent<CameraBoss>().character = GameObject.FindGameObjectWithTag("Player").transform;
         Time.timeScale = 1;
     }
