@@ -52,20 +52,22 @@ public class Saver : MonoBehaviour{
             center.transform.localScale = data.ToVector3(data.centerScale);
 
             //getting block types
-            for (int x = 0; x < data.blockLocations.Count; x++)
-            {
-                GameObject block = (GameObject)Instantiate(blankBlock, data.ToVector3((float[])data.blockLocations[x]), Quaternion.identity);
-                block.transform.SetParent(center.transform);
-                block.tag = (String)data.blockNumbers[x];
-            }
+            if(data.blockNumbers.Count != 0)
+                for (int x = 0; x < data.blockLocations.Count; x++)
+                {
+                    GameObject block = (GameObject)Instantiate(blankBlock, data.ToVector3((float[])data.blockLocations[x]), Quaternion.identity);
+                    block.transform.SetParent(center.transform);
+                    block.tag = (String)data.blockNumbers[x];
+                }
 
             //getting button types
-            for (int x = 0; x < data.buttonLocations.Count; x++)
-            {
-                GameObject button = (GameObject)Instantiate(blankButton, data.ToVector3((float[])data.buttonLocations[x]), Quaternion.identity);
-                button.transform.SetParent(center.transform);
-                button.tag = (String)data.buttonNumbers[x];
-            }
+            if(data.buttonLocations.Count != 0)
+                for (int x = 0; x < data.buttonLocations.Count; x++)
+                {
+                    GameObject button = (GameObject)Instantiate(blankButton, data.ToVector3((float[])data.buttonLocations[x]), Quaternion.identity);
+                    button.transform.SetParent(center.transform);
+                    button.tag = (String)data.buttonNumbers[x];
+                }
             //set character
             GameObject player = (GameObject)Instantiate(character, data.ToVector3(data.charLoc), Quaternion.identity);
             player.transform.SetParent(center.transform);
@@ -103,7 +105,7 @@ class LevelData
 
         blockLocations = new ArrayList();
         blockNumbers = new ArrayList();
-
+        
 
         //every child of stage.transform
         foreach (Transform block in stage.transform)
