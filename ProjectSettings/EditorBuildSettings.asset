@@ -6,8 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Scenes/MainMenu.unity
+  - enabled: 1
     path: Assets/_Scenes/TestSpins.unity
   - enabled: 1
     path: Assets/_Scenes/LevelEdit.unity
   - enabled: 1
     path: Assets/_Scenes/LoadStage.unity
+  - enabled: 1
+    path: Assets/_Scenes/TestPhysics.unity
