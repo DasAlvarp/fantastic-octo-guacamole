@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 using System.IO;
 
-public class GenerateButtons : MonoBehaviour {
+public class GenerateButtons : MonoBehaviour  {
     public GameObject dropdowns;
     float time;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+        print(Application.persistentDataPath);
+
+        DontDestroyOnLoad(gameObject.transform.parent.gameObject);
         dropdowns.GetComponent<Dropdown>().options.Clear();
         int x = 0;
         for (x = 0; File.Exists(Application.persistentDataPath + "/" + x + ".dat"); x++)
@@ -20,12 +22,16 @@ public class GenerateButtons : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("SpinRight"))
+        if (Input.GetButtonDown("SpinDown"))
         {
             if (File.Exists(Application.persistentDataPath + "/" + dropdowns.GetComponent<Dropdown>().value + ".dat"))
             {
+                GameObject.Find("MrUniverse").GetComponent<TextHolder>().text = "" + dropdowns.GetComponent<Dropdown>().value;
                 Application.LoadLevel("LoadStage");
-                GameObject.Find("WhereToHud").GetComponent<OnStart>().level = "" + dropdowns.GetComponent<Dropdown>().value;
+
+
+
+                Destroy(gameObject.transform.parent.gameObject);
 
             }
         }
@@ -35,6 +41,17 @@ public class GenerateButtons : MonoBehaviour {
             {
                 File.Delete(Application.persistentDataPath + "/" + x + ".dat");
             }
+        }
+        if(Input.GetButtonDown("SpinRight"))
+        {
+            Application.LoadLevel("MainMenu");
+            Destroy(gameObject.transform.parent.gameObject);
+
+        }
+        if (Input.GetButtonDown("SpinLeft"))
+        {
+            GameObject.Find("WhereToHud").GetComponent<OnStart>().level = "" + dropdowns.GetComponent<Dropdown>().value;
+
         }
 
         time += Time.deltaTime;

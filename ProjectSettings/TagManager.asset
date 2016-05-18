@@ -42,6 +42,8 @@ TagManager:
   - Exit
   - Stage
   - ExitCenter
+  - CamBoss
+  - UIcheese
   layers:
   - Default
   - TransparentFX

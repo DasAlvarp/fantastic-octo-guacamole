@@ -55,7 +55,7 @@ public class Saver : MonoBehaviour{
         for(x = 0; File.Exists(Application.persistentDataPath + "/" + x + ".dat"); x++)
         {
         }
-        Load((x-1) + "");
+        Load((x) + "");
     }
     public void Load(string name)
     {
