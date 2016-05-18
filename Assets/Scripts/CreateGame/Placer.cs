@@ -139,7 +139,6 @@ public class Placer : MonoBehaviour {
             {
                 GameObject placedBlock = (GameObject)Instantiate(block, pos, Quaternion.identity);
                 placedBlock.transform.parent = GameObject.FindGameObjectWithTag("Stage").transform;
-                GameObject.FindGameObjectWithTag("Stage").GetComponent<Saver>().Save();
             }
 
         }
