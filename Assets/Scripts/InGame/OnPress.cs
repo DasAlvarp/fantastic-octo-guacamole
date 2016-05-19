@@ -9,7 +9,6 @@ public class OnPress : MonoBehaviour {
     // Use this for initialization
     void Start () {
         blocks = GameObject.FindGameObjectsWithTag(gameObject.tag);
-	
 	}
 	
 	// Update is called once per frame

@@ -31,6 +31,7 @@ GameObject:
   - 114: {fileID: 11464608}
   - 114: {fileID: 11409242}
   - 65: {fileID: 6546500}
+  - 114: {fileID: 11465158}
   m_Layer: 0
   m_Name: RunAway
   m_TagString: ExitCenter
@@ -591,6 +592,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7eff559b4552be4880ba6f2bf9fae04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11465158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d484af8d8ffab45915e890273737ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11475018
