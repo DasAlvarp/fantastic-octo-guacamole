@@ -28,17 +28,17 @@ public class Saver : MonoBehaviour{
 
 
     //default save, saves on last number.
-    public void Save()
+    public string Save()
     {
         int x = 0;
         for (x = 0; File.Exists(Application.persistentDataPath + "/" + x + ".dat"); x++)
         {//count thru all stages
         }
-        Save("" + (x));
+        return Save("" + (x));
     }
 
     //saves stuff
-    public void Save(string name)
+    public string Save(string name)
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/" + name + ".dat");
@@ -47,6 +47,7 @@ public class Saver : MonoBehaviour{
         datasave.SaveStage(stage);
         bf.Serialize(file, datasave);
         file.Close();
+        return name;
 
     }
 

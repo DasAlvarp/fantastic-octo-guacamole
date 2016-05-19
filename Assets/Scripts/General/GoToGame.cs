@@ -14,7 +14,7 @@ public class GoToGame : MonoBehaviour {
 	void Update () {
 	    if(Input.GetButtonDown("Start"))
         {
-            stage.GetComponent<Saver>().Save();
+            GameObject.Find("MrUniverse").GetComponent<TextHolder>().text = stage.GetComponent<Saver>().Save();
             Application.LoadLevel("LoadStage");
         }
 	}

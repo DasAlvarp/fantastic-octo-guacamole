@@ -12,10 +12,10 @@ public class GenerateButtons : MonoBehaviour  {
 	void Awake () {
         //coulda been OnStart.
         dropdowns.GetComponent<Dropdown>().options.Clear();
-        int x = 0;
-        for (x = 0; File.Exists(Application.persistentDataPath + "/" + x + ".dat"); x++)
+        string[] filePaths = Directory.GetFiles(Application.persistentDataPath + "/", "*.dat");
+        for(int x = 0; x < filePaths.Length; x++)
         {
-            AddButton(x);
+            AddButton(filePaths[x].Substring(Application.persistentDataPath.Length + 1, filePaths[x].Length - (Application.persistentDataPath.Length + 5)));
         }
 
     }
@@ -27,7 +27,7 @@ public class GenerateButtons : MonoBehaviour  {
         {
             if (File.Exists(Application.persistentDataPath + "/" + dropdowns.GetComponent<Dropdown>().value + ".dat"))
             {
-                GameObject.Find("MrUniverse").GetComponent<TextHolder>().text = "" + dropdowns.GetComponent<Dropdown>().value;
+                GameObject.Find("MrUniverse").GetComponent<TextHolder>().text = dropdowns.GetComponent<Dropdown>().options[dropdowns.GetComponent<Dropdown>().value].text;
                 Application.LoadLevel("LoadStage");
             }
         }
@@ -35,9 +35,11 @@ public class GenerateButtons : MonoBehaviour  {
         //delete all levels
         if (Input.GetButtonDown("SpinUp"))
         {
-            for(int x = 0; File.Exists(Application.persistentDataPath + "/" + x + ".dat"); x++)
+            dropdowns.GetComponent<Dropdown>().options.Clear();
+            string[] filePaths = Directory.GetFiles(Application.persistentDataPath + "/", "*.dat");
+            for (int x = 0; x < filePaths.Length; x++)
             {
-                File.Delete(Application.persistentDataPath + "/" + x + ".dat");
+                File.Delete(filePaths[x]);
             }
         }
 
@@ -50,7 +52,7 @@ public class GenerateButtons : MonoBehaviour  {
         //gonna delete something soon.
         if (Input.GetButtonDown("SpinLeft"))
         {
-            GameObject.Find("WhereToHud").GetComponent<OnStart>().level = "" + dropdowns.GetComponent<Dropdown>().value;
+            GameObject.Find("MrUniverse").GetComponent<TextHolder>().text = dropdowns.GetComponent<Dropdown>().options[dropdowns.GetComponent<Dropdown>().value].text;
         }
 
         //timer so selection doesnt't go 15 times every slight touch of the arrow.
@@ -65,10 +67,10 @@ public class GenerateButtons : MonoBehaviour  {
 	}
 
     //adds an element to the list.
-    void AddButton(int buttonNum)
+    void AddButton(string button)
     {
         Dropdown.OptionData buttonInfo = new Dropdown.OptionData() ;
-        buttonInfo.text = buttonNum + "";
+        buttonInfo.text = button;
         dropdowns.GetComponent<Dropdown>().options.Add(buttonInfo);
 
     }
