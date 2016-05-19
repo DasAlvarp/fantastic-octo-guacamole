@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02f8412c3265d348aa0233efb05169b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui: {fileID: 22301966, guid: 8c60015ff90f3a943b5f20ce6c31a3c9, type: 2}
   thisGuy: {fileID: 5426076}
 --- !u!114 &11487022
 MonoBehaviour:

@@ -12,6 +12,11 @@ public class GoTo : MonoBehaviour {
 	
 	}
 
+    public void GoToStage()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
     public void GoToStage(string level)
     {
         Application.LoadLevel(level);

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class CharacterCTRL : MonoBehaviour
 {
-
+    public Canvas ui;
     public Rigidbody thisGuy;
     // Use this for initialization
     bool locked;
@@ -27,6 +28,7 @@ public class CharacterCTRL : MonoBehaviour
         }
 
         Jump();
+        ManageUI();
     }
 
     public void Lock()
@@ -45,7 +47,7 @@ public class CharacterCTRL : MonoBehaviour
         {
             if(Mathf.Abs(thisGuy.velocity.y) < 1)
             {
-                thisGuy.velocity = new Vector3(Input.GetAxis("Horizontal"), 6);
+                thisGuy.velocity = new Vector3(Input.GetAxis("Horizontal"), 7);
             }
             canJump = false;
 
@@ -56,4 +58,16 @@ public class CharacterCTRL : MonoBehaviour
     {
         canJump = true;
     }
+
+    void ManageUI()
+    {
+        if (Input.GetButtonDown("Start"))
+            if (ui.enabled == false)
+            {
+                Time.timeScale = 0;
+                ui.enabled = true;
+            }
+    }
+
+
 }
