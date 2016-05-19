@@ -12,6 +12,7 @@ public class CharacterCTRL : MonoBehaviour
     void Start()
     {
         Unlock();
+        ui = GameObject.Instantiate(ui);
     }
 
     // Update is called once per frame

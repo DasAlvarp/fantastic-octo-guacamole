@@ -52,7 +52,16 @@ public class GenerateButtons : MonoBehaviour  {
         //gonna delete something soon.
         if (Input.GetButtonDown("SpinLeft"))
         {
-            GameObject.Find("MrUniverse").GetComponent<TextHolder>().text = dropdowns.GetComponent<Dropdown>().options[dropdowns.GetComponent<Dropdown>().value].text;
+            string[] filePaths = Directory.GetFiles(Application.persistentDataPath + "/", "*.dat");
+
+            File.Delete(filePaths[dropdowns.GetComponent<Dropdown>().value]);
+            dropdowns.GetComponent<Dropdown>().options.Clear();
+            filePaths = Directory.GetFiles(Application.persistentDataPath + "/", "*.dat");
+            for (int x = 0; x < filePaths.Length; x++)
+            {
+                AddButton(filePaths[x].Substring(Application.persistentDataPath.Length + 1, filePaths[x].Length - (Application.persistentDataPath.Length + 5)));
+            }
+
         }
 
         //timer so selection doesnt't go 15 times every slight touch of the arrow.
