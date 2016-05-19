@@ -96,6 +96,7 @@ GameObject:
   - 223: {fileID: 300941852}
   - 114: {fileID: 300941851}
   - 114: {fileID: 300941850}
+  - 114: {fileID: 300941854}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -133,7 +134,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -182,6 +183,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &300941854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 300941849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22bf4e5508d639545af729b040aeca6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsRight:
+  - {fileID: 1139988914}
+  - {fileID: 1139988914}
+  - {fileID: 1139988914}
+  buttonsLeft:
+  - {fileID: 1838072122}
+  - {fileID: 916176524}
+  - {fileID: 444621595}
 --- !u!1 &444621591
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,8 +236,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0.61600006}
   m_AnchorMax: {x: 0, y: 0.61600006}
-  m_AnchoredPosition: {x: 369.25, y: -173}
-  m_SizeDelta: {x: 738, y: 100}
+  m_AnchoredPosition: {x: 877.75, y: -488}
+  m_SizeDelta: {x: 1787.5, y: 262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &444621593
 MonoBehaviour:
@@ -346,8 +366,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.25, y: -71}
-  m_SizeDelta: {x: 800, y: 141}
+  m_AnchoredPosition: {x: -8, y: -122}
+  m_SizeDelta: {x: 1936, y: 228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &742445738
 MonoBehaviour:
@@ -370,11 +390,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 68
+    m_FontSize: 165
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 118
+    m_MaxSize: 168
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -483,8 +503,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0.61600006}
   m_AnchorMax: {x: 0, y: 0.61600006}
-  m_AnchoredPosition: {x: 249.5, y: -65}
-  m_SizeDelta: {x: 503, y: 76}
+  m_AnchoredPosition: {x: 594.75, y: -205}
+  m_SizeDelta: {x: 1221.5, y: 199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916176522
 MonoBehaviour:
@@ -699,8 +719,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -368.87, y: 0}
-  m_SizeDelta: {x: 738.25, y: 100}
+  m_AnchoredPosition: {x: -893.62, y: -0.000011444092}
+  m_SizeDelta: {x: 1788, y: 262}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &954468520
 MonoBehaviour:
@@ -723,11 +743,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 84
+    m_FontSize: 165
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 96
+    m_MaxSize: 165
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -836,8 +856,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0.61600006}
   m_AnchorMax: {x: 0, y: 0.61600006}
-  m_AnchoredPosition: {x: 622, y: 40.25}
-  m_SizeDelta: {x: 357, y: 79.5}
+  m_AnchoredPosition: {x: 1494, y: 70}
+  m_SizeDelta: {x: 852, y: 209}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1139988911
 MonoBehaviour:
@@ -966,8 +986,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.00096893474}
-  m_SizeDelta: {x: 800, y: 440.19}
+  m_AnchoredPosition: {x: -8, y: -0.24838525}
+  m_SizeDelta: {x: 1936, y: 1057.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1195656792
 MonoBehaviour:
@@ -1033,8 +1053,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -178.43, y: 1.625}
-  m_SizeDelta: {x: 357.13, y: 76.25}
+  m_AnchoredPosition: {x: -425.93, y: -0.0015449524}
+  m_SizeDelta: {x: 852, y: 209}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1344034539
 MonoBehaviour:
@@ -1057,11 +1077,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 53
+    m_FontSize: 151
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 96
+    m_MaxSize: 151
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1106,8 +1126,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -251.25, y: -0.0000014305115}
-  m_SizeDelta: {x: 504, y: 76}
+  m_AnchoredPosition: {x: -610.38, y: 0}
+  m_SizeDelta: {x: 1222, y: 199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1384276416
 MonoBehaviour:
@@ -1130,11 +1150,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 62
+    m_FontSize: 133
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 96
+    m_MaxSize: 133
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1158,6 +1178,7 @@ GameObject:
   - 224: {fileID: 1838072119}
   - 222: {fileID: 1838072121}
   - 114: {fileID: 1838072120}
+  - 114: {fileID: 1838072122}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -1180,8 +1201,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0.61600006}
   m_AnchorMax: {x: 0, y: 0.61600006}
-  m_AnchoredPosition: {x: 188, y: 40}
-  m_SizeDelta: {x: 376, y: 80}
+  m_AnchoredPosition: {x: 445.5, y: 70}
+  m_SizeDelta: {x: 923, y: 209}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1838072120
 MonoBehaviour:
@@ -1216,6 +1237,47 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1838072118}
+--- !u!114 &1838072122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1838072118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.71323526, b: 0.03443211, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1838072120}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2058002737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: 
+  unlockedLevels: 0
 --- !u!224 &2058002739
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1292,8 +1355,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -187.75, y: 0}
-  m_SizeDelta: {x: 376.5, y: 80}
+  m_AnchoredPosition: {x: -461.25, y: 0}
+  m_SizeDelta: {x: 924, y: 209}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2097149052
 MonoBehaviour:
@@ -1316,11 +1379,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 66
+    m_FontSize: 159
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 96
+    m_MaxSize: 159
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
