@@ -16,7 +16,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/TestPhysics.unity
   - enabled: 1
-    path: Assets/_Scenes/LoadStage.unity
+    path: Assets/_Scenes/LevelLoad.unity
   - enabled: 1
     path: Assets/_Scenes/CampaignLoad.unity
   - enabled: 1

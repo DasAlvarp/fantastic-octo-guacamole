@@ -2038,7 +2038,7 @@ Prefab:
     - target: {fileID: 11455092, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
       propertyPath: character
       value: 
-      objectReference: {fileID: 111058, guid: 6eb4c70c87270464bb648ccccaf7e62f, type: 2}
+      objectReference: {fileID: 111058, guid: f29c788d6788e0a41a9586815ade159f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
   m_IsPrefabParent: 0
@@ -2979,7 +2979,7 @@ MonoBehaviour:
   cubeBlock: {fileID: 167808, guid: 849f3ed4e3a559a4aa6b903a2e96c475, type: 2}
   button: {fileID: 121304, guid: bc6096488c819cc448da87f0e03968f7, type: 2}
   exit: {fileID: 120796, guid: 4e3917502c9433b44bff1e80835a44ab, type: 2}
-  character: {fileID: 111058, guid: 6eb4c70c87270464bb648ccccaf7e62f, type: 2}
+  character: {fileID: 111058, guid: f29c788d6788e0a41a9586815ade159f, type: 2}
   selectedOption: {fileID: 1934469528}
   radialMenu: {fileID: 256454958}
   wireMan: {fileID: 184136, guid: 44e4590ca37beaf47b402afb34e756dd, type: 2}
