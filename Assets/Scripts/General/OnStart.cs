@@ -23,6 +23,7 @@ public class OnStart : MonoBehaviour {
             stage.GetComponent<Saver>().Load(level);
         }
         camCont.GetComponent<CameraBoss>().character = GameObject.FindGameObjectWithTag("Player").transform;
+        camCont.GetComponent<CameraBoss>().stage = GameObject.Find("Stage(Clone)").transform;
         Time.timeScale = 1;
     }
 
