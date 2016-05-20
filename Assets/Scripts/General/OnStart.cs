@@ -11,7 +11,7 @@ public class OnStart : MonoBehaviour {
     
     void Start () {
         print(level);
-
+        
         level = GameObject.Find("MrUniverse").GetComponent<TextHolder>().text;
         print(level);
         if (level == "")
