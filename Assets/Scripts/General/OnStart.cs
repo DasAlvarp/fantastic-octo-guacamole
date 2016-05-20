@@ -13,7 +13,6 @@ public class OnStart : MonoBehaviour
     void Start()
     {
         level = GameObject.Find("MrUniverse").GetComponent<TextHolder>().text;
-        print(level);
         if (level == "")
         {
             stage.GetComponent<Saver>().Load();
