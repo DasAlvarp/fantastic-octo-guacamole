@@ -19,6 +19,20 @@ public class TextHolder : MonoBehaviour {
 	
 	}
 
+    public void AddLevel(int area, int level)
+    {
+        if (area > unlockedAreas)
+        {
+            unlockedAreas = area;
+            unlockedLevels = 1;
+        }
+        if(level > unlockedLevels && area <= unlockedAreas)
+        {
+            unlockedLevels = level;
+        }
+    }
+
+
     public void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();

@@ -31,8 +31,8 @@ public class MainSelector : MonoBehaviour
 
         selectedHeight -= gameObject.GetComponent<DpadConversion>().upPress;
         if (selectedHeight == -1)
-            selectedHeight += 3;
-        selectedHeight %= 3;
+            selectedHeight += buttonsRight.Length;
+        selectedHeight %= buttonsRight.Length;
 
         selectedSide -= gameObject.GetComponent<DpadConversion>().sidePress;
         if (selectedSide == -1)
