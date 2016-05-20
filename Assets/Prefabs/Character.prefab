@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 22301966, guid: 8c60015ff90f3a943b5f20ce6c31a3c9, type: 2}
   thisGuy: {fileID: 5426076}
+  jumpSound: {fileID: 8300000, guid: c5720fa8a189cd9478d4254659998b49, type: 3}
 --- !u!114 &11487022
 MonoBehaviour:
   m_ObjectHideFlags: 1

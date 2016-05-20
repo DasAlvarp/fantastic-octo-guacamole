@@ -5,16 +5,23 @@ using System.Collections;
 public class MainSelector : MonoBehaviour
 {
 
+    public AudioClip pickIt;
+
+
     public Button[] buttonsRight;
     public Button[] buttonsLeft;
     int selectedHeight = 0;
     int selectedSide = 0;
+    AudioSource sound;
     Button[,] buttonsToSelect;
     DpadConversion buttonner;
 
     // Use this for initialization
     void Start()
     {
+        sound = gameObject.AddComponent<AudioSource>();
+        sound.clip = pickIt;
+
         buttonsToSelect = new Button[3,2];
         gameObject.AddComponent<DpadConversion>();
         
@@ -44,6 +51,7 @@ public class MainSelector : MonoBehaviour
         buttonsToSelect[selectedHeight,selectedSide].Select();
         if (Input.GetButtonDown("SpinDown"))
         {
+            sound.Play();
             buttonsToSelect[selectedHeight,selectedSide].onClick.Invoke();
         }
     }

@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bf4e5508d639545af729b040aeca6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickIt: {fileID: 8300000, guid: 732f3ebf1c5d7e3488eb1258eee340f4, type: 3}
   buttonsRight:
   - {fileID: 1139988914}
   - {fileID: 1139988914}
@@ -1330,6 +1331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: 
   unlockedLevels: 0
+  unlockedAreas: 0
 --- !u!224 &2058002739
 RectTransform:
   m_ObjectHideFlags: 0

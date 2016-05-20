@@ -597,6 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisGuy: {fileID: 182184}
+  rotate: {fileID: 8300000, guid: 1855fab5cb3e1e94b9e4d03d798e8cfd, type: 3}
 --- !u!114 &11455092
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -6,13 +6,21 @@ public class CharacterCTRL : MonoBehaviour
 {
     public Canvas ui;
     public Rigidbody thisGuy;
+
+    public AudioClip jumpSound;
     // Use this for initialization
     bool locked;
     bool canJump;
+
+    AudioSource sound;
+
     void Start()
     {
         Unlock();
         ui = GameObject.Instantiate(ui);
+        sound = gameObject.AddComponent<AudioSource>();
+        sound.clip = jumpSound;
+
     }
 
     // Update is called once per frame
@@ -49,6 +57,7 @@ public class CharacterCTRL : MonoBehaviour
             if(Mathf.Abs(thisGuy.velocity.y) < 1)
             {
                 thisGuy.velocity = new Vector3(Input.GetAxis("Horizontal"), 7);
+                sound.Play();
             }
             canJump = false;
 

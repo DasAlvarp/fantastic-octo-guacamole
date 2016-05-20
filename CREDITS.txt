@@ -1,0 +1,6 @@
+CREDITS
+
+SOUNDS: 
+-jump: https://www.freesound.org/people/jeremysykes/sounds/344502/
+-menu select: https://www.freesound.org/people/jeremysykes/sounds/344519/
+-stage spin/rotate: https://www.freesound.org/people/jeremysykes/sounds/341252/
