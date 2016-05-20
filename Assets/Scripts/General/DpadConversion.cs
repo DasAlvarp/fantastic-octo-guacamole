@@ -43,7 +43,7 @@ public class DpadConversion : MonoBehaviour {
             }
             upPress = dpadUpState;
         }
-        if (Input.GetAxis("DpadLeft") != dpadUpState)
+        if (Input.GetAxis("DpadLeft") != dpadSideState)
         {
             dpadSideState = (int)Input.GetAxis("DpadLeft");
             left = false;

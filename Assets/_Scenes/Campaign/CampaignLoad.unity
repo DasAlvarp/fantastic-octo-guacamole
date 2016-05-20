@@ -377,6 +377,7 @@ GameObject:
   - 222: {fileID: 619426860}
   - 114: {fileID: 619426859}
   - 114: {fileID: 619426858}
+  - 114: {fileID: 619426861}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -440,7 +441,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 619426859}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 619426861}
+        m_MethodName: GoToStage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: s1select
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &619426859
@@ -476,6 +488,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 619426856}
+--- !u!114 &619426861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619426856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24160cff47adb214da15617f66cb6e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &786361172
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,8 +582,6 @@ GameObject:
   - 224: {fileID: 907185782}
   - 222: {fileID: 907185784}
   - 114: {fileID: 907185783}
-  - 114: {fileID: 907185785}
-  - 114: {fileID: 907185786}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -618,31 +639,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 907185781}
---- !u!114 &907185785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 907185781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb45257abc4ae0a4baff18dc05c0f45f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropdowns: {fileID: 0}
---- !u!114 &907185786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 907185781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22bf4e5508d639545af729b040aeca6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonsRight: []
-  buttonsLeft: []
 --- !u!1 &1465004897
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +650,7 @@ GameObject:
   - 223: {fileID: 1465004900}
   - 114: {fileID: 1465004899}
   - 114: {fileID: 1465004898}
+  - 114: {fileID: 1465004902}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: UIcheese
@@ -737,3 +734,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1465004902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1465004897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22bf4e5508d639545af729b040aeca6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonsRight:
+  - {fileID: 619426858}
+  buttonsLeft:
+  - {fileID: 619426858}
