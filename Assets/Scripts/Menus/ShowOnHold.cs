@@ -7,20 +7,20 @@ public class ShowOnHold : MonoBehaviour {
     public GameObject toAntiToggle;
 	// Use this for initialization
 	void Start () {
-        toToggle.active = false;
+        toToggle.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if(Input.GetButtonDown(buttonName))
         {
-            toToggle.active = true;
-            toAntiToggle.active = false;
+            toToggle.SetActive(true);
+            toAntiToggle.SetActive(false);
         }
         if(Input.GetButtonUp(buttonName))
         {
-            toToggle.active = false;
-            toAntiToggle.active = true;
+            toToggle.SetActive(false);
+            toAntiToggle.SetActive(true);
         }
 	
 	}

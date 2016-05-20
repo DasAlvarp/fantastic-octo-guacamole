@@ -3,7 +3,6 @@ using System.Collections;
 
 
 public class Placer : MonoBehaviour {
-
     //way too big of a class to place things
     public GameObject cubeBlock;
     public GameObject button;
@@ -80,7 +79,6 @@ public class Placer : MonoBehaviour {
                 PushWalls(inFront);
             CheckCubes(inFront);
             PlaceWire(inFront);
-
         }
     }
 

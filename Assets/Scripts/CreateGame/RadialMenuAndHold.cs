@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class RadialMenuAndHold : MonoBehaviour {
 
@@ -7,9 +6,10 @@ public class RadialMenuAndHold : MonoBehaviour {
     public GameObject otherThing;
     public GameObject selector;
     public int value;
-	void Start () {
-        otherThing.active = false;
-	
+
+	void Start ()
+    {
+        otherThing.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -17,14 +17,14 @@ public class RadialMenuAndHold : MonoBehaviour {
         //otherTHing = inverted toggle
         if(Input.GetButtonDown("SpinUp") || Input.GetKeyDown("q"))
         {
-            otherThing.active = true;
+            otherThing.SetActive(true);
         }
         else if(Input.GetButtonUp("SpinUp") || Input.GetKeyUp("q"))
         {
             value = GetEigth();
-            otherThing.active = false;
+            otherThing.SetActive(false);
         }
-        if(otherThing.active)
+        if(otherThing.activeInHierarchy)
         {
             int pos = GetEigth();
             selector.transform.rotation = Quaternion.identity;

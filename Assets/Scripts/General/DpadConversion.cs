@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class DpadConversion : MonoBehaviour {
-    public DpadConversion()
-    {
-
-    }
+    //so you can have multiple instances
+    public DpadConversion(){    }
 
     int dpadUpState = 0;
     int dpadSideState = 0;
@@ -18,10 +15,6 @@ public class DpadConversion : MonoBehaviour {
 
     public int upPress = 0;
     public int sidePress = 0;
-	// Use this for initialization
-	void Start () {
-	
-	}
 
     // Update is called once per frame
     void Update()
@@ -59,6 +52,4 @@ public class DpadConversion : MonoBehaviour {
             sidePress = dpadSideState;
         }
     }
-
-
 }

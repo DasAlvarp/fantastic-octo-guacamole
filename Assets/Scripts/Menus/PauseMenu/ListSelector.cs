@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+
 public class ListSelector : MonoBehaviour {
     //Allows controller to kinda work on dropdown menu.
     public Button[] buttonsToSelect;
@@ -30,7 +31,5 @@ public class ListSelector : MonoBehaviour {
         {
             buttonsToSelect[selected].onClick.Invoke() ;
         }
-
-        
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.IO;
 
 public class GenerateButtons : MonoBehaviour  {
@@ -28,7 +29,7 @@ public class GenerateButtons : MonoBehaviour  {
             if (File.Exists(Application.persistentDataPath + "/" + dropdowns.GetComponent<Dropdown>().value + ".dat"))
             {
                 GameObject.Find("MrUniverse").GetComponent<TextHolder>().text = dropdowns.GetComponent<Dropdown>().options[dropdowns.GetComponent<Dropdown>().value].text;
-                Application.LoadLevel("LoadStage");
+                SceneManager.LoadScene("LoadStage");
             }
         }
 
@@ -46,7 +47,7 @@ public class GenerateButtons : MonoBehaviour  {
         //goes to main menu
         if(Input.GetButtonDown("SpinRight"))
         {
-            Application.LoadLevel("MainMenu");
+            SceneManager.LoadScene("MainMenu");
         }
 
         //gonna delete something soon.

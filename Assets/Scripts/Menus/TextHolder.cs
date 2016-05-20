@@ -15,11 +15,11 @@ public class TextHolder : MonoBehaviour {
         Load();
 
         //only the first MrUniverse can exist.
-        var others = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
+        var others = GameObject.FindGameObjectsWithTag(gameObject.tag);
         if(others.Length > 1)
             foreach (GameObject o in others)
             {
-                if (o == this.gameObject)
+                if (o == gameObject)
                     Destroy(o.gameObject);
             }
     }
@@ -37,7 +37,6 @@ public class TextHolder : MonoBehaviour {
             unlockedLevels = level;
         }
     }
-
 
     public void Save()
     {
@@ -63,7 +62,6 @@ public class TextHolder : MonoBehaviour {
             file.Close();
         }
     }
-
 }
 
 

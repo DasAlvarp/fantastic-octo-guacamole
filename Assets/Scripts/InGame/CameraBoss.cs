@@ -7,7 +7,8 @@ public class CameraBoss : MonoBehaviour {
 
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         thisGuy.position = new Vector3(stage.position.x, stage.position.y, character.position.z - 1);
         thisGuy.GetComponent<Camera>().depth = stage.localScale.z * 10;
         thisGuy.GetComponent<Camera>().orthographicSize = GreaterThan(stage.localScale.x * 5, stage.localScale.y * 5);

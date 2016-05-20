@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoToGame : MonoBehaviour {
     public GameObject stage;
@@ -10,7 +11,7 @@ public class GoToGame : MonoBehaviour {
 	    if(Input.GetButtonDown("Start"))
         {
             GameObject.Find("MrUniverse").GetComponent<TextHolder>().text = stage.GetComponent<Saver>().Save();
-            Application.LoadLevel("LoadStage");
+            SceneManager.LoadScene("LoadStage");
         }
 	}
 }

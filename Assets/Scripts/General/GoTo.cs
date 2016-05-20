@@ -1,27 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoTo : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     //manages game state.
-
+    
+        //reloads level if not given a level.
     public void GoToStage()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void GoToStage(string level)
     {
-        Application.LoadLevel(level);
+        SceneManager.LoadScene(level);
     }
 
     public void Quit()

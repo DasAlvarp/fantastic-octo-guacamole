@@ -57,7 +57,4 @@ public class Rotator : MonoBehaviour {
         }
         thisGuy.transform.Rotate(rotateTo, Space.World);
     }
-
-    
-
 }

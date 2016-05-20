@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainSelector : MonoBehaviour
 {
@@ -54,7 +55,7 @@ public class MainSelector : MonoBehaviour
 
         if(Input.GetButtonDown("SpinRight"))
         {
-            Application.LoadLevel(lastMenu);
+            SceneManager.LoadScene(lastMenu);
         }
     }
 }

@@ -15,7 +15,7 @@ public class CharacterCTRL : MonoBehaviour
     void Start()
     {
         Unlock();
-        ui = GameObject.Instantiate(ui);
+        ui = Instantiate(ui);
         sound = gameObject.AddComponent<AudioSource>();
         sound.clip = jumpSound;
     }
@@ -58,7 +58,6 @@ public class CharacterCTRL : MonoBehaviour
                 sound.Play();
             }
             canJump = false;
-
         }
     }
 

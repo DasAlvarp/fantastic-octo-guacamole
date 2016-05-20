@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class CameraCTRL : MonoBehaviour
 {
-
     public Transform thisGuy;
 
     // Use this for initialization
@@ -12,7 +10,6 @@ public class CameraCTRL : MonoBehaviour
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
     }
 
     // Update is called once per frame

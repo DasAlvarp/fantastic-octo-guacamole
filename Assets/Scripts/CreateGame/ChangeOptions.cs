@@ -3,13 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class ChangeOptions : MonoBehaviour {
-
     public GameObject selectionMenu;
-    int menuLevel = 0;
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -75,13 +69,11 @@ public class ChangeOptions : MonoBehaviour {
     //menu for block channel
     public void Edit()
     {
-        selectionMenu.active = true;
-        menuLevel = 0;
-
+        selectionMenu.SetActive(true);
     }
 
     public void Disappear()
     {
-        selectionMenu.active = false;
+        selectionMenu.SetActive(false);
     }
 }

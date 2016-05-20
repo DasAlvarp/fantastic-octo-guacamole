@@ -5,7 +5,6 @@ using System.IO;
 using System.Collections;
 
 public class Saver : MonoBehaviour{
-
     //info for rebuilding stage.
     public GameObject stage;
 
@@ -156,5 +155,4 @@ class LevelData
     {
         return new Vector3(vector[0], vector[1], vector[2]);
     }
-
 }

@@ -6,10 +6,10 @@ public class OnPress : MonoBehaviour {
     public GameObject[] blocks;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         blocks = GameObject.FindGameObjectsWithTag(gameObject.tag);
 	}
-
     
     //button triggering script. Might switch to toggle/add lever at some point
     void OnTriggerEnter(Collider col)

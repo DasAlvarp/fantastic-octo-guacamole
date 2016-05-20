@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndProgression : MonoBehaviour {
     public int levelNumber;
@@ -9,6 +10,6 @@ public class EndProgression : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
         GameObject.Find("MrUniverse").GetComponent<TextHolder>().AddLevel(areaNumber, levelNumber);
-        Application.LoadLevel(nextLevel);
+        SceneManager.LoadScene(nextLevel);
     }
 }
