@@ -16,17 +16,6 @@ public class Saver : MonoBehaviour{
     public GameObject character;
 
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-
     //default save, saves on last number.
     public string Save()
     {
@@ -50,7 +39,6 @@ public class Saver : MonoBehaviour{
         return name;
 
     }
-
 
     //loads = conversts stage load to file
     public void Load()

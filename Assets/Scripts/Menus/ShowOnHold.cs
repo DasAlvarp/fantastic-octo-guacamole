@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class ShowOnHold : MonoBehaviour {
 
@@ -9,7 +8,6 @@ public class ShowOnHold : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         toToggle.active = false;
-	
 	}
 	
 	// Update is called once per frame

@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-
 public class ListSelector : MonoBehaviour {
-
+    //Allows controller to kinda work on dropdown menu.
     public Button[] buttonsToSelect;
     int selected = 0;
     DpadConversion buttonner;

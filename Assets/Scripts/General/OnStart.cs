@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class OnStart : MonoBehaviour {
+public class OnStart : MonoBehaviour
+{
     //place for "global global" variables
 
     // Use this for initialization
     public GameObject stage;
     public GameObject camCont;
     public string level;
-    
-    void Start () {
-        print(level);
-        
+
+    //Specific loading thing.
+    void Start()
+    {
         level = GameObject.Find("MrUniverse").GetComponent<TextHolder>().text;
         print(level);
         if (level == "")
@@ -27,8 +27,4 @@ public class OnStart : MonoBehaviour {
         Time.timeScale = 1;
     }
 
-    // Update is called once per frame
-    void Update () {
-	
-	}
 }

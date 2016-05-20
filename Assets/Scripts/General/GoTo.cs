@@ -12,6 +12,8 @@ public class GoTo : MonoBehaviour {
 	
 	}
 
+    //manages game state.
+
     public void GoToStage()
     {
         Application.LoadLevel(Application.loadedLevel);

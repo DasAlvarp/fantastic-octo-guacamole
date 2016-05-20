@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Rotator : MonoBehaviour {
 
@@ -14,9 +13,7 @@ public class Rotator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
         Spin();
-
     }
 
 

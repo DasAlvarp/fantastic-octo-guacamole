@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class StageLoadControl : MonoBehaviour {
 
@@ -29,6 +28,7 @@ public class StageLoadControl : MonoBehaviour {
         }
     }
 
+    //loads stage and changes button color if the stage is unlocked
     public void LoadIfUnlocked()
     {
         if(stageNum < GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedAreas)

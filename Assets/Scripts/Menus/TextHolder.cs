@@ -2,9 +2,9 @@
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-using System.Collections;
 
 public class TextHolder : MonoBehaviour {
+    //This script is basically what makes MrUniverse actually useful.
     public string text;
     public int unlockedLevels;
     public int unlockedAreas;
@@ -14,6 +14,7 @@ public class TextHolder : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
         Load();
 
+        //only the first MrUniverse can exist.
         var others = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
         if(others.Length > 1)
             foreach (GameObject o in others)
@@ -22,12 +23,8 @@ public class TextHolder : MonoBehaviour {
                     Destroy(o.gameObject);
             }
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
+    //unlocks a level in campaign
     public void AddLevel(int area, int level)
     {
         if (area > unlockedAreas)
@@ -69,6 +66,8 @@ public class TextHolder : MonoBehaviour {
 
 }
 
+
+//save for player level unlocks
 [Serializable]
 class LoadData
 {

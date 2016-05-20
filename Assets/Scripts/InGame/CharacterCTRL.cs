@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
 
 public class CharacterCTRL : MonoBehaviour
 {
@@ -20,7 +18,6 @@ public class CharacterCTRL : MonoBehaviour
         ui = GameObject.Instantiate(ui);
         sound = gameObject.AddComponent<AudioSource>();
         sound.clip = jumpSound;
-
     }
 
     // Update is called once per frame
@@ -40,6 +37,7 @@ public class CharacterCTRL : MonoBehaviour
         ManageUI();
     }
 
+    //managing UI editableness
     public void Lock()
     {
         locked = true;
@@ -64,11 +62,13 @@ public class CharacterCTRL : MonoBehaviour
         }
     }
 
+    //you can jump when you touch something.
     void OnCollisionEnter(Collision collide)
     {
         canJump = true;
     }
 
+    //Pauses
     void ManageUI()
     {
         if (Input.GetButtonDown("Start"))
@@ -78,6 +78,4 @@ public class CharacterCTRL : MonoBehaviour
                 ui.enabled = true;
             }
     }
-
-
 }

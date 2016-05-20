@@ -61,7 +61,6 @@ public class GenerateButtons : MonoBehaviour  {
             {
                 AddButton(filePaths[x].Substring(Application.persistentDataPath.Length + 1, filePaths[x].Length - (Application.persistentDataPath.Length + 5)));
             }
-
         }
 
         //timer so selection doesnt't go 15 times every slight touch of the arrow.
@@ -72,7 +71,6 @@ public class GenerateButtons : MonoBehaviour  {
 
             dropdowns.GetComponent<Dropdown>().value += (int)Input.GetAxis("DpadDown");
         }
-        
 	}
 
     //adds an element to the list.
@@ -81,6 +79,5 @@ public class GenerateButtons : MonoBehaviour  {
         Dropdown.OptionData buttonInfo = new Dropdown.OptionData() ;
         buttonInfo.text = button;
         dropdowns.GetComponent<Dropdown>().options.Add(buttonInfo);
-
     }
 }

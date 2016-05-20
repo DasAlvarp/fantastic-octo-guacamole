@@ -1,18 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class EndPoint : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+    //default end of level
     void OnTriggerEnter(Collider col)
     {
         Application.LoadLevel("MainMenu");

@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class MainSelector : MonoBehaviour
 {
-
     public AudioClip pickIt;
     public string lastMenu;
 
@@ -19,12 +17,14 @@ public class MainSelector : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //get sound
         sound = GameObject.Find("MrUniverse").AddComponent<AudioSource>();
         sound.clip = pickIt;
 
         buttonsToSelect = new Button[3,2];
         gameObject.AddComponent<DpadConversion>();
         
+        //fill buttons
         for(int x = 0; x < buttonsRight.Length; x++)
         {
             buttonsToSelect[x, 0] = buttonsLeft[x];
@@ -32,10 +32,9 @@ public class MainSelector : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    //Selecting b/t things
     void Update()
     {
-
         selectedHeight -= gameObject.GetComponent<DpadConversion>().upPress;
         if (selectedHeight == -1)
             selectedHeight += buttonsRight.Length;

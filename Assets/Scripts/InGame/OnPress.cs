@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class OnPress : MonoBehaviour {
     bool pressed = false;
@@ -10,11 +9,7 @@ public class OnPress : MonoBehaviour {
     void Start () {
         blocks = GameObject.FindGameObjectsWithTag(gameObject.tag);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
     
     //button triggering script. Might switch to toggle/add lever at some point
     void OnTriggerEnter(Collider col)
