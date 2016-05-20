@@ -960,6 +960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickIt: {fileID: 8300000, guid: 732f3ebf1c5d7e3488eb1258eee340f4, type: 3}
+  lastMenu: CampaignLoad
   buttonsRight:
   - {fileID: 1539642611}
   - {fileID: 916788805}

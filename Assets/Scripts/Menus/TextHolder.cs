@@ -12,7 +12,16 @@ public class TextHolder : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(gameObject);
-	}
+        Load();
+
+        var others = GameObject.FindGameObjectsWithTag(this.gameObject.tag);
+        if(others.Length > 1)
+            foreach (GameObject o in others)
+            {
+                if (o == this.gameObject)
+                    Destroy(o.gameObject);
+            }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -52,6 +61,8 @@ public class TextHolder : MonoBehaviour {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/unlocks.inf", FileMode.Open);
             LoadData data = (LoadData)bf.Deserialize(file);
+            unlockedAreas = data.areaUnlock;
+            unlockedLevels = data.levelUnlock;
             file.Close();
         }
     }

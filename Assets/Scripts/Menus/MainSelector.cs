@@ -6,7 +6,7 @@ public class MainSelector : MonoBehaviour
 {
 
     public AudioClip pickIt;
-
+    public string lastMenu;
 
     public Button[] buttonsRight;
     public Button[] buttonsLeft;
@@ -19,13 +19,13 @@ public class MainSelector : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        sound = gameObject.AddComponent<AudioSource>();
+        sound = GameObject.Find("MrUniverse").AddComponent<AudioSource>();
         sound.clip = pickIt;
 
         buttonsToSelect = new Button[3,2];
         gameObject.AddComponent<DpadConversion>();
         
-        for(int x = 0; x < 3; x++)
+        for(int x = 0; x < buttonsRight.Length; x++)
         {
             buttonsToSelect[x, 0] = buttonsLeft[x];
             buttonsToSelect[x, 1] = buttonsRight[x];
@@ -46,13 +46,16 @@ public class MainSelector : MonoBehaviour
             selectedSide += 2;
         selectedSide %= 2;
 
-        print(selectedHeight + ", " + selectedSide);
-
         buttonsToSelect[selectedHeight,selectedSide].Select();
         if (Input.GetButtonDown("SpinDown"))
         {
-            sound.Play();
+            GameObject.Find("MrUniverse").GetComponent<AudioSource>().Play();
             buttonsToSelect[selectedHeight,selectedSide].onClick.Invoke();
+        }
+
+        if(Input.GetButtonDown("SpinRight"))
+        {
+            Application.LoadLevel(lastMenu);
         }
     }
 }

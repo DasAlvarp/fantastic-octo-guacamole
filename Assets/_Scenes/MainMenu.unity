@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickIt: {fileID: 8300000, guid: 732f3ebf1c5d7e3488eb1258eee340f4, type: 3}
+  lastMenu: MainMenu
   buttonsRight:
   - {fileID: 1139988914}
   - {fileID: 1139988914}
@@ -1313,7 +1314,7 @@ GameObject:
   - 114: {fileID: 2058002738}
   m_Layer: 5
   m_Name: MrUniverse
-  m_TagString: Untagged
+  m_TagString: Global Commander 1.0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -745,7 +745,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bf4e5508d639545af729b040aeca6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickIt: {fileID: 0}
+  lastMenu: MainMenu
   buttonsRight:
   - {fileID: 619426858}
+  - {fileID: 619426858}
   buttonsLeft:
+  - {fileID: 619426858}
   - {fileID: 619426858}
