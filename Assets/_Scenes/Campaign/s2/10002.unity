@@ -46713,6 +46713,56 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 900853977}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &902742991
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 930908821}
+    m_Modifications:
+    - target: {fileID: 479812, guid: 8c7b19b88c355044696d32d68f907e97, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 479812, guid: 8c7b19b88c355044696d32d68f907e97, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 479812, guid: 8c7b19b88c355044696d32d68f907e97, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -15.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 479812, guid: 8c7b19b88c355044696d32d68f907e97, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 479812, guid: 8c7b19b88c355044696d32d68f907e97, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 479812, guid: 8c7b19b88c355044696d32d68f907e97, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 479812, guid: 8c7b19b88c355044696d32d68f907e97, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 479812, guid: 8c7b19b88c355044696d32d68f907e97, type: 2}
+      propertyPath: m_RootOrder
+      value: 168
+      objectReference: {fileID: 0}
+    - target: {fileID: 160592, guid: 8c7b19b88c355044696d32d68f907e97, type: 2}
+      propertyPath: m_Name
+      value: Lever
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8c7b19b88c355044696d32d68f907e97, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &902742992 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 479812, guid: 8c7b19b88c355044696d32d68f907e97, type: 2}
+  m_PrefabInternal: {fileID: 902742991}
 --- !u!1 &902830678
 GameObject:
   m_ObjectHideFlags: 0
@@ -48604,6 +48654,7 @@ Transform:
   - {fileID: 1168380927}
   - {fileID: 561311686}
   - {fileID: 2089073123}
+  - {fileID: 902742992}
   - {fileID: 1234887073}
   - {fileID: 2029313696}
   m_Father: {fileID: 0}
@@ -64152,7 +64203,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 930908821}
-  m_RootOrder: 168
+  m_RootOrder: 169
 --- !u!82 &1234887074
 AudioSource:
   m_ObjectHideFlags: 0
@@ -104445,7 +104496,7 @@ Transform:
   - {fileID: 897036464}
   - {fileID: 2053477285}
   m_Father: {fileID: 930908821}
-  m_RootOrder: 169
+  m_RootOrder: 170
 --- !u!114 &2029313697
 MonoBehaviour:
   m_ObjectHideFlags: 0
