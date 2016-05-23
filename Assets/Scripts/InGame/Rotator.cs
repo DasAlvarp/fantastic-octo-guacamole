@@ -10,11 +10,13 @@ public class Rotator : MonoBehaviour {
 	void Start () {
         sound = gameObject.AddComponent<AudioSource>();
         sound.clip = rotate;
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.Find("Character(Clone)");
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        player = GameObject.Find("Character(Clone)");
+
         Spin();
     }
 

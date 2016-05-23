@@ -11,7 +11,7 @@ GameObject:
   - 20: {fileID: 2011560}
   - 124: {fileID: 12460814}
   - 92: {fileID: 9273762}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CameraRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,6 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 456006}
   - 114: {fileID: 11409210}
+  - 108: {fileID: 10859302}
   m_Layer: 0
   m_Name: Stage
   m_TagString: Untagged
@@ -130,7 +131,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 484890}
   - 212: {fileID: 21296268}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: xbox-controller-x-button-md
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +147,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 489210}
   - 212: {fileID: 21274984}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: xbox-controller-a-button-md
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +163,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 415242}
   - 212: {fileID: 21226108}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: xbox-controller-b-button-md
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +181,7 @@ GameObject:
   - 20: {fileID: 2040866}
   - 124: {fileID: 12420286}
   - 92: {fileID: 9206946}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CameraLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +199,7 @@ GameObject:
   - 20: {fileID: 2025714}
   - 124: {fileID: 12493340}
   - 92: {fileID: 9220164}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CameraUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +233,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 472490}
   - 212: {fileID: 21245192}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: xbox-controller-y-button-md
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +251,7 @@ GameObject:
   - 20: {fileID: 2007236}
   - 124: {fileID: 12447672}
   - 92: {fileID: 9219942}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CameraDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1019,6 +1020,39 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124224}
   m_Enabled: 1
+--- !u!108 &10859302
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106450}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.58
+  m_Range: 106
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967263
+  m_Lightmapping: 2
+  m_BounceIntensity: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 152.29, y: 480.6}
 --- !u!114 &11409210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1031,6 +1065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisGuy: {fileID: 106450}
+  rotate: {fileID: 0}
 --- !u!114 &11467664
 MonoBehaviour:
   m_ObjectHideFlags: 1
