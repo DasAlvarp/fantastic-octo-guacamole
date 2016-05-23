@@ -74,6 +74,7 @@ public class GenerateButtons : MonoBehaviour  {
             time = 0f;
 
             dropdowns.value += (int)Input.GetAxis("DpadDown");
+            dropdowns.Select() ;
         }
 	}
 

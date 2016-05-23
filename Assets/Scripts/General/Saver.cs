@@ -126,12 +126,10 @@ class LevelData
             if(block.gameObject.tag == "Player")
             {
                 charLoc = FromVector3(block.transform.position);
-                player = true;
             }
             else if(block.gameObject.tag == "ExitCenter")
             {
                 exitLoc = FromVector3(block.position);
-                exit = true;
             }
             else if(block.gameObject.name == "Block(Clone)")
             {
