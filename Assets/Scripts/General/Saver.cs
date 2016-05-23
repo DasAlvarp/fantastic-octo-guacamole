@@ -111,6 +111,9 @@ class LevelData
     //saves it. duh.
     public void SaveStage(GameObject stage)
     {
+        bool player = false; ;
+        bool exit = false;
+
         buttonLocations = new ArrayList();
         buttonNumbers = new ArrayList();
 
@@ -126,10 +129,12 @@ class LevelData
             if(block.gameObject.tag == "Player")
             {
                 charLoc = FromVector3(block.transform.position);
+                player = true;
             }
             else if(block.gameObject.tag == "ExitCenter")
             {
                 exitLoc = FromVector3(block.position);
+                exit = true;
             }
             else if(block.gameObject.name == "Block(Clone)")
             {
