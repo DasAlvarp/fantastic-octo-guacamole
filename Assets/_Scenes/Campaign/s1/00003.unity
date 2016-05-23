@@ -269,6 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 0}
   thisGuy: {fileID: 552664424}
+  jumpSound: {fileID: 0}
 --- !u!54 &552664424
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -438,6 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisGuy: {fileID: 595764516}
+  rotate: {fileID: 0}
 --- !u!4 &595764519
 Transform:
   m_ObjectHideFlags: 0
@@ -538,6 +540,10 @@ Prefab:
     - target: {fileID: 22462036, guid: b5435704214f2374087965f1a2630ddc, type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 151368, guid: b5435704214f2374087965f1a2630ddc, type: 2}
+      propertyPath: m_TagString
+      value: Global Commander 1.0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5435704214f2374087965f1a2630ddc, type: 2}
