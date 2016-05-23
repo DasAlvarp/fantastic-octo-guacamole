@@ -4,8 +4,10 @@ using UnityEngine.SceneManagement;
 using System.IO;
 
 public class GenerateButtons : MonoBehaviour  {
-    public GameObject dropdowns;
+    public Dropdown dropdowns;
     float time;
+    Image colors;
+    Image def;
 
     //sets up dropdown menus
 
@@ -18,6 +20,7 @@ public class GenerateButtons : MonoBehaviour  {
         {
             AddButton(filePaths[x].Substring(Application.persistentDataPath.Length + 1, filePaths[x].Length - (Application.persistentDataPath.Length + 5)));
         }
+        dropdowns.Show();
 
     }
 	
@@ -70,7 +73,7 @@ public class GenerateButtons : MonoBehaviour  {
         {
             time = 0f;
 
-            dropdowns.GetComponent<Dropdown>().value += (int)Input.GetAxis("DpadDown");
+            dropdowns.value += (int)Input.GetAxis("DpadDown");
         }
 	}
 

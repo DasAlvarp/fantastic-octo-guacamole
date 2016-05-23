@@ -111,9 +111,6 @@ class LevelData
     //saves it. duh.
     public void SaveStage(GameObject stage)
     {
-        bool player = false; ;
-        bool exit = false;
-
         buttonLocations = new ArrayList();
         buttonNumbers = new ArrayList();
 
