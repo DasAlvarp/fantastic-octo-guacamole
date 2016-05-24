@@ -87,15 +87,17 @@ public class Placer : MonoBehaviour {
     {
         for (int x = 0; x < maxBlockTypes; x++)
         {
-            if (inFront.collider.gameObject.tag == "block " + x)
+            if (inFront.collider.gameObject.tag == "block " + x || inFront.collider.gameObject.tag == "lever")
             {
                 if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
                 {
                     inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Edit();
+                    return;
                 }
                 if (Input.GetButtonUp("RotateLeft") || Input.GetKeyDown("e"))
                 {
                     inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Disappear();
+                    return;
                 }
             }
         }
@@ -202,6 +204,7 @@ public class Placer : MonoBehaviour {
 
         }
     }
+
     //why is this here? Oh well.
     Vector3 GetMagnitudes(Vector3 vec)
     {

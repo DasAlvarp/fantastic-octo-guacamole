@@ -252,6 +252,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 595764519}
     m_Modifications:
+    - target: {fileID: 11456910, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: toToggle.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 426718, guid: 58e58464ea2f855458881502753848b6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.44
@@ -284,6 +288,70 @@ Prefab:
       propertyPath: m_RootOrder
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 185314, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 139672, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 199870, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 117114, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 172988, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 106926, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 138780, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 176514, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 168216, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 125962, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 188844, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 141300, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 129622, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: m_TagString
+      value: Lever
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456910, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: toggleTag
+      value: block 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 11456910, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: toToggle.Array.data[0]
+      value: 
+      objectReference: {fileID: 1225751132}
+    - target: {fileID: 11456910, guid: 58e58464ea2f855458881502753848b6, type: 2}
+      propertyPath: toToggle.Array.data[1]
+      value: 
+      objectReference: {fileID: 1453303455}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58e58464ea2f855458881502753848b6, type: 2}
   m_IsPrefabParent: 0

@@ -9,58 +9,91 @@ public class ChangeOptions : MonoBehaviour {
 	void Update () {
         if (SceneManager.GetActiveScene().name == "LevelEdit")
         {
-            selectionMenu.GetComponent<SetText>().TextIt(gameObject.tag);
-            ArrayList walls = new ArrayList();
-            //saving walls of block
-            foreach(Transform wall in gameObject.transform.GetComponentsInChildren<Transform>())
+            if (gameObject.tag.Substring(0,5) == "block")
             {
-                walls.Add(wall);
-            }
-             
-            //if one block wall's channel is changed, all block wall channels should be changed. Disappear after input given.
-            if (Input.GetAxis("DpadDown") == -1)
-            {
-                gameObject.tag = "block 31";
-                foreach(Transform wall in walls)
+                print("hi!");
+                selectionMenu.GetComponent<SetText>().TextIt(gameObject.tag);
+                ArrayList walls = new ArrayList();
+                //saving walls of block
+                foreach (Transform wall in gameObject.transform.GetComponentsInChildren<Transform>())
                 {
-                    wall.tag = gameObject.tag;
+                    walls.Add(wall);
                 }
-                gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 31";
-                Disappear();
-            }
-            else if (Input.GetAxis("DpadDown") == 1)
-            {
-                gameObject.tag = "block 1";
-                gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 1";
-                foreach (Transform wall in walls)
+
+                //if one block wall's channel is changed, all block wall channels should be changed. Disappear after input given.
+                if (Input.GetAxis("DpadDown") == -1)
                 {
-                    wall.tag = gameObject.tag;
-
+                    gameObject.tag = "block 31";
+                    foreach (Transform wall in walls)
+                    {
+                        wall.tag = gameObject.tag;
+                    }
+                    gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 31";
+                    Disappear();
                 }
-                Disappear();
-            }
-
-            if (Input.GetAxis("DpadLeft") == -1)
-            {
-                gameObject.tag = "block 0";
-                gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 0";
-                foreach (Transform wall in walls)
+                else if (Input.GetAxis("DpadDown") == 1)
                 {
-                    wall.tag = gameObject.tag;
+                    gameObject.tag = "block 1";
+                    gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 1";
+                    foreach (Transform wall in walls)
+                    {
+                        wall.tag = gameObject.tag;
 
+                    }
+                    Disappear();
                 }
-                Disappear();
-            }
-            else if (Input.GetAxis("DpadLeft") == 1)
-            {
-                gameObject.tag = "block 2";
-                gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 2";
-                foreach(Transform wall in walls)
+
+                if (Input.GetAxis("DpadLeft") == -1)
                 {
-                    wall.tag = gameObject.tag;
+                    gameObject.tag = "block 0";
+                    gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 0";
+                    foreach (Transform wall in walls)
+                    {
+                        wall.tag = gameObject.tag;
 
+                    }
+                    Disappear();
                 }
-                Disappear();
+                else if (Input.GetAxis("DpadLeft") == 1)
+                {
+                    gameObject.tag = "block 2";
+                    gameObject.transform.GetComponentInChildren<Transform>().gameObject.tag = "block 2";
+                    foreach (Transform wall in walls)
+                    {
+                        wall.tag = gameObject.tag;
+
+                    }
+                    Disappear();
+                }
+            }
+            else if (gameObject.tag == "Lever")
+            {
+                selectionMenu.GetComponent<SetText>().TextIt(gameObject.tag);
+
+                print("hi");
+                //if one block wall's channel is changed, all block wall channels should be changed. Disappear after input given.
+                if (Input.GetAxis("DpadDown") == -1)
+                {
+                    gameObject.GetComponent<OnToggle>().toggleTag = "block 2";
+                  
+                    Disappear();
+                }
+                else if (Input.GetAxis("DpadDown") == 1)
+                {
+                    gameObject.GetComponent<OnToggle>().toggleTag = "block 1";
+                    Disappear();
+                }
+
+                if (Input.GetAxis("DpadLeft") == -1)
+                {
+                    gameObject.GetComponent<OnToggle>().toggleTag = "block 0";
+                    Disappear();
+                }
+                else if (Input.GetAxis("DpadLeft") == 1)
+                {
+                    gameObject.GetComponent<OnToggle>().toggleTag = "block 2";
+                    Disappear();
+                }
             }
         }
 
