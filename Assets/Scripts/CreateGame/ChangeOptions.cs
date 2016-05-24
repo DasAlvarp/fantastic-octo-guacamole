@@ -11,7 +11,6 @@ public class ChangeOptions : MonoBehaviour {
         {
             if (gameObject.tag.Substring(0,5) == "block")
             {
-                print("hi!");
                 selectionMenu.GetComponent<SetText>().TextIt(gameObject.tag);
                 ArrayList walls = new ArrayList();
                 //saving walls of block
@@ -68,13 +67,12 @@ public class ChangeOptions : MonoBehaviour {
             }
             else if (gameObject.tag == "Lever")
             {
-                selectionMenu.GetComponent<SetText>().TextIt(gameObject.tag);
+                selectionMenu.GetComponent<SetText>().TextIt(gameObject.GetComponent<OnToggle>().toggleTag);
 
-                print("hi");
                 //if one block wall's channel is changed, all block wall channels should be changed. Disappear after input given.
                 if (Input.GetAxis("DpadDown") == -1)
                 {
-                    gameObject.GetComponent<OnToggle>().toggleTag = "block 2";
+                    gameObject.GetComponent<OnToggle>().toggleTag = "block 3";
                   
                     Disappear();
                 }
@@ -95,6 +93,7 @@ public class ChangeOptions : MonoBehaviour {
                     Disappear();
                 }
             }
+
         }
 
     }

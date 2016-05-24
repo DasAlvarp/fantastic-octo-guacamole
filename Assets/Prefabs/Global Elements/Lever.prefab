@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11416054}
   m_Layer: 31
   m_Name: face6 (1)
-  m_TagString: block 0
+  m_TagString: LeverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ GameObject:
   - 114: {fileID: 11497456}
   m_Layer: 31
   m_Name: face4 (1)
-  m_TagString: block 0
+  m_TagString: LeverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +54,7 @@ GameObject:
   - 114: {fileID: 11439036}
   m_Layer: 0
   m_Name: face3
-  m_TagString: block 0
+  m_TagString: LeverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ GameObject:
   - 114: {fileID: 11456910}
   m_Layer: 0
   m_Name: Lever
-  m_TagString: block 0
+  m_TagString: Lever
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +93,7 @@ GameObject:
   - 114: {fileID: 11422720}
   m_Layer: 0
   m_Name: face6
-  m_TagString: block 0
+  m_TagString: LeverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ GameObject:
   - 114: {fileID: 11483928}
   m_Layer: 31
   m_Name: face2 (1)
-  m_TagString: block 0
+  m_TagString: LeverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ GameObject:
   - 114: {fileID: 11456950}
   m_Layer: 0
   m_Name: face1
-  m_TagString: block 0
+  m_TagString: LeverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,7 +154,7 @@ GameObject:
   - 114: {fileID: 11442230}
   m_Layer: 0
   m_Name: face4
-  m_TagString: block 0
+  m_TagString: LeverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +173,7 @@ GameObject:
   - 114: {fileID: 11462648}
   m_Layer: 31
   m_Name: face5 (1)
-  m_TagString: block 0
+  m_TagString: LeverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,7 +194,7 @@ GameObject:
   - 114: {fileID: 11444282}
   m_Layer: 0
   m_Name: face5
-  m_TagString: block 0
+  m_TagString: LeverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,7 +213,7 @@ GameObject:
   - 114: {fileID: 11491548}
   m_Layer: 31
   m_Name: face1 (1)
-  m_TagString: block 0
+  m_TagString: LeverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,7 +234,7 @@ GameObject:
   - 114: {fileID: 11405988}
   m_Layer: 0
   m_Name: face2
-  m_TagString: block 0
+  m_TagString: LeverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,7 +253,7 @@ GameObject:
   - 114: {fileID: 11450344}
   m_Layer: 31
   m_Name: face3 (1)
-  m_TagString: block 0
+  m_TagString: LeverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,7 +289,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.44, y: -4.5, z: 3.543786}
+  m_LocalPosition: {x: 4.5, y: -1.0725765, z: 1.8876052}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 480426}
@@ -1140,6 +1140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e9905289e7f2c4b85c2cc020bd38fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toggleTag: 
 --- !u!114 &11456950
 MonoBehaviour:
   m_ObjectHideFlags: 1

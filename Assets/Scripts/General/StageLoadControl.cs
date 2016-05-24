@@ -34,7 +34,6 @@ public class StageLoadControl : MonoBehaviour {
         {
             if(levelNum <= GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedLevels)
                 SceneManager.LoadScene(loadLevel);
-
         }
     }
 }

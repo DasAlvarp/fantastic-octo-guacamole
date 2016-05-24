@@ -8,6 +8,7 @@ public class Placer : MonoBehaviour {
     public GameObject button;
     public GameObject exit;
     public GameObject character;
+    public GameObject lever;
 
     public GameObject selectedOption;
 
@@ -22,6 +23,7 @@ public class Placer : MonoBehaviour {
 	void Start () {
         cubeBlock.GetComponent<ChangeOptions>().selectionMenu = selectedOption ;
         button.GetComponent<ChangeOptions>().selectionMenu = selectedOption;
+        lever.GetComponent<ChangeOptions>().selectionMenu = selectedOption;
         
         selectedObject = cubeBlock;
     }
@@ -47,17 +49,21 @@ public class Placer : MonoBehaviour {
         {
             return exit;
         }
-        if(selections == -3)
+        else if (selections == -3)
         {
             return button;
         }
-        if(selections == -1)
+        else if (selections == -1)
         {
             return cubeBlock;
         }
-        if(selections == 0)
+        else if (selections == 0)
         {
             return character;
+        }
+        else if(selections == -4)
+        {
+            return lever;
         }
         return selectedObject;
     }
@@ -85,9 +91,37 @@ public class Placer : MonoBehaviour {
     //changes block channel.
     void CheckCubes(RaycastHit inFront)
     {
+        if (inFront.collider.gameObject.tag == "Lever")
+        {
+            if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
+            {
+                inFront.collider.gameObject.GetComponent<ChangeOptions>().Edit();
+                return;
+            }
+            if (Input.GetButtonUp("RotateLeft") || Input.GetKeyDown("e"))
+            {
+                inFront.collider.gameObject.GetComponent<ChangeOptions>().Disappear();
+                return;
+            }
+        }
+        else if(inFront.collider.tag == "LeverWall")
+        {
+            print("dank memes");
+            if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
+            {
+                inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Edit();
+                return;
+            }
+            if (Input.GetButtonUp("RotateLeft") || Input.GetKeyDown("e"))
+            {
+                inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Disappear();
+                return;
+            }
+        }
+
         for (int x = 0; x < maxBlockTypes; x++)
         {
-            if (inFront.collider.gameObject.tag == "block " + x || inFront.collider.gameObject.tag == "lever")
+            if (inFront.collider.gameObject.tag == "block " + x || inFront.collider.gameObject.tag == "Lever")
             {
                 if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
                 {
@@ -109,7 +143,7 @@ public class Placer : MonoBehaviour {
         Vector3 pos = SetProperValues(ray.collider.transform.position);
         for (int x = 0; x < maxBlockTypes; x++)
         {
-            if (ray.collider.gameObject.tag == "block " + x || ray.collider.gameObject.tag == "Wall" || ray.collider.gameObject.tag == "Exit" || ray.collider.gameObject.tag == "Player")
+            if (ray.collider.gameObject.tag == "block " + x || ray.collider.gameObject.tag == "Wall" || ray.collider.gameObject.tag == "Exit" || ray.collider.gameObject.tag == "Player" || ray.collider.gameObject.tag == "Lever")
             {
                 pos = SetProperValues(ray.collider.transform.position) + ray.collider.gameObject.GetComponent<PlaneDirection>().GetDirection();
             }
@@ -138,16 +172,33 @@ public class Placer : MonoBehaviour {
                     return;
                 }
             }
+            GameObject[] levers = GameObject.FindGameObjectsWithTag("Lever");
+            foreach (GameObject lever in levers)
+            {
+                if(lever.transform.position == pos)
+                {
+                    return;
+                }
+            }
         }
-
+        //if it's not a block
+        if (block.tag == "Player" || block.tag == "ExitCenter" || block.tag == "Lever")
+        {
+            GameObject placedBlock = (GameObject)Instantiate(block, pos, Quaternion.identity);
+            placedBlock.transform.parent = GameObject.FindGameObjectWithTag("Stage").transform;
+            return;
+        }
         for (int x = 0; x < maxBlockTypes; x++)
         {
-            if(block.tag == "block " + x  || block.tag == "Player" || block.tag == "ExitCenter")
+            if(block.tag == "block " + x )
             {
                 GameObject placedBlock = (GameObject)Instantiate(block, pos, Quaternion.identity);
                 placedBlock.transform.parent = GameObject.FindGameObjectWithTag("Stage").transform;
+                return;
             }
         }
+
+
     }
 
     //adjusting values so thing snap into a grid.

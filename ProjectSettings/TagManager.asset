@@ -46,6 +46,7 @@ TagManager:
   - UIcheese
   - Global Commander 1.0
   - Lever
+  - LeverWall
   layers:
   - Default
   - TransparentFX

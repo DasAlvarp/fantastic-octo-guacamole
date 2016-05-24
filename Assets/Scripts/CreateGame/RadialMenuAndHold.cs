@@ -27,6 +27,7 @@ public class RadialMenuAndHold : MonoBehaviour {
         if(otherThing.activeInHierarchy)
         {
             int pos = GetEigth();
+            print(pos);
             selector.transform.rotation = Quaternion.identity;
             selector.transform.Rotate(0, 0, Mathf.Rad2Deg*((5 + pos) * Mathf.PI / 4 + Mathf.PI));
         }

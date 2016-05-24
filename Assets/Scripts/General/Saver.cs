@@ -68,7 +68,7 @@ public class Saver : MonoBehaviour{
                 {
                     GameObject block = (GameObject)Instantiate(blankBlock, data.ToVector3((float[])data.blockLocations[x]), Quaternion.identity);
                     block.transform.SetParent(center.transform);
-                    block.tag = (String)data.blockNumbers[x];
+                    block.tag = (string)data.blockNumbers[x];
                 }
 
             //getting button types
@@ -77,7 +77,7 @@ public class Saver : MonoBehaviour{
                 {
                     GameObject button = (GameObject)Instantiate(blankButton, data.ToVector3((float[])data.buttonLocations[x]), Quaternion.identity);
                     button.transform.SetParent(center.transform);
-                    button.tag = (String)data.buttonNumbers[x];
+                    button.tag = (string)data.buttonNumbers[x];
                 }
             //set character
             GameObject player = (GameObject)Instantiate(character, data.ToVector3(data.charLoc), Quaternion.identity);
