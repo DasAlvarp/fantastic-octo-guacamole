@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class StageLoadControl : MonoBehaviour {
-    public int stageNum;
+    public int areaNum;
     public int levelNum;
     public string loadLevel;
     public Color usable;
@@ -11,12 +11,11 @@ public class StageLoadControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (stageNum < GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedAreas)
+        if (areaNum < GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedAreas && toChange.color != usable)
         {
             toChange.color = usable;
-            
         }
-        else if (stageNum == GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedAreas)
+        else if (areaNum == GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedAreas)
         {
             if (levelNum <= GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedLevels)
                 toChange.color = usable;
@@ -26,11 +25,12 @@ public class StageLoadControl : MonoBehaviour {
     //loads stage and changes button color if the stage is unlocked
     public void LoadIfUnlocked()
     {
-        if(stageNum < GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedAreas)
+        GameObject.Find("MrUniverse").GetComponent<TextHolder>().Save();
+        if (areaNum < GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedAreas)
         {
             SceneManager.LoadScene(loadLevel);
         }
-        else if(stageNum == GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedAreas)
+        else if(areaNum == GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedAreas)
         {
             if(levelNum <= GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedLevels)
                 SceneManager.LoadScene(loadLevel);

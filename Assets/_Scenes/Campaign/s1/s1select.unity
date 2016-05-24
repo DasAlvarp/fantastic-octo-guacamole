@@ -692,9 +692,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabae96db46d21940bcaed6e1bb7f6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageNum: 0
+  areaNum: 0
   levelNum: 4
-  loadLevel: 4
+  loadLevel: 00004
   usable: {r: 0.9411765, g: 0, b: 1, a: 1}
   toChange: {fileID: 916788806}
 --- !u!114 &916788805
@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabae96db46d21940bcaed6e1bb7f6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageNum: 0
+  areaNum: 0
   levelNum: 3
   loadLevel: 00003
   usable: {r: 0.9411765, g: 0, b: 1, a: 1}
@@ -1153,7 +1153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabae96db46d21940bcaed6e1bb7f6e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageNum: 0
+  areaNum: 0
   levelNum: 2
   loadLevel: 00002
   usable: {r: 0.9411765, g: 0, b: 1, a: 1}

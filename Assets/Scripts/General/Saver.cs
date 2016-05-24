@@ -87,7 +87,6 @@ public class Saver : MonoBehaviour{
                 {
                     GameObject lever = (GameObject)Instantiate(blankLever, data.ToVector3((float[])data.leverLocations[x]), Quaternion.identity);
                     lever.transform.SetParent(center.transform);
-                    print(data.leverNumbers[x]);
                     lever.GetComponent<OnToggle>().toggleTag = (string)data.leverNumbers[x];
                 }
             //set character
