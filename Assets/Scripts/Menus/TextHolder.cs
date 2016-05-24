@@ -3,7 +3,8 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-public class TextHolder : MonoBehaviour {
+public class TextHolder : MonoBehaviour
+{
     //This script is basically what makes MrUniverse actually useful.
     public string text;
     public int unlockedLevels;

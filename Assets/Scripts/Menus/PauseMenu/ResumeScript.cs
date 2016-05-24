@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 
-public class ResumeScript : MonoBehaviour {
-
+public class ResumeScript : MonoBehaviour
+{
     public Canvas bigBoss;
-	// Use this for initialization
+
+	// Unpauses
 	public void OnPress () {
         Time.timeScale = 1;
         bigBoss.enabled = false;	

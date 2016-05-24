@@ -12,7 +12,7 @@ public class RadialMenuAndHold : MonoBehaviour {
         otherThing.SetActive(false);
 	}
 	
-	// Update is called once per frame
+	// tests radial menus and stuff.
 	void Update () {
         //otherTHing = inverted toggle
         if(Input.GetButtonDown("SpinUp") || Input.GetKeyDown("q"))

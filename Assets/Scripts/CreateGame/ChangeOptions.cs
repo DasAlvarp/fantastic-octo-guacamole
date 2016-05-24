@@ -7,6 +7,7 @@ public class ChangeOptions : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //this is horible and messy and needts to be fixed at some point.
         if (SceneManager.GetActiveScene().name == "LevelEdit")
         {
             if (gameObject.tag.Substring(0,5) == "block")

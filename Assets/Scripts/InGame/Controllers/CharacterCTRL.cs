@@ -32,7 +32,6 @@ public class CharacterCTRL : MonoBehaviour
         {
             thisGuy.velocity = new Vector3(0, 0,0);
         }
-
         Jump();
         ManageUI();
     }
@@ -42,6 +41,7 @@ public class CharacterCTRL : MonoBehaviour
     {
         locked = true;
     }
+
     public void Unlock()
     {
         locked = false;

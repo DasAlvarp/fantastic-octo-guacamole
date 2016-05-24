@@ -21,6 +21,7 @@ public class Placer : MonoBehaviour {
     public int maxBlockTypes;
 	// Use this for initialization
 	void Start () {
+        //init selections
         cubeBlock.GetComponent<ChangeOptions>().selectionMenu = selectedOption ;
         button.GetComponent<ChangeOptions>().selectionMenu = selectedOption;
         lever.GetComponent<ChangeOptions>().selectionMenu = selectedOption;
@@ -150,7 +151,6 @@ public class Placer : MonoBehaviour {
             }
         }
         Instantiate(wireMan, pos, Quaternion.identity);
-
     }
 
     //places a block where the wireframe block is
@@ -160,10 +160,20 @@ public class Placer : MonoBehaviour {
         Vector3 pos = GameObject.FindGameObjectWithTag("WireBlock").transform.position;
         for (int x = 0; x < maxBlockTypes; x++)
         {
-            //get proper channel etc.
+            //get proper channel etc, if it's unique, good to place.
             if(block.tag == "Player" || block.tag == "Exit")
             {
                 break;
+            }
+
+            //probably fewer levers than blocks, so do this first for memory.
+            GameObject[] levers = GameObject.FindGameObjectsWithTag("Lever");
+            foreach (GameObject lever in levers)
+            {
+                if (lever.transform.position == pos)
+                {
+                    return;
+                }
             }
             GameObject[] otherStuff = GameObject.FindGameObjectsWithTag("block " + x);
             for (int y = 0; y < otherStuff.Length; y++)
@@ -173,15 +183,9 @@ public class Placer : MonoBehaviour {
                     return;
                 }
             }
-            GameObject[] levers = GameObject.FindGameObjectsWithTag("Lever");
-            foreach (GameObject lever in levers)
-            {
-                if(lever.transform.position == pos)
-                {
-                    return;
-                }
-            }
+            
         }
+
         //if it's not a block
         if (block.tag == "Player" || block.tag == "ExitCenter" || block.tag == "Lever")
         {
@@ -198,8 +202,6 @@ public class Placer : MonoBehaviour {
                 return;
             }
         }
-
-
     }
 
     //adjusting values so thing snap into a grid.
@@ -253,7 +255,6 @@ public class Placer : MonoBehaviour {
             {
                 saved.transform.SetParent(bigBox.transform);
             }
-
         }
     }
 

@@ -9,6 +9,8 @@ public class ChangeFace : MonoBehaviour {
     {
         state = true;
     }
+
+    //toggles state of textures on lever.
     public bool Toggle()
     {       
         if (state)
@@ -20,6 +22,5 @@ public class ChangeFace : MonoBehaviour {
         gameObject.GetComponent<Renderer>().material = onSt;
         state = true;
         return false;
- 
-    }
+     }
 }

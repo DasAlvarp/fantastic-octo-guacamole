@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
 
-public class ShowOnHold : MonoBehaviour {
-
+public class ShowOnHold : MonoBehaviour
+{
     public string buttonName;
     public GameObject toToggle;
     public GameObject toAntiToggle;
-	// Use this for initialization
-	void Start () {
+
+	// ToToggle is such a horrible name for something that's being held down.
+	void Start ()
+    {
         toToggle.SetActive(false);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if(Input.GetButtonDown(buttonName))
         {
             toToggle.SetActive(true);
@@ -22,6 +25,5 @@ public class ShowOnHold : MonoBehaviour {
             toToggle.SetActive(false);
             toAntiToggle.SetActive(true);
         }
-	
 	}
 }

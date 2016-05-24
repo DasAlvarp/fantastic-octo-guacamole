@@ -6,14 +6,15 @@ public class Rotator : MonoBehaviour {
     public AudioClip rotate;
     GameObject player;
     AudioSource sound;
+
 	// Use this for initialization
 	void Start () {
         sound = gameObject.AddComponent<AudioSource>();
         sound.clip = rotate;
-        player = GameObject.Find("Character(Clone)");
+        player = GameObject.Find("Character(Clone)");//sometimes is null on start.
     }
 	
-	// Update is called once per frame
+	// this works better now I guess?
 	void FixedUpdate () {
         player = GameObject.Find("Character(Clone)");
 
@@ -75,6 +76,6 @@ public class Rotator : MonoBehaviour {
 
     Vector3 FloorEr(Vector3 vec)
     {
-        return new Vector3(vec.x, vec.y, Mathf.Round((vec.z)));
+        return new Vector3(vec.x, vec.y,vec.z);//still testing ways to make stuff better. EZ changes.
     }
 }

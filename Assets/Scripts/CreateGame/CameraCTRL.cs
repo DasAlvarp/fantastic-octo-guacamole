@@ -2,8 +2,6 @@
 
 public class CameraCTRL : MonoBehaviour
 {
-    public Transform thisGuy;
-
     // Use this for initialization
     void Start()
     {
@@ -46,8 +44,8 @@ public class CameraCTRL : MonoBehaviour
                 movement += new Vector3(0, .5f, 0);
             }
 
-            thisGuy.Translate(movement, Space.Self);
-            thisGuy.transform.Rotate(new Vector3(0, Input.GetAxis("CamSpin")));
+            transform.Translate(movement, Space.Self);
+            transform.Rotate(new Vector3(0, Input.GetAxis("CamSpin")));
         }
         //lock/release camera
         if(Input.GetKeyDown("escape"))

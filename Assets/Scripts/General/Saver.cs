@@ -37,7 +37,6 @@ public class Saver : MonoBehaviour{
         bf.Serialize(file, datasave);
         file.Close();
         return name;
-
     }
 
     //loads = conversts stage load to file
@@ -98,7 +97,6 @@ public class Saver : MonoBehaviour{
             exit.transform.SetParent(center.transform);
 
             file.Close();
-
         }
     }
 }

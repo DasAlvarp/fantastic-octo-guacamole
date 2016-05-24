@@ -5,6 +5,7 @@ public class OnToggle : MonoBehaviour {
     GameObject[] toToggle;
     bool started = false;
 
+    //toggles faces on levers.
     void OnTriggerEnter(Collider col)
     {
         //OnStart doesn't want to work for some reason.
@@ -14,6 +15,7 @@ public class OnToggle : MonoBehaviour {
             toToggle = GameObject.FindGameObjectsWithTag(toggleTag);
             print(toToggle.Length);
         }
+
         ChangeFace[] things  = transform.GetComponentsInChildren<ChangeFace>();
         for(int x = 0; x < things.Length; x++)
         {

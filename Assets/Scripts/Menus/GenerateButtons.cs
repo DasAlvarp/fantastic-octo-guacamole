@@ -21,10 +21,9 @@ public class GenerateButtons : MonoBehaviour  {
             AddButton(filePaths[x].Substring(Application.persistentDataPath.Length + 1, filePaths[x].Length - (Application.persistentDataPath.Length + 5)));
         }
         dropdowns.Show();
-
     }
 	
-	// Update is called once per frame
+	// this is for dropdown moving and selecting stuff. It's still pretty voodoo to me.
 	void Update () {
         //go to level.
         if (Input.GetButtonDown("SpinDown"))
