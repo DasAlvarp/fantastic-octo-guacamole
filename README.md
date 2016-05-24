@@ -3,7 +3,15 @@ This is a fez-inspired game that lets you rotate the stage, jump, and generally 
 
 
 
-Latest Version: [0-0-3 indev](http://www.mediafire.com/download/bif9yai6o70w4me/not_Data_0-0-3a.zip)
+Latest Version: [0-0-4 indev](http://www.mediafire.com/download/v582xfrx2a2qznz/not_Data0-0-4a.zip)
+Changes:
+ * added levers
+ * lighting details (I think)
+ * messed up tutorial
+ * campaign more playable, but not actually.
+
+
+[0-0-3 indev](http://www.mediafire.com/download/bif9yai6o70w4me/not_Data_0-0-3a.zip)
 Changes:
  * Small UI changes
  * Level creation forces you to have exit+player added to save
