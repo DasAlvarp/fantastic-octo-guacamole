@@ -615,6 +615,7 @@ MonoBehaviour:
   blankButton: {fileID: 121304, guid: bc6096488c819cc448da87f0e03968f7, type: 2}
   blankExit: {fileID: 120796, guid: 4e3917502c9433b44bff1e80835a44ab, type: 2}
   character: {fileID: 111058, guid: 6eb4c70c87270464bb648ccccaf7e62f, type: 2}
+  blankLever: {fileID: 129622, guid: 58e58464ea2f855458881502753848b6, type: 2}
 --- !u!114 &11460758
 MonoBehaviour:
   m_ObjectHideFlags: 1

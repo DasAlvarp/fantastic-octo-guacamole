@@ -13,6 +13,7 @@ public class Saver : MonoBehaviour{
     public GameObject blankButton;
     public GameObject blankExit;
     public GameObject character;
+    public GameObject blankLever;
 
 
     //default save, saves on last number.
@@ -79,6 +80,16 @@ public class Saver : MonoBehaviour{
                     button.transform.SetParent(center.transform);
                     button.tag = (string)data.buttonNumbers[x];
                 }
+
+            //loading levers
+            if (data.leverNumbers.Count != 0)
+                for (int x = 0; x < data.leverNumbers.Count; x++)
+                {
+                    GameObject lever = (GameObject)Instantiate(blankLever, data.ToVector3((float[])data.leverLocations[x]), Quaternion.identity);
+                    lever.transform.SetParent(center.transform);
+                    print(data.leverNumbers[x]);
+                    lever.GetComponent<OnToggle>().toggleTag = (string)data.leverNumbers[x];
+                }
             //set character
             GameObject player = (GameObject)Instantiate(character, data.ToVector3(data.charLoc), Quaternion.identity);
             player.transform.SetParent(center.transform);
@@ -107,6 +118,9 @@ class LevelData
     public ArrayList blockLocations;
     public ArrayList blockNumbers;
 
+    public ArrayList leverLocations;
+    public ArrayList leverNumbers;
+
 
     //saves it. duh.
     public void SaveStage(GameObject stage)
@@ -116,6 +130,10 @@ class LevelData
 
         blockLocations = new ArrayList();
         blockNumbers = new ArrayList();
+
+        leverLocations = new ArrayList();
+        leverNumbers = new ArrayList();
+
         exitLoc = new float[]{ 0f,0f,0f};
         charLoc = new float[] { 0f, 0f, 0f };
 
@@ -140,6 +158,11 @@ class LevelData
             {
                 buttonLocations.Add(FromVector3(block.position));
                 buttonNumbers.Add(block.gameObject.tag);
+            }
+            else if(block.gameObject.tag == "Lever")
+            {
+                leverLocations.Add(FromVector3(block.position));
+                leverNumbers.Add("" + block.GetComponent<OnToggle>().toggleTag);
             }
         }
         centerScale = FromVector3(stage.transform.localScale);

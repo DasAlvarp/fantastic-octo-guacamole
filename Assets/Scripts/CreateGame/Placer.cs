@@ -91,6 +91,7 @@ public class Placer : MonoBehaviour {
     //changes block channel.
     void CheckCubes(RaycastHit inFront)
     {
+        //things tend to hit walls.. Return returns, because it already did what we needed to do.
         if (inFront.collider.gameObject.tag == "Lever")
         {
             if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
@@ -121,7 +122,7 @@ public class Placer : MonoBehaviour {
 
         for (int x = 0; x < maxBlockTypes; x++)
         {
-            if (inFront.collider.gameObject.tag == "block " + x || inFront.collider.gameObject.tag == "Lever")
+            if (inFront.collider.gameObject.tag == "block " + x )
             {
                 if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
                 {
