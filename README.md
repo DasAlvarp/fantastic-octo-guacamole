@@ -3,7 +3,14 @@ This is a fez-inspired game that lets you rotate the stage, jump, and generally 
 
 
 
-Latest Version: [0-0-4 indev](http://www.mediafire.com/download/v582xfrx2a2qznz/not_Data0-0-4a.zip)
+Latest Version: [0-0-5 indev] (http://www.mediafire.com/download/jo5934ant8m66ad/not_Data0-0-5a.zip)
+Changes:
+* added new lever mechanics (not in level editor yet
+* fixed hitboxes used for building stuff.
+* Added another puzzle
+* you can load in editable stages and update them
+
+[0-0-4 indev](http://www.mediafire.com/download/v582xfrx2a2qznz/not_Data0-0-4a.zip)
 Changes:
  * added levers
  * lighting details (I think)
