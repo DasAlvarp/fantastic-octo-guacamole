@@ -15,7 +15,7 @@ public class CameraBoss : MonoBehaviour {
         }
         transform.position = new Vector3(stage.position.x, stage.position.y, character.position.z - .9999f);//idk
         gameObject.GetComponent<Camera>().depth = stage.localScale.z * 10;
-        gameObject.GetComponent<Camera>().orthographicSize = GreaterThan(stage.localScale.x * 5, stage.localScale.y * 5);
+        gameObject.GetComponent<Camera>().orthographicSize = GreaterThan(stage.lossyScale.z * 5, (GreaterThan(stage.lossyScale.x * 5, stage.lossyScale.y * 5)));
     }
 
     float GreaterThan(float x, float y)
