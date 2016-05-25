@@ -13,7 +13,7 @@ public class CameraBoss : MonoBehaviour {
         {
             stage = GameObject.Find("Stage(Clone)").transform;
         }
-        transform.position = new Vector3(stage.position.x, stage.position.y, character.position.z - character.lossyScale.z);//idk
+        transform.position = new Vector3(stage.position.x, stage.position.y, character.position.z - character.lossyScale.z -.1f);//idk
         gameObject.GetComponent<Camera>().depth = stage.localScale.z * 10;
         gameObject.GetComponent<Camera>().orthographicSize = GreaterThan(stage.lossyScale.z * 5, (GreaterThan(stage.lossyScale.x * 5, stage.lossyScale.y * 5)));
     }

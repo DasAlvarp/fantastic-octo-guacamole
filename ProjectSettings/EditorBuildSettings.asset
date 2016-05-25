@@ -30,6 +30,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Campaign/s1/00004.unity
   - enabled: 1
+    path: Assets/_Scenes/Campaign/s1/00005.unity
+  - enabled: 1
     path: Assets/_Scenes/Campaign/s2/s2select.unity
   - enabled: 1
     path: Assets/_Scenes/Campaign/s2/10001.unity
