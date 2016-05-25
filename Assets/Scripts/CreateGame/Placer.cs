@@ -156,7 +156,6 @@ public class Placer : MonoBehaviour {
     //places a block where the wireframe block is
     void PlaceBlock(GameObject block)
     {
-
         Vector3 pos = GameObject.FindGameObjectWithTag("WireBlock").transform.position;
         for (int x = 0; x < maxBlockTypes; x++)
         {

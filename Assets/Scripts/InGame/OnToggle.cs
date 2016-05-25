@@ -13,7 +13,6 @@ public class OnToggle : MonoBehaviour {
         {
             started = true;
             toToggle = GameObject.FindGameObjectsWithTag(toggleTag);
-            print(toToggle.Length);
         }
 
         ChangeFace[] things  = transform.GetComponentsInChildren<ChangeFace>();

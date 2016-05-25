@@ -13,9 +13,9 @@ public class CameraBoss : MonoBehaviour {
         {
             stage = GameObject.Find("Stage(Clone)").transform;
         }
-        thisGuy.position = new Vector3(stage.position.x, stage.position.y, character.position.z - .9999f);//idk
-        thisGuy.GetComponent<Camera>().depth = stage.localScale.z * 10;
-        thisGuy.GetComponent<Camera>().orthographicSize = GreaterThan(stage.localScale.x * 5, stage.localScale.y * 5);
+        transform.position = new Vector3(stage.position.x, stage.position.y, character.position.z - .9999f);//idk
+        gameObject.GetComponent<Camera>().depth = stage.localScale.z * 10;
+        gameObject.GetComponent<Camera>().orthographicSize = GreaterThan(stage.localScale.x * 5, stage.localScale.y * 5);
     }
 
     float GreaterThan(float x, float y)

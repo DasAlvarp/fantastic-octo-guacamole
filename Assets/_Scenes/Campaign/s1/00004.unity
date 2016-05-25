@@ -403,9 +403,28 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11465158, guid: 4e3917502c9433b44bff1e80835a44ab, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4e3917502c9433b44bff1e80835a44ab, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &572574444 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 120796, guid: 4e3917502c9433b44bff1e80835a44ab, type: 2}
+  m_PrefabInternal: {fileID: 572574443}
+--- !u!114 &572574445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 572574444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dedbeddb071fb748b92bda0e3211939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNumber: 0
+  areaNumber: 5
+  nextLevel: 00005
 --- !u!1 &595764516
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +460,7 @@ MonoBehaviour:
   blankButton: {fileID: 121304, guid: bc6096488c819cc448da87f0e03968f7, type: 2}
   blankExit: {fileID: 120796, guid: 4e3917502c9433b44bff1e80835a44ab, type: 2}
   character: {fileID: 111058, guid: 6eb4c70c87270464bb648ccccaf7e62f, type: 2}
+  blankLever: {fileID: 0}
 --- !u!114 &595764518
 MonoBehaviour:
   m_ObjectHideFlags: 0
