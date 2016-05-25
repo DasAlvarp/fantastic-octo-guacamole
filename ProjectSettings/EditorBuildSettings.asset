@@ -10,13 +10,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/TestSpins.unity
   - enabled: 1
-    path: Assets/_Scenes/LevelEdit.unity
+    path: Assets/_Scenes/LevelManagement/LevelEdit.unity
   - enabled: 1
-    path: Assets/_Scenes/LoadStage.unity
+    path: Assets/_Scenes/LevelManagement/LoadStage.unity
   - enabled: 1
     path: Assets/_Scenes/TestPhysics.unity
   - enabled: 1
-    path: Assets/_Scenes/LevelLoad.unity
+    path: Assets/_Scenes/LevelManagement/LevelLoad.unity
   - enabled: 1
     path: Assets/_Scenes/Campaign/CampaignLoad.unity
   - enabled: 1

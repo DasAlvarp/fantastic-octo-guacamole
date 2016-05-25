@@ -6,6 +6,9 @@ public class GoToGame : MonoBehaviour {
     public GameObject stage;
     public Text text;
 
+    void Awake()
+    {
+    }
 	//loads level that's been edited.
 	// Update is called once per frame
 	void Update () {
@@ -13,6 +16,8 @@ public class GoToGame : MonoBehaviour {
         {
             if(GameObject.FindGameObjectWithTag("ExitCenter") &&  GameObject.FindGameObjectWithTag("Player"))
             {
+                stage = GameObject.Find("Stage(Clone)");
+
                 text.text = "";
 
                 GameObject.Find("MrUniverse").GetComponent<TextHolder>().text = stage.GetComponent<Saver>().Save();

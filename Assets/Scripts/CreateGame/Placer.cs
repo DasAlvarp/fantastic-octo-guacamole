@@ -108,7 +108,6 @@ public class Placer : MonoBehaviour {
         }
         else if(inFront.collider.tag == "LeverWall")
         {
-            print("dank memes");
             if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
             {
                 inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Edit();
