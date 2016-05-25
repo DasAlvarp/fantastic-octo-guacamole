@@ -58,7 +58,7 @@ public class Saver : MonoBehaviour{
             LevelData data = (LevelData)bf.Deserialize(file);
 
             //set center properly
-            GameObject center = (GameObject)Instantiate(blankStage, new Vector3(.5f,5.5f,.5f), Quaternion.identity);
+            GameObject center = (GameObject)Instantiate(blankStage, data.ToVector3(data.centerLoc), Quaternion.identity);
             //default start location for stage
             center.transform.localScale = data.ToVector3(data.centerScale);
 
@@ -106,6 +106,7 @@ public class Saver : MonoBehaviour{
 class LevelData
 {
     public float[] centerScale;
+    public float[] centerLoc;
     public float[] charLoc;
     public float[] exitLoc;
 
@@ -163,6 +164,7 @@ class LevelData
             }
         }
         centerScale = FromVector3(stage.transform.localScale);
+        centerLoc = FromVector3(stage.transform.position);
     } 
 
     //converting these things back and forth.
