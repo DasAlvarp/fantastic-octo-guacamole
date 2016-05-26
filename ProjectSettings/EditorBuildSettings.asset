@@ -18,6 +18,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/LevelManagement/LevelLoad.unity
   - enabled: 1
+    path: Assets/_Scenes/LevelManagement/LevelEditAfterLoad.unity
+  - enabled: 1
+    path: Assets/_Scenes/LevelManagement/LevelEditLoad.unity
+  - enabled: 1
     path: Assets/_Scenes/Campaign/CampaignLoad.unity
   - enabled: 1
     path: Assets/_Scenes/Campaign/s1/s1select.unity
