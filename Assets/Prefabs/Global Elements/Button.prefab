@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c68f148cc8d37fe4c940cdfc4d970545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectionMenu: {fileID: 0}
+  selectionMenu: {fileID: 103280, guid: 3e14ecaa30392184ea225a20295fac2b, type: 2}
 --- !u!114 &11455270
 MonoBehaviour:
   m_ObjectHideFlags: 1

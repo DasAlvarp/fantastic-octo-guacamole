@@ -10,8 +10,6 @@ public class Placer : MonoBehaviour {
     public GameObject character;
     public GameObject lever;
 
-    public GameObject selectedOption;
-
     public GameObject radialMenu;
     int selected;
 
@@ -19,18 +17,16 @@ public class Placer : MonoBehaviour {
 
     public GameObject wireMan;
     public int maxBlockTypes;
+
 	// Use this for initialization
-	void Start () {
-        //init selections
-        cubeBlock.GetComponent<ChangeOptions>().selectionMenu = selectedOption ;
-        button.GetComponent<ChangeOptions>().selectionMenu = selectedOption;
-        lever.GetComponent<ChangeOptions>().selectionMenu = selectedOption;
-        
+	void Start ()
+    {
         selectedObject = cubeBlock;
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         //have to adjust camera up/down, but don't want it to affect movement, this script is conveniently attatched to the camera
         if (!Input.GetButton("SpinUp") && !Input.GetButton("RotateLeft") && !Input.GetKey("q"))
             transform.Rotate(new Vector3(Input.GetAxis("CamRotUp"), 0));
@@ -97,12 +93,14 @@ public class Placer : MonoBehaviour {
         {
             if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
             {
+                inFront.collider.gameObject.GetComponent<ChangeOptions>().enabled = true;
                 inFront.collider.gameObject.GetComponent<ChangeOptions>().Edit();
                 return;
             }
             if (Input.GetButtonUp("RotateLeft") || Input.GetKeyDown("e"))
             {
                 inFront.collider.gameObject.GetComponent<ChangeOptions>().Disappear();
+
                 return;
             }
         }
@@ -110,7 +108,10 @@ public class Placer : MonoBehaviour {
         {
             if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
             {
+                inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().enabled = true;
+
                 inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Edit();
+
                 return;
             }
             if (Input.GetButtonUp("RotateLeft") || Input.GetKeyDown("e"))
@@ -126,12 +127,15 @@ public class Placer : MonoBehaviour {
             {
                 if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
                 {
+                    inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().enabled = true;
+
                     inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Edit();
                     return;
                 }
                 if (Input.GetButtonUp("RotateLeft") || Input.GetKeyDown("e"))
                 {
                     inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Disappear();
+
                     return;
                 }
             }
@@ -147,9 +151,10 @@ public class Placer : MonoBehaviour {
             if (ray.collider.gameObject.tag == "block " + x || ray.collider.gameObject.tag == "Wall" || ray.collider.gameObject.tag == "Exit" || ray.collider.gameObject.tag == "Player" || ray.collider.gameObject.tag == "Lever")
             {
                 pos = SetProperValues(ray.collider.transform.position) + ray.collider.gameObject.GetComponent<PlaneDirection>().GetDirection();
+                Instantiate(wireMan, pos, Quaternion.identity);
+                return;
             }
         }
-        Instantiate(wireMan, pos, Quaternion.identity);
     }
 
     //places a block where the wireframe block is
