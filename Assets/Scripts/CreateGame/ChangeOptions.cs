@@ -19,7 +19,6 @@ public class ChangeOptions : MonoBehaviour
         {
             if (gameObject.tag.Substring(0,5) == "block")
             {
-                selectionMenu.GetComponent<SetText>().TextIt(gameObject.tag);
                 
 
                 //if one block wall's channel is changed, all block wall channels should be changed. Disappear after input given.
@@ -83,6 +82,8 @@ public class ChangeOptions : MonoBehaviour
         selectInstance = Instantiate(selectionMenu);
         selectInstance.transform.SetParent(GameObject.Find("Canvas").transform);
         selectInstance.transform.position = new Vector3(Screen.width / 2, Screen.height / 2);
+        selectInstance.GetComponent<SetText>().TextIt(gameObject.tag);
+
     }
 
     public void Disappear()
