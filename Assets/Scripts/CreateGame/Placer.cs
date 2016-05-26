@@ -75,11 +75,11 @@ public class Placer : MonoBehaviour
         //mouse placement controls. Other controls are very much WIP
         if (Physics.Raycast(transform.position, forward, out inFront, 200, 31))
         {
-            if (Input.GetButtonDown("SpinDown") || Input.GetKeyDown("mouse 0"))
+            if (Input.GetButtonDown("EditorPlace"))
                 PlaceBlock(selectedObject);
-            if (Input.GetButtonDown("SpinRight") || Input.GetKeyDown("mouse 1"))
+            if (Input.GetButtonDown("EditorDelete"))
                 DeleteBlock(inFront);
-            if (Input.GetButtonDown("SpinLeft") || Input.GetKeyDown("mouse 2"))
+            if (Input.GetButtonDown("EditorPush"))
                 PushWalls(inFront);
             CheckCubes(inFront);
             PlaceWire(inFront);
@@ -92,13 +92,13 @@ public class Placer : MonoBehaviour
         //things tend to hit walls.. Return returns, because it already did what we needed to do.
         if (inFront.collider.gameObject.tag == "Lever")
         {
-            if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
+            if (Input.GetButtonDown("EditorChannel"))
             {
                 inFront.collider.gameObject.GetComponent<ChangeOptions>().enabled = true;
                 inFront.collider.gameObject.GetComponent<ChangeOptions>().Edit();
                 return;
             }
-            if (Input.GetButtonUp("RotateLeft") || Input.GetKeyDown("e"))
+            if (Input.GetButtonUp("EditorChannel"))
             {
                 inFront.collider.gameObject.GetComponent<ChangeOptions>().Disappear();
 
@@ -107,7 +107,7 @@ public class Placer : MonoBehaviour
         }
         else if(inFront.collider.tag == "LeverWall")
         {
-            if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
+            if (Input.GetButtonDown("EditorChannel"))
             {
                 inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().enabled = true;
 
@@ -115,7 +115,7 @@ public class Placer : MonoBehaviour
 
                 return;
             }
-            if (Input.GetButtonUp("RotateLeft") || Input.GetKeyDown("e"))
+            if (Input.GetButtonUp("EditorChannel"))
             {
                 inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Disappear();
                 return;
@@ -126,14 +126,14 @@ public class Placer : MonoBehaviour
         {
             if (inFront.collider.gameObject.tag == "block " + x )
             {
-                if (Input.GetButtonDown("RotateLeft") || Input.GetKeyDown("e"))
+                if (Input.GetButtonDown("EditorChannel"))
                 {
                     inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().enabled = true;
 
                     inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Edit();
                     return;
                 }
-                if (Input.GetButtonUp("RotateLeft") || Input.GetKeyDown("e"))
+                if (Input.GetButtonUp("EditorChannel"))
                 {
                     inFront.collider.gameObject.GetComponentInParent<ChangeOptions>().Disappear();
 

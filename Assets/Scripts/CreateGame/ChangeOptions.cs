@@ -19,27 +19,25 @@ public class ChangeOptions : MonoBehaviour
         {
             if (gameObject.tag.Substring(0,5) == "block")
             {
-                
-
                 //if one block wall's channel is changed, all block wall channels should be changed. Disappear after input given.
-                if (Input.GetAxis("DpadDown") == -1)
+                if (Input.GetAxis("DpadDown") == -1 || Input.GetKey("down"))
                 {
                     print("hi");
                     gameObject.tag = "block 31";
                     Disappear();
                 }
-                else if (Input.GetAxis("DpadDown") == 1)
+                else if (Input.GetAxis("DpadDown") == 1 || Input.GetKey("up"))
                 {
                     gameObject.tag = "block 1";
                     Disappear();
                 }
 
-                if (Input.GetAxis("DpadLeft") == -1)
+                if (Input.GetAxis("DpadLeft") == -1 || Input.GetKey("left"))
                 {
                     gameObject.tag = "block 0";
                     Disappear();
                 }
-                else if (Input.GetAxis("DpadLeft") == 1)
+                else if (Input.GetAxis("DpadLeft") == 1 || Input.GetKey("right"))
                 {
                     gameObject.tag = "block 2";
                     Disappear();
@@ -50,24 +48,24 @@ public class ChangeOptions : MonoBehaviour
                 selectionMenu.GetComponent<SetText>().TextIt(gameObject.GetComponent<OnToggle>().toggleTag);
 
                 //if one block wall's channel is changed, all block wall channels should be changed. Disappear after input given.
-                if (Input.GetAxis("DpadDown") == -1)
+                if (Input.GetAxis("DpadDown") == -1 || Input.GetKey("down"))
                 {
                     gameObject.GetComponent<OnToggle>().toggleTag = "block 3";
                   
                     Disappear();
                 }
-                else if (Input.GetAxis("DpadDown") == 1)
+                else if (Input.GetAxis("DpadDown") == 1 || Input.GetKey("up"))
                 {
                     gameObject.GetComponent<OnToggle>().toggleTag = "block 1";
                     Disappear();
                 }
 
-                if (Input.GetAxis("DpadLeft") == -1)
+                if (Input.GetAxis("DpadLeft") == -1 || Input.GetKey("left"))
                 {
                     gameObject.GetComponent<OnToggle>().toggleTag = "block 0";
                     Disappear();
                 }
-                else if (Input.GetAxis("DpadLeft") == 1)
+                else if (Input.GetAxis("DpadLeft") == 1 || Input.GetKey("right"))
                 {
                     gameObject.GetComponent<OnToggle>().toggleTag = "block 2";
                     Disappear();

@@ -15,11 +15,11 @@ public class RadialMenuAndHold : MonoBehaviour {
 	// tests radial menus and stuff.
 	void Update () {
         //otherTHing = inverted toggle
-        if(Input.GetButtonDown("SpinUp") || Input.GetKeyDown("q"))
+        if(Input.GetButtonDown("EditorRadial"))
         {
             otherThing.SetActive(true);
         }
-        else if(Input.GetButtonUp("SpinUp") || Input.GetKeyUp("q"))
+        else if(Input.GetButtonUp("EditorRadial"))
         {
             value = GetEigth();
             otherThing.SetActive(false);
