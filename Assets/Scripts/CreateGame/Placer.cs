@@ -34,7 +34,16 @@ public class Placer : MonoBehaviour
 
         //selected block type
         selected = radialMenu.GetComponent<RadialMenuAndHold>().value;
+        selected -= Mathf.FloorToInt(Input.GetAxis("Mouse ScrollWheel") * 10);
+
+        selected *= -1;
+        selected += 5;
+        selected %= 5;
+        selected *= -1;
+        radialMenu.GetComponent<RadialMenuAndHold>().value = selected;
         selectedObject = SelectOptions(selected);
+
+        
 
         //basically the update method here.
         DoThings();
