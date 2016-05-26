@@ -26,11 +26,11 @@ public class CharacterCTRL : MonoBehaviour
     {
         if (!locked)
         {
-            thisGuy.velocity = new Vector3(Input.GetAxis("Horizontal") * 8, thisGuy.velocity.y);
+            thisGuy.velocity = new Vector3(GetLargestMagnitude(Input.GetAxis("Horizontal"), HorizontalKeyInputs()) * 8, thisGuy.velocity.y);
         }
         else
         {
-            thisGuy.velocity = new Vector3(0, 0,0);
+            thisGuy.velocity = new Vector3(0, 0, 0);
         }
         Jump();
         ManageUI();
@@ -50,7 +50,7 @@ public class CharacterCTRL : MonoBehaviour
     //jumping is a bit stranger than I thought it would be.
     void Jump()
     {
-        if(Input.GetAxis("Vertical") > .5 && canJump)
+        if((Input.GetAxis("Vertical") > .5 || Input.GetButton("Jump")) && canJump )
         {
             if(Mathf.Abs(thisGuy.velocity.y) < 1)
             {
@@ -76,5 +76,40 @@ public class CharacterCTRL : MonoBehaviour
                 Time.timeScale = 0;
                 ui.enabled = true;
             }
+    }
+
+    float HorizontalKeyInputs()
+    {
+        float tret = 0;
+        if(Input.GetButton("MoveLeft"))
+        {
+            tret -= 1;
+        }
+        if(Input.GetButton("MoveRight"))
+        {
+            tret += 1;
+        }
+        return tret;
+    }
+
+    //idk, recursive stuff is kinda fun. Not very practical though.
+    float GetLargestMagnitude(params float[] floats)
+    {
+        if(floats.Length == 2)
+        {
+            if (Mathf.Abs(floats[0]) > Mathf.Abs(floats[1]))
+                return floats[0];
+            else
+                return floats[1];
+        }
+        else
+        {
+            float[] newFloats = new float[floats.Length - 1];
+            for(int x = 0; x < floats.Length - 1; x++)
+            {
+                newFloats[x] = floats[x];
+            }
+            return (GetLargestMagnitude(floats[floats.Length - 1], GetLargestMagnitude(newFloats)));
+        }
     }
 }

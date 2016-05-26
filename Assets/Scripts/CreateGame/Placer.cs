@@ -2,7 +2,8 @@
 using System.Collections;
 
 
-public class Placer : MonoBehaviour {
+public class Placer : MonoBehaviour
+{
     //way too big of a class to place things
     public GameObject cubeBlock;
     public GameObject button;
@@ -11,7 +12,7 @@ public class Placer : MonoBehaviour {
     public GameObject lever;
 
     public GameObject radialMenu;
-    int selected;
+    public int selected;
 
     GameObject selectedObject;
 

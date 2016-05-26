@@ -41,7 +41,7 @@ public class ListGeneration : MonoBehaviour
     void Update()
     {
         //go to level.
-        if (Input.GetButtonDown("SpinDown"))
+        if (Input.GetButtonDown("MenuSelect"))
         {
             if (File.Exists(Application.persistentDataPath + "/" + options[selected] + ".dat"))
             {
@@ -51,7 +51,7 @@ public class ListGeneration : MonoBehaviour
         }
 
         //delete all levels
-        if (Input.GetButtonDown("SpinUp"))
+        if (Input.GetButtonDown("MenuDeleteAll"))
         {
             options.Clear();
             string[] filePaths = Directory.GetFiles(Application.persistentDataPath + "/", "*.dat");
@@ -63,13 +63,13 @@ public class ListGeneration : MonoBehaviour
         }
 
         //goes to main menu
-        if (Input.GetButtonDown("SpinRight"))
+        if (Input.GetButtonDown("MenuBack"))
         {
             SceneManager.LoadScene("MainMenu");
         }
 
-        //gonna delete something soon.
-        if (Input.GetButtonDown("SpinLeft"))
+        //deletes a specific item.
+        if (Input.GetButtonDown("MenuDelete"))
         {
             string[] filePaths = Directory.GetFiles(Application.persistentDataPath + "/", "*.dat");
 

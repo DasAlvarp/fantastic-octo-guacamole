@@ -41,17 +41,20 @@ public class ListGenerationForEdit : MonoBehaviour
     void Update()
     {
         //go to level.
-        if (Input.GetButtonDown("SpinDown"))
+        if (options.Count > 0)
         {
-            if (File.Exists(Application.persistentDataPath + "/" + options[selected] + ".dat"))
+            if (Input.GetButtonDown("MenuSelect"))
             {
-                GameObject.Find("MrUniverse").GetComponent<TextHolder>().text = (string)options[selected];
-                SceneManager.LoadScene("LevelEditAfterLoad");
+                if (File.Exists(Application.persistentDataPath + "/" + options[selected] + ".dat"))
+                {
+                    GameObject.Find("MrUniverse").GetComponent<TextHolder>().text = (string)options[selected];
+                    SceneManager.LoadScene("LevelEditAfterLoad");
+                }
             }
         }
 
         //delete all levels
-        if (Input.GetButtonDown("SpinUp"))
+        if (Input.GetButtonDown("MenuDeleteAll"))
         {
             options.Clear();
             string[] filePaths = Directory.GetFiles(Application.persistentDataPath + "/", "*.dat");
@@ -63,13 +66,15 @@ public class ListGenerationForEdit : MonoBehaviour
         }
 
         //goes to main menu
-        if (Input.GetButtonDown("SpinRight"))
+        if (Input.GetButtonDown("MenuBack"))
         {
+            GameObject.Find("MrUniverse").GetComponent<TextHolder>().text = "";
+
             SceneManager.LoadScene("MainMenu");
         }
 
         //gonna delete something soon.
-        if (Input.GetButtonDown("SpinLeft"))
+        if (Input.GetButtonDown("MenuDelete"))
         {
             string[] filePaths = Directory.GetFiles(Application.persistentDataPath + "/", "*.dat");
 
@@ -85,11 +90,13 @@ public class ListGenerationForEdit : MonoBehaviour
         if (time > .1f)
         {
             time = 0f;
-
-            selected -= (int)Input.GetAxis("DpadDown");
-            if (selected < 0)
-                selected += options.Count;
-            selected %= options.Count;
+            if (options.Count > 0)
+            {
+                selected -= (int)Input.GetAxis("DpadDown");
+                if (selected < 0)
+                    selected += options.Count;
+                selected %= options.Count;
+            }
 
         }
     }
@@ -97,22 +104,28 @@ public class ListGenerationForEdit : MonoBehaviour
     //update selecing thingy.
     void UpdateSelector()
     {
-        selector.text = "";
-        for (int x = 0; x < selected; x++)
+        if (options.Count > 0)
         {
-            selector.text += "\n";
+            selector.text = "";
+            for (int x = 0; x < selected; x++)
+            {
+                selector.text += "\n";
+            }
+            selector.text += "+";
+            selectedItem.text = (string)options[selected];
         }
-        selector.text += "+";
-        selectedItem.text = (string)options[selected];
     }
 
     //updates UI list
     void UpdateOptions()
     {
-        itemList.text = "";
-        for (int x = 0; x < options.Count; x++)
+        if (options.Count > 0)
         {
-            itemList.text += "   " + options[x] + "\n";
+            itemList.text = "";
+            for (int x = 0; x < options.Count; x++)
+            {
+                itemList.text += "   " + options[x] + "\n";
+            }
         }
     }
 }
