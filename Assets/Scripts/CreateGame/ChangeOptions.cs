@@ -82,6 +82,7 @@ public class ChangeOptions : MonoBehaviour
     {
         selectInstance = Instantiate(selectionMenu);
         selectInstance.transform.SetParent(GameObject.Find("Canvas").transform);
+        selectInstance.transform.position = new Vector3(Screen.width / 2, Screen.height / 2);
     }
 
     public void Disappear()
