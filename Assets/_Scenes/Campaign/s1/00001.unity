@@ -362,7 +362,7 @@ Transform:
   m_GameObject: {fileID: 552664419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.5, y: -0.5, z: 3.5}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 595764519}
   m_RootOrder: 6
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisGuy: {fileID: 839298753}
-  character: {fileID: 1016143990}
+  character: {fileID: 552664420}
   stage: {fileID: 595764519}
 --- !u!1001 &952497393
 Prefab:
@@ -944,10 +944,6 @@ Prefab:
     - {fileID: 11467664, guid: 8ff8bebf7c638834d86c1ad587fd0e0b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8ff8bebf7c638834d86c1ad587fd0e0b, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1016143990 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 470876, guid: 8ff8bebf7c638834d86c1ad587fd0e0b, type: 2}
-  m_PrefabInternal: {fileID: 1016143986}
 --- !u!1 &1059072295
 GameObject:
   m_ObjectHideFlags: 0

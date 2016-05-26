@@ -26,41 +26,41 @@ public class Rotator : MonoBehaviour {
     void Spin()
     {
         Vector3 rotateTo;
-        if (Input.GetButtonUp("SpinLeft"))
+        if (Input.GetButtonDown("SpinLeft"))
         {
             sound.Play();
             rotateTo = new Vector3(0, 90, 0);
             player.transform.position = FloorEr(player.transform.position);
         }
-        else if (Input.GetButtonUp("SpinRight"))
+        else if (Input.GetButtonDown("SpinRight"))
         {
             sound.Play();
             rotateTo = new Vector3(0, -90, 0);
             player.transform.position = FloorEr(player.transform.position);
 
         }
-        else if (Input.GetButtonUp("SpinUp"))
+        else if (Input.GetButtonDown("SpinUp"))
         {
             sound.Play();
             rotateTo = new Vector3(-90, 0, 0);
             player.transform.position = FloorEr(player.transform.position);
 
         }
-        else if (Input.GetButtonUp("SpinDown"))
+        else if (Input.GetButtonDown("SpinDown"))
         {
             sound.Play();
             rotateTo = new Vector3(90, 0, 0);
             player.transform.position = FloorEr(player.transform.position);
 
         }
-        else if(Input.GetButtonUp("RotateRight"))
+        else if(Input.GetButtonDown("RotateRight"))
         {
             sound.Play();
             rotateTo = new Vector3(0, 0, 90);
             player.transform.position = FloorEr(player.transform.position);
 
         }
-        else if (Input.GetButtonUp("RotateLeft"))
+        else if (Input.GetButtonDown("RotateLeft"))
         {
             sound.Play();
             rotateTo = new Vector3(0, 0, -90);

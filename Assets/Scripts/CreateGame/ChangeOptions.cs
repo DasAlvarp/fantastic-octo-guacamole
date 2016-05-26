@@ -22,7 +22,6 @@ public class ChangeOptions : MonoBehaviour
                 //if one block wall's channel is changed, all block wall channels should be changed. Disappear after input given.
                 if (Input.GetAxis("DpadDown") == -1 || Input.GetKey("down"))
                 {
-                    print("hi");
                     gameObject.tag = "block 31";
                     Disappear();
                 }

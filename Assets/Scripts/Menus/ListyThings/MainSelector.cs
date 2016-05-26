@@ -47,13 +47,13 @@ public class MainSelector : MonoBehaviour
         selectedSide %= 2;
 
         buttonsToSelect[selectedHeight,selectedSide].Select();
-        if (Input.GetButtonDown("SpinDown"))
+        if (Input.GetButtonDown("MenuSelect"))
         {
             GameObject.Find("MrUniverse").GetComponent<AudioSource>().Play();
             buttonsToSelect[selectedHeight,selectedSide].onClick.Invoke();
         }
 
-        if(Input.GetButtonDown("SpinRight"))
+        if(Input.GetButtonDown("MenuBack"))
         {
             SceneManager.LoadScene(lastMenu);
         }
