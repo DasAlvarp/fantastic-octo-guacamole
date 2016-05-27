@@ -10,6 +10,7 @@ public class Placer : MonoBehaviour
     public GameObject exit;
     public GameObject character;
     public GameObject lever;
+    public GameObject spike;
 
     public GameObject radialMenu;
     public int selected;
@@ -37,8 +38,8 @@ public class Placer : MonoBehaviour
         selected -= Mathf.FloorToInt(Input.GetAxis("Mouse ScrollWheel") * 10);
 
         selected *= -1;
-        selected += 5;
-        selected %= 5;
+        selected += 6;
+        selected %= 6;
         selected *= -1;
         radialMenu.GetComponent<RadialMenuAndHold>().value = selected;
         selectedObject = SelectOptions(selected);
@@ -71,6 +72,10 @@ public class Placer : MonoBehaviour
         else if(selections == -4)
         {
             return lever;
+        }
+        else if(selections == -5)
+        {
+            return spike;
         }
         return selectedObject;
     }

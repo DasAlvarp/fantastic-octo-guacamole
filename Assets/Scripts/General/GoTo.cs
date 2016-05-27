@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GoTo : MonoBehaviour {
+public class GoTo : MonoBehaviour
+{
     //manages game state.
     
         //reloads level if not given a level.
@@ -13,6 +14,11 @@ public class GoTo : MonoBehaviour {
     public void GoToStage(string level)
     {
         SceneManager.LoadScene(level);
+    }
+
+    public void Restart()
+    {
+        GoToStage();
     }
 
     public void Quit()

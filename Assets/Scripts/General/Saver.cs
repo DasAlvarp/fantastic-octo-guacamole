@@ -14,6 +14,7 @@ public class Saver : MonoBehaviour{
     public GameObject blankExit;
     public GameObject character;
     public GameObject blankLever;
+    public GameObject blankSpike;
 
 
     //default save, saves on last number.
@@ -88,6 +89,17 @@ public class Saver : MonoBehaviour{
                     lever.transform.SetParent(center.transform);
                     lever.GetComponent<OnToggle>().toggleTag = (string)data.leverNumbers[x];
                 }
+
+            //place dem spikes
+            if(data.spikeNumbers.Count != 0)
+            {
+                for(int x = 0; x < data.spikeNumbers.Count; x ++)
+                {
+                    GameObject spike = (GameObject)Instantiate(blankSpike, data.ToVector3((float[])data.spikeLocations[x]), Quaternion.identity);
+                    spike.transform.SetParent(center.transform);
+                    spike.tag = (string)data.spikeNumbers[x];
+                }
+            }
             //set character
             GameObject player = (GameObject)Instantiate(character, data.ToVector3(data.charLoc), Quaternion.identity);
             player.transform.SetParent(center.transform);
@@ -119,6 +131,9 @@ class LevelData
     public ArrayList leverLocations;
     public ArrayList leverNumbers;
 
+    public ArrayList spikeLocations;
+    public ArrayList spikeNumbers;
+
 
     //saves it. duh.
     public void SaveStage(GameObject stage)
@@ -131,6 +146,9 @@ class LevelData
 
         leverLocations = new ArrayList();
         leverNumbers = new ArrayList();
+
+        spikeLocations = new ArrayList();
+        spikeNumbers = new ArrayList();
 
         exitLoc = new float[]{ 0f,0f,0f};
         charLoc = new float[] { 0f, 0f, 0f };
@@ -150,17 +168,22 @@ class LevelData
             else if(block.gameObject.name == "Block(Clone)")
             {
                 blockLocations.Add(FromVector3(block.position));
-                blockNumbers.Add(block.gameObject.tag);
+                blockNumbers.Add(block.tag);
             }
             else if(block.gameObject.name == "Button(Clone)")
             {
                 buttonLocations.Add(FromVector3(block.position));
-                buttonNumbers.Add(block.gameObject.tag);
+                buttonNumbers.Add(block.tag);
             }
             else if(block.gameObject.tag == "Lever")
             {
                 leverLocations.Add(FromVector3(block.position));
                 leverNumbers.Add("" + block.GetComponent<OnToggle>().toggleTag);
+            }
+            else if(block.gameObject.name == "Spike(Clone)")
+            {
+                spikeLocations.Add(FromVector3(block.position));
+                spikeNumbers.Add(block.tag);
             }
         }
         centerScale = FromVector3(stage.transform.localScale);

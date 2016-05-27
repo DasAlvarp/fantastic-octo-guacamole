@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class CameraBoss : MonoBehaviour {
+public class CameraBoss : MonoBehaviour
+{
     public Transform thisGuy;
     public Transform character;
     public Transform stage;

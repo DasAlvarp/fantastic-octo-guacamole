@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class CharacterAnimator : MonoBehaviour
 {
+    //script for controlling character. Not sure if I want to use it tho.
     public Image wheel;
     public Image body;
     public Image head;

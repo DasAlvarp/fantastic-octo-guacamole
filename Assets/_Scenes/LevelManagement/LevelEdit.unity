@@ -1555,6 +1555,73 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 949185438}
+--- !u!1 &963065400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 963065401}
+  - 222: {fileID: 963065403}
+  - 114: {fileID: 963065402}
+  m_Layer: 0
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &963065401
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 963065400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1917685559}
+  m_RootOrder: 6
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -123.2, y: 41.6}
+  m_SizeDelta: {x: 71.8, y: 71.8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &963065402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 963065400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: a2e3386fab37f324390369ffb39414d0, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &963065403
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 963065400}
 --- !u!1 &992342673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,6 +1774,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 599742290}
     m_Modifications:
+    - target: {fileID: 11428764, guid: e98e8989d1ac34f4bbd0b1bbc7f37921, type: 2}
+      propertyPath: images.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 22402758, guid: e98e8989d1ac34f4bbd0b1bbc7f37921, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1779,6 +1850,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11428764, guid: e98e8989d1ac34f4bbd0b1bbc7f37921, type: 2}
+      propertyPath: images.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: a2e3386fab37f324390369ffb39414d0,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e98e8989d1ac34f4bbd0b1bbc7f37921, type: 2}
   m_IsPrefabParent: 0
@@ -2387,7 +2463,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 474922, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11455092, guid: d30b3ed11432d124aad262d0b113ae01, type: 2}
       propertyPath: blankStage
@@ -2827,6 +2903,7 @@ RectTransform:
   - {fileID: 1027256017}
   - {fileID: 629664946}
   - {fileID: 69573528}
+  - {fileID: 963065401}
   m_Father: {fileID: 256454959}
   m_RootOrder: 0
   m_AnchorMin: {x: 1, y: 0.5}
@@ -3442,6 +3519,7 @@ MonoBehaviour:
   exit: {fileID: 120796, guid: 4e3917502c9433b44bff1e80835a44ab, type: 2}
   character: {fileID: 181002, guid: f29c788d6788e0a41a9586815ade159f, type: 2}
   lever: {fileID: 129622, guid: 58e58464ea2f855458881502753848b6, type: 2}
+  spike: {fileID: 102950, guid: 9b3c84583f8488642be12fc2b2570b84, type: 2}
   radialMenu: {fileID: 256454958}
   selected: 0
   wireMan: {fileID: 184136, guid: 44e4590ca37beaf47b402afb34e756dd, type: 2}

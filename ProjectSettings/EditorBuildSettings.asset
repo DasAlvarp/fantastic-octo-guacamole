@@ -45,3 +45,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/Campaign/s2/10002.unity
   - enabled: 1
     path: Assets/_Scenes/Campaign/s2/10003.unity
+  - enabled: 1
+    path: Assets/_Scenes/Campaign/s2/10004.unity
