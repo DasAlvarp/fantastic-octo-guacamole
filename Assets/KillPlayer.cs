@@ -1,20 +1,18 @@
 ﻿using UnityEngine;
 
 public class KillPlayer : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public AudioClip dead;
+    AudioSource fred;
+    void Start()
+    {
+        fred = new AudioSource();
+        fred.clip = dead;
+    }
 
     void OnTriggerEnter(Collider col)
     {
-            GetComponent<GoTo>().Restart();
-        
+        fred.Play();
+
+        GetComponent<GoTo>().Restart();
     }
 }
