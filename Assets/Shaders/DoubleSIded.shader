@@ -1,4 +1,4 @@
-﻿Shader "Custom/DoubleSIded" {
+﻿Shader "Custom/DoubleSided" {
 	//basically ripped from http://answers.unity3d.com/questions/272749/how-to-write-unlit-surface-shader.html with some changes.
 	Properties{
 		_MainTex("Base (RGB)", 2D) = "white" {}
