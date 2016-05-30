@@ -88,6 +88,11 @@ public class Rotator : MonoBehaviour
         return new Vector3(vec.x, vec.y,vec.z);//still testing ways to make stuff better. EZ changes.
     }
 
+    public Transform ThisGuy()
+    {
+        return thisGuy.transform;
+    }
+
     IEnumerator Rotate(Vector3 vec, float time)
     {        
         thisGuy.transform.Rotate(vec * Time.deltaTime / time, Space.World);
