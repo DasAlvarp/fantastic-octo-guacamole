@@ -19,26 +19,43 @@ public class ChangeOptions : MonoBehaviour
         {
             if (gameObject.tag.Substring(0,5) == "block")
             {
+                Transform[] walls = GetComponentsInChildren<Transform>();
                 //if one block wall's channel is changed, all block wall channels should be changed. Disappear after input given.
                 if (Input.GetAxis("DpadDown") == -1 || Input.GetKey("down"))
                 {
                     gameObject.tag = "block 31";
+                    foreach(Transform wall in walls)
+                    {
+                        wall.tag = gameObject.tag;
+                    }
                     Disappear();
                 }
                 else if (Input.GetAxis("DpadDown") == 1 || Input.GetKey("up"))
                 {
                     gameObject.tag = "block 1";
+                    foreach (Transform wall in walls)
+                    {
+                        wall.tag = gameObject.tag;
+                    }
                     Disappear();
                 }
 
                 if (Input.GetAxis("DpadLeft") == -1 || Input.GetKey("left"))
                 {
                     gameObject.tag = "block 0";
+                    foreach (Transform wall in walls)
+                    {
+                        wall.tag = gameObject.tag;
+                    }
                     Disappear();
                 }
                 else if (Input.GetAxis("DpadLeft") == 1 || Input.GetKey("right"))
                 {
                     gameObject.tag = "block 2";
+                    foreach (Transform wall in walls)
+                    {
+                        wall.tag = gameObject.tag;
+                    }
                     Disappear();
                 }
             }
