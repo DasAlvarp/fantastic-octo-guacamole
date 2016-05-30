@@ -15,7 +15,8 @@ public class ListSelector : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         //if the menu is up, pasue the game and do the pause menu thing.
         if(gameObject.GetComponent<Canvas>().enabled)
         {

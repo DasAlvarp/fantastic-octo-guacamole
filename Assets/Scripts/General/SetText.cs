@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class SetText : MonoBehaviour {
+public class SetText : MonoBehaviour
+{
     public GameObject textThing;
 
     //just holds text. 

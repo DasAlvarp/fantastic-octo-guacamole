@@ -201,7 +201,6 @@ public class Placer : MonoBehaviour
                     return;
                 }
             }
-            
         }
 
         //if it's not a block

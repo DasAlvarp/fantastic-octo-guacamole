@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class DpadConversion : MonoBehaviour {
+public class DpadConversion : MonoBehaviour
+{
     //so you can have multiple instances
     public DpadConversion(){    }
 
@@ -16,7 +17,7 @@ public class DpadConversion : MonoBehaviour {
     public int upPress = 0;
     public int sidePress = 0;
 
-    // Update is called once per frame
+    // Converts d-pad axises into button-type inputs.
     void Update()
     {
         upPress = 0;

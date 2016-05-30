@@ -2,15 +2,17 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class StageLoadControl : MonoBehaviour {
+public class StageLoadControl : MonoBehaviour
+{
     public int areaNum;
     public int levelNum;
     public string loadLevel;
     public Color usable;
     public Image toChange;
 	
-	// Update is called once per frame
-	void Update () {
+	// Manages unlocks
+	void Update ()
+    {
         if (areaNum < GameObject.Find("MrUniverse").GetComponent<TextHolder>().unlockedAreas && toChange.color != usable)
         {
             toChange.color = usable;

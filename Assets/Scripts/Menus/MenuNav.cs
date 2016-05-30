@@ -3,18 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuNav : MonoBehaviour
 {
-
-	// Use this for initialization
-	void Start ()
+    // Supposed to be for global menu management. Not quite there yet.
+    void Update()
     {
-    }
-
-    // Update is called once per frame
-    void Update ()
-    {
-        if(Input.GetButtonDown("MenuBack"))
+        if (Input.GetButtonDown("MenuBack"))
         {
             SceneManager.LoadScene("MainMenu");
         }
-	}
+    }
 }

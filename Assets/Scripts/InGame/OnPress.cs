@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class OnPress : MonoBehaviour {
+public class OnPress : MonoBehaviour
+{
     bool pressed = false;
 
     public GameObject[] blocks;

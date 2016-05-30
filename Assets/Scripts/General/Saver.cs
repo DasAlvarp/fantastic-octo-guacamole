@@ -4,7 +4,9 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Collections;
 
-public class Saver : MonoBehaviour{
+//class for saving levels.
+public class Saver : MonoBehaviour
+{
     //info for rebuilding stage.
     public GameObject stage;
 

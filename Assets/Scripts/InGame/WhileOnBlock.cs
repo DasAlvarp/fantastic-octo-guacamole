@@ -15,7 +15,7 @@ public class WhileOnBlock : MonoBehaviour
         }
     }
 
-    //toggles faces on levers.
+    //toggles faces on levers. This one makes it so the lever is only active when the player is touching it.
     void OnTriggerEnter(Collider col)
     {
         ChangeFace[] things = transform.GetComponentsInChildren<ChangeFace>();

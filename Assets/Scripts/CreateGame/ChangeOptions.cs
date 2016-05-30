@@ -6,6 +6,7 @@ public class ChangeOptions : MonoBehaviour
     public GameObject selectionMenu;
     GameObject selectInstance;
 
+    //channel change option menu
     public void Start()
     {
         enabled = false;

@@ -5,7 +5,8 @@ public class ResumeScript : MonoBehaviour
     public Canvas bigBoss;
 
 	// Unpauses
-	public void OnPress () {
+	public void OnPress ()
+    {
         Time.timeScale = 1;
         bigBoss.enabled = false;	
 	}

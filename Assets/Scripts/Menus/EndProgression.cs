@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndProgression : MonoBehaviour {
+public class EndProgression : MonoBehaviour
+{
     public int levelNumber;
     public int areaNumber;
     public string nextLevel;

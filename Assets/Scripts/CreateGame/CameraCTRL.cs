@@ -47,6 +47,7 @@ public class CameraCTRL : MonoBehaviour
             transform.Translate(movement, Space.Self);
             transform.Rotate(new Vector3(0, Input.GetAxis("CamSpin")));
         }
+
         //lock/release camera
         if(Input.GetKeyDown("escape"))
         {

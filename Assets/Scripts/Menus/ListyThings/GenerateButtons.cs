@@ -3,7 +3,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 
-public class GenerateButtons : MonoBehaviour  {
+public class GenerateButtons : MonoBehaviour
+{
     public Dropdown dropdowns;
     float time;
     Image colors;
@@ -12,7 +13,8 @@ public class GenerateButtons : MonoBehaviour  {
     //sets up dropdown menus
 
 	// Use this for initialization
-	void Awake () {
+	void Awake ()
+    {
         //coulda been OnStart.
         dropdowns.GetComponent<Dropdown>().options.Clear();
         string[] filePaths = Directory.GetFiles(Application.persistentDataPath + "/", "*.dat");
@@ -24,7 +26,8 @@ public class GenerateButtons : MonoBehaviour  {
     }
 	
 	// this is for dropdown moving and selecting stuff. It's still pretty voodoo to me.
-	void Update () {
+	void Update ()
+    {
         //go to level.
         if (Input.GetButtonDown("SpinDown"))
         {

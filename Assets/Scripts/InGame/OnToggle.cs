@@ -1,17 +1,13 @@
 ﻿using UnityEngine;
 
-public class OnToggle : MonoBehaviour {
+public class OnToggle : MonoBehaviour
+{
     public string toggleTag;
     GameObject[] toToggle;
-    bool started = false;
 
     void Start()
     {
-        if (!started)
-        {
-            started = true;
-            toToggle = GameObject.FindGameObjectsWithTag(toggleTag);
-        }
+        toToggle = GameObject.FindGameObjectsWithTag(toggleTag);
     }
 
     //toggles faces on levers.
@@ -34,7 +30,5 @@ public class OnToggle : MonoBehaviour {
                 toggleMe.SetActive(true);
             }
         }
-    }
-
-   
+    } 
 }

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Rotator : MonoBehaviour
 {
-
     public GameObject thisGuy;
     public AudioClip rotate;
     float time = 1f;
@@ -11,7 +10,8 @@ public class Rotator : MonoBehaviour
     AudioSource sound;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         sound = gameObject.AddComponent<AudioSource>();
         sound.clip = rotate;
     }
@@ -68,16 +68,13 @@ public class Rotator : MonoBehaviour
         }
     }
 
-    Vector3 FloorEr(Vector3 vec)
-    {
-        return new Vector3(vec.x, vec.y,vec.z);//still testing ways to make stuff better. EZ changes.
-    }
-
+    //returns transform, for possbile camra things
     public Transform ThisGuy()
     {
         return thisGuy.transform;
     }
-
+    
+    //spins stage over amount of time
     IEnumerator Rotate(Vector3 vec, float time)
     {        
         thisGuy.transform.Rotate(vec * Time.deltaTime / time, Space.World);
@@ -95,7 +92,8 @@ public class Rotator : MonoBehaviour
             yield return null;
         }
     }
-
+    
+    //at end of rotation, make sure that it's 'snapped' to a right angle.
     Vector3 RoundTo90(Transform rotation)
     {
         Vector3 vec = rotation.eulerAngles;

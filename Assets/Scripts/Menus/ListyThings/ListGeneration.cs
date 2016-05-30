@@ -90,10 +90,7 @@ public class ListGeneration : MonoBehaviour
             if (selected < 0)
                 selected += options.Count;
             selected %= options.Count;
-
         }
-
-        
     }
 
     //update selecing thingy.

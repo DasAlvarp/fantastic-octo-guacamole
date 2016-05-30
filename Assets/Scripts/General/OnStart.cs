@@ -2,8 +2,6 @@
 
 public class OnStart : MonoBehaviour
 {
-    //place for "global global" variables
-
     // Use this for initialization
     public GameObject stage;
     public GameObject camCont;
@@ -25,5 +23,4 @@ public class OnStart : MonoBehaviour
         camCont.GetComponent<CameraBoss>().stage = GameObject.Find("Stage(Clone)").transform;
         Time.timeScale = 1;
     }
-
 }

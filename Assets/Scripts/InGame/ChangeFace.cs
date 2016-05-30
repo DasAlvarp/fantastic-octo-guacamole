@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
-public class ChangeFace : MonoBehaviour {
+//changing face of lever.
+public class ChangeFace : MonoBehaviour
+{
     public Material offSt;
     public Material onSt;
     bool state;

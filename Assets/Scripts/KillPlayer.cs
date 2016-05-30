@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
-public class KillPlayer : MonoBehaviour {
+public class KillPlayer : MonoBehaviour
+{
+    //kills player and restarts level
     public AudioClip dead;
     AudioSource fred;
     void Start()
