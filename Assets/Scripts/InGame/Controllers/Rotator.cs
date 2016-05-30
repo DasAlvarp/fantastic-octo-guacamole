@@ -89,9 +89,7 @@ public class Rotator : MonoBehaviour
     }
 
     IEnumerator Rotate(Vector3 vec, float time)
-    {
-        print(time);
-        
+    {        
         thisGuy.transform.Rotate(vec * Time.deltaTime / time, Space.World);
         yield return null;
 
