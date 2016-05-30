@@ -3,7 +3,13 @@ This is a fez-inspired game that lets you rotate the stage, jump, and generally 
 
 
 
-Latest Version: [0-0-6b] (http://www.mediafire.com/download/y1ilqwgfo9s0q4h/not_Data0-0-6b.zip)  
+Latest Version: [0-0-7](http://www.mediafire.com/download/el1b40jdej4ecdc/not_Data0-0-7.zip)  
+Changes:
+ * Transitions on changing camera angles
+ * changed where camera is relative to player to try to minimize chance of not being able to see player
+ * Added special player only shader so the inside and outside render, for camera edge case purposes
+
+[0-0-6b] (http://www.mediafire.com/download/y1ilqwgfo9s0q4h/not_Data0-0-6b.zip)  
 Changes:
 * SPIKES!
 * Things are genraly nicer
