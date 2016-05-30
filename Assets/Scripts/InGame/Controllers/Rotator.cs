@@ -8,22 +8,17 @@ public class Rotator : MonoBehaviour
     public AudioClip rotate;
     float time = 1f;
     Vector3 rotateTo = new Vector3(0, 0, 0);
-    GameObject player;
     AudioSource sound;
-    Transform pos;
 
 	// Use this for initialization
 	void Start () {
         sound = gameObject.AddComponent<AudioSource>();
         sound.clip = rotate;
-        player = GameObject.Find("Character(Clone)");//sometimes is null on start.
     }
 	
 	// this works better now I guess?
 	void FixedUpdate ()
     {
-        player = GameObject.Find("Character(Clone)");
-        pos = transform;
         Spin();
     }
 
@@ -48,39 +43,29 @@ public class Rotator : MonoBehaviour
             sound.Play();
             rotateTo = new Vector3(-90, 0, 0);
             StartCoroutine(Rotate(rotateTo, time));
-
-
         }
         else if (Input.GetButtonDown("SpinDown"))
         {
             sound.Play();
             rotateTo = new Vector3(90, 0, 0);
             StartCoroutine(Rotate(rotateTo, time));
-
-
         }
         else if(Input.GetButtonDown("RotateRight"))
         {
             sound.Play();
             rotateTo = new Vector3(0, 0, 90);
             StartCoroutine(Rotate(rotateTo, time));
-
-
         }
         else if (Input.GetButtonDown("RotateLeft"))
         {
             sound.Play();
             rotateTo = new Vector3(0, 0, -90);
             StartCoroutine(Rotate(rotateTo, time));
-
-
         }
         else
         {
             rotateTo = new Vector3(0, 0, 0);
         }
-
-
     }
 
     Vector3 FloorEr(Vector3 vec)
@@ -108,10 +93,7 @@ public class Rotator : MonoBehaviour
         {
             thisGuy.transform.eulerAngles = RoundTo90(thisGuy.transform);
             yield return null;
-
         }
-
-
     }
 
     Vector3 RoundTo90(Transform rotation)
@@ -121,7 +103,5 @@ public class Rotator : MonoBehaviour
         vec.y = Mathf.Round(vec.y / 90) * 90;
         vec.z = Mathf.Round(vec.z / 90) * 90;
         return vec;
-
-
     }
 }
