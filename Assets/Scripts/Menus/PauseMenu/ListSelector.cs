@@ -23,12 +23,12 @@ public class ListSelector : MonoBehaviour
             Time.timeScale = 0;
         }
 
-         selected -= gameObject.GetComponent<DpadConversion>().upPress;
+        selected -= gameObject.GetComponent<DpadConversion>().upPress;
         if (selected == -1)
             selected += 3;
         selected %= 3;
         buttonsToSelect[selected].Select();
-        if(Input.GetButtonDown("SpinDown"))
+        if(Input.GetButtonDown("MenuSelect"))
         {
             buttonsToSelect[selected].onClick.Invoke() ;
         }

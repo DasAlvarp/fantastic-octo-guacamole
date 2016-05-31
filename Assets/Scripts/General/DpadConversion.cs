@@ -52,5 +52,29 @@ public class DpadConversion : MonoBehaviour
             }
             sidePress = dpadSideState;
         }
+        if(Input.GetKeyDown("up"))
+        {
+            up = true;
+            down = false;
+            upPress = 1;
+        }
+        if (Input.GetKeyDown("down"))
+        {
+            up = false;
+            down = true;
+            upPress = -1;
+        }
+        if (Input.GetKeyDown("left"))
+        {
+            left = true;
+            right = false;
+            sidePress = -1;
+        }
+        if (Input.GetKeyDown("right"))
+        {
+            right = true;
+            left = false;
+            sidePress = 1;
+        }
     }
 }

@@ -76,6 +76,11 @@ public class CharacterCTRL : MonoBehaviour
                 Time.timeScale = 0;
                 ui.enabled = true;
             }
+            else if (ui.enabled == true)
+            {
+                Time.timeScale = 1;
+                ui.enabled = false;
+            }
     }
 
     float HorizontalKeyInputs()
