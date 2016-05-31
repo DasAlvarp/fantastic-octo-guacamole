@@ -235,7 +235,7 @@ public class Placer : MonoBehaviour
     {
         for(int x = 0; x < maxBlockTypes; x++)
         {
-            if (other.collider.gameObject.tag == "block " + x || other.collider.gameObject.tag == "Exit" || other.collider.gameObject.tag == "Player")
+            if (other.collider.gameObject.tag == "LeverWall" || other.collider.gameObject.tag == "block " + x || other.collider.gameObject.tag == "Exit" || other.collider.gameObject.tag == "Player")
             {
                 other.collider.gameObject.GetComponent<DeleteParent>().Delete();
             }
