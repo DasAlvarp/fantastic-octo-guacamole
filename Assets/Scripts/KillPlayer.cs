@@ -8,7 +8,19 @@ public class KillPlayer : MonoBehaviour
     void Start()
     {
         fred = new AudioSource();
-        fred.clip = dead;
+        if(dead != null )
+        {
+            try
+            {
+                fred.clip = dead;
+
+                Debug.Log(dead.name);
+            }
+            catch
+            {
+                Debug.Log("There is no sound");
+            }
+        }
     }
 
     void OnTriggerEnter(Collider col)
