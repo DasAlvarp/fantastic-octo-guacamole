@@ -135,7 +135,7 @@ Material:
       data:
         first:
           name: _EmissionLM
-        second: 107.82
+        second: -231.1
     m_Colors:
       data:
         first:
@@ -148,4 +148,4 @@ Material:
       data:
         first:
           name: _Illumi
-        second: {r: 1, g: 0, b: 0, a: 0}
+        second: {r: 1, g: 0, b: 0, a: 1}

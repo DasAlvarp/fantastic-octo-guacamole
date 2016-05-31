@@ -10,7 +10,7 @@
 	}
 		SubShader
 	{
-		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent" }
+		Tags{ "Queue" = "Transparent" "IgnoreProjector" = "False" "RenderType" = "Transparent" }
 		LOD 100
 		Cull Off
 		ZWrite Off
@@ -22,13 +22,26 @@
 		Material{
 		Emission[_Illumi]
 	}
-		CGPROGRAM
-#pragma vertex vert
-#pragma fragment frag
-		// make fog work
-#pragma multi_compile_fog
 
-#include "UnityCG.cginc"
+		CGPROGRAM
+		#pragma vertex vert
+		#pragma fragment frag
+		#pragma multi_compile_fog
+
+		#include "UnityCG.cginc"
+
+		fixed4 _Illumi;
+
+	struct Input {
+		float4 color : COLOR;
+	};
+	struct v2f
+	{
+		float2 uv : TEXCOORD0;
+		UNITY_FOG_COORDS(1)
+			float4 vertex : SV_POSITION;
+	};
+
 
 		struct appdata
 	{
@@ -36,12 +49,7 @@
 		float2 uv : TEXCOORD0;
 	};
 
-	struct v2f
-	{
-		float2 uv : TEXCOORD0;
-		UNITY_FOG_COORDS(1)
-			float4 vertex : SV_POSITION;
-	};
+
 
 	sampler2D _MainTex;
 	float4 _MainTex_ST;
