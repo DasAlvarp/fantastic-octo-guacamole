@@ -1,32 +1,31 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class KillPlayer : MonoBehaviour
 {
     //kills player and restarts level
     public AudioClip dead;
-    AudioSource fred;
+    public AudioSource fred;
     void Start()
     {
-        fred = new AudioSource();
-        if(dead != null )
-        {
-            try
-            {
-                fred.clip = dead;
-
-                Debug.Log(dead.name);
-            }
-            catch
-            {
-                Debug.Log("There is no sound");
-            }
-        }
+        fred = Instantiate(new AudioSource());
+        fred.clip = dead;
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnCollisionEnter(Collision col)
     {
         fred.Play();
+        Destroy(col.gameObject);
+        StartCoroutine(WaitForFred(fred));
+    }
 
+    IEnumerator WaitForFred(AudioSource fred)
+    {
+        while(fred.isPlaying)
+        {
+            yield return null;
+        }
         GetComponent<GoTo>().Restart();
+        yield return null;
     }
 }
