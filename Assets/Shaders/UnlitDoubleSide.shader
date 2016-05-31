@@ -1,5 +1,7 @@
 ﻿Shader "Unlit/UnlitDoubleSide"
 {
+	//		_Emission("Emission (Lightmapper)", Float) = 1.0
+
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}

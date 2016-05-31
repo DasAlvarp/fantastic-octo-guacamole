@@ -7,11 +7,12 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: done
-  m_Shader: {fileID: 4800000, guid: da35cbb80c721bc449826d2983e95810, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 502c33ee3bc673449b60c600404ee421, type: 3}
+  m_ShaderKeywords: _ALPHABLEND_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Transparent
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -82,15 +83,15 @@ Material:
       data:
         first:
           name: _SrcBlend
-        second: 1
+        second: 5
       data:
         first:
           name: _DstBlend
-        second: 0
+        second: 10
       data:
         first:
           name: _Cutoff
-        second: 0.5
+        second: 0.348
       data:
         first:
           name: _Parallax
@@ -98,11 +99,11 @@ Material:
       data:
         first:
           name: _ZWrite
-        second: 1
+        second: 0
       data:
         first:
           name: _Glossiness
-        second: 0.5
+        second: 0
       data:
         first:
           name: _BumpScale
@@ -122,11 +123,19 @@ Material:
       data:
         first:
           name: _Mode
-        second: 0
+        second: 2
       data:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _Emission
+        second: 1
+      data:
+        first:
+          name: _EmissionLM
+        second: 107.82
     m_Colors:
       data:
         first:
@@ -136,3 +145,7 @@ Material:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Illumi
+        second: {r: 1, g: 0, b: 0, a: 0}
