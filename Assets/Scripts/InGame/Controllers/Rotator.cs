@@ -30,37 +30,37 @@ public class Rotator : MonoBehaviour
         {
             sound.Play();
             rotateTo = new Vector3(0, 90, 0);
-            StartCoroutine(Rotate(rotateTo, time));
+            StartCoroutine(RotatePositive(rotateTo, time));
         }
         else if (Input.GetButtonDown("SpinRight"))
         {
             sound.Play();
             rotateTo = new Vector3(0, -90, 0);
-            StartCoroutine(Rotate(rotateTo, time));
+            StartCoroutine(RotateNegative(rotateTo, time));
         }
         else if (Input.GetButtonDown("SpinUp"))
         {
             sound.Play();
             rotateTo = new Vector3(-90, 0, 0);
-            StartCoroutine(Rotate(rotateTo, time));
+            StartCoroutine(RotateNegative(rotateTo, time));
         }
         else if (Input.GetButtonDown("SpinDown"))
         {
             sound.Play();
             rotateTo = new Vector3(90, 0, 0);
-            StartCoroutine(Rotate(rotateTo, time));
+            StartCoroutine(RotatePositive(rotateTo, time));
         }
         else if(Input.GetButtonDown("RotateRight"))
         {
             sound.Play();
             rotateTo = new Vector3(0, 0, 90);
-            StartCoroutine(Rotate(rotateTo, time));
+            StartCoroutine(RotatePositive(rotateTo, time));
         }
         else if (Input.GetButtonDown("RotateLeft"))
         {
             sound.Play();
             rotateTo = new Vector3(0, 0, -90);
-            StartCoroutine(Rotate(rotateTo, time));
+            StartCoroutine(RotateNegative(rotateTo, time));
         }
         else
         {
@@ -74,32 +74,56 @@ public class Rotator : MonoBehaviour
         return thisGuy.transform;
     }
     
+
+    //looks like i only need one, but no reason to delete in case something strange pops up.
     //spins stage over amount of time
-    IEnumerator Rotate(Vector3 vec, float time)
-    {        
+    IEnumerator RotatePositive(Vector3 vec, float time)
+    {
+        
         thisGuy.transform.Rotate(vec * Time.deltaTime / time, Space.World);
         yield return null;
-
+        vec -= vec * Time.deltaTime/time ;
         time -= Time.deltaTime;
-        vec -= vec * Time.deltaTime / time;
-        if (time > 0)
+
+
+        if (time > .01f)
         {
-            StartCoroutine(Rotate(vec, time));
+            StartCoroutine(RotatePositive(vec, time));
         }
-        if (time <= 0)
+        else
         {
             thisGuy.transform.eulerAngles = RoundTo90(thisGuy.transform);
             yield return null;
         }
     }
-    
+
+    IEnumerator RotateNegative(Vector3 vec, float time)
+    {
+
+        thisGuy.transform.Rotate(vec * Time.deltaTime / time, Space.World);
+        yield return null;
+        vec -= vec * Time.deltaTime / time;
+        time -= Time.deltaTime;
+
+
+        if (time > .01f)
+        {
+            StartCoroutine(RotateNegative(vec, time));
+        }
+        else 
+        {
+            thisGuy.transform.eulerAngles = RoundTo90(thisGuy.transform);
+            yield return null;
+        }
+    }
+
     //at end of rotation, make sure that it's 'snapped' to a right angle.
     Vector3 RoundTo90(Transform rotation)
     {
         Vector3 vec = rotation.eulerAngles;
-        vec.x = Mathf.Round(vec.x / 90) * 90;
-        vec.y = Mathf.Round(vec.y / 90) * 90;
-        vec.z = Mathf.Round(vec.z / 90) * 90;
+        vec.x = Mathf.Round(vec.x / 90f) * 90;
+        vec.y = Mathf.Round(vec.y / 90f) * 90;
+        vec.z = Mathf.Round(vec.z / 90f) * 90;
         return vec;
     }
 }
