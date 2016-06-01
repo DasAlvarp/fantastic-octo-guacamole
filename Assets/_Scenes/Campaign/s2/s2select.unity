@@ -1187,11 +1187,13 @@ MonoBehaviour:
   pickIt: {fileID: 8300000, guid: 732f3ebf1c5d7e3488eb1258eee340f4, type: 3}
   lastMenu: CampaignLoad
   buttonsRight:
-  - {fileID: 1539642611}
   - {fileID: 916788805}
+  - {fileID: 1539642611}
+  - {fileID: 1603702631}
   buttonsLeft:
   - {fileID: 684664600}
   - {fileID: 1571230297}
+  - {fileID: 1015975803}
 --- !u!114 &1465004903
 MonoBehaviour:
   m_ObjectHideFlags: 0
