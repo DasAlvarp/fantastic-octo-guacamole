@@ -35,7 +35,7 @@ public class RadialMenuAndHold : MonoBehaviour {
     int GetEigth()
     {
         //get eight that joystick is on. Mouse doesn't really work.
-        float rad = Mathf.Atan2(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
+        float rad = Mathf.Atan2(Input.GetAxis("Vertical") - Input.GetAxis("CamRotUp"), Input.GetAxis("Horizontal") + Input.GetAxis("CamSpin"));
         rad += Mathf.PI / 2;
         rad *= 4 / Mathf.PI;
         if(Input.GetAxis("Vertical") < -3)
