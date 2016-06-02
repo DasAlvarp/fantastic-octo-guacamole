@@ -17,6 +17,7 @@ public class CharacterCTRL : MonoBehaviour
         Unlock();
         ui = Instantiate(ui);
         sound = gameObject.AddComponent<AudioSource>();
+        sound.playOnAwake = false;
         sound.clip = jumpSound;
     }
 

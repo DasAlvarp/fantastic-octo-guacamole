@@ -5,9 +5,11 @@ public class KillPlayer : MonoBehaviour
 {
     //kills player and restarts level
     public AudioClip dead;
-    public AudioSource fred;
+    AudioSource fred;
     void Start()
     {
+        fred = gameObject.AddComponent<AudioSource>();
+        fred.playOnAwake = false;
         fred.clip = dead;
     }
 
