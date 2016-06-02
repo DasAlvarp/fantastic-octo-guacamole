@@ -29,13 +29,13 @@ public class Rotator : MonoBehaviour
         if (Input.GetButtonDown("SpinLeft"))
         {
             sound.Play();
-            rotateTo = new Vector3(0, 90, 0);
+            rotateTo = new Vector3(0, -90, 0);
             StartCoroutine(RotatePositive(rotateTo, time));
         }
         else if (Input.GetButtonDown("SpinRight"))
         {
             sound.Play();
-            rotateTo = new Vector3(0, -90, 0);
+            rotateTo = new Vector3(0, 90, 0);
             StartCoroutine(RotateNegative(rotateTo, time));
         }
         else if (Input.GetButtonDown("SpinUp"))
