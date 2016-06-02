@@ -5,8 +5,12 @@ public class DpadConversion : MonoBehaviour
     //so you can have multiple instances
     public DpadConversion(){    }
 
+    public float vert;
     int dpadUpState = 0;
     int dpadSideState = 0;
+
+    int joyUpState = 0;
+    int joySideState = 0;
 
     //press variables
     public bool up = false;
@@ -20,61 +24,121 @@ public class DpadConversion : MonoBehaviour
     // Converts d-pad axises into button-type inputs.
     void Update()
     {
+        // reset EVERYTHING
         upPress = 0;
         sidePress = 0;
-        if (Input.GetAxis("DpadDown") != dpadUpState)
+        Reset();
+
+
+        //joystick control part
+
+        if (Mathf.RoundToInt(Input.GetAxis("Vertical")) != joyUpState)
         {
-            dpadUpState = (int)Input.GetAxis("DpadDown");
-            up = false;
-            down = false;
-            if (dpadUpState == 1)
+            print("Triggered");
+            joyUpState = Mathf.RoundToInt(Input.GetAxis("Vertical"));
+            if (joyUpState == 1)
             {
                 up = true;
             }
-            else if (dpadUpState == -1)
+            else if (joyUpState == -1)
             {
                 down = true;
             }
-            upPress = dpadUpState;
+            upPress = joyUpState;
         }
-        if (Input.GetAxis("DpadLeft") != dpadSideState)
+        if (Mathf.RoundToInt(Input.GetAxis("Horizontal")) != joySideState)
         {
-            dpadSideState = (int)Input.GetAxis("DpadLeft");
-            left = false;
-            right = false;
-            if (dpadSideState == 1)
+            joySideState = Mathf.RoundToInt(Input.GetAxis("Horizontal"));
+            if (joySideState == 1)
             {
                 right = true;
             }
-            else if (dpadSideState == -1)
+            else if (joySideState == -1)
             {
-                right = true;
+                left = true;
             }
-            sidePress = dpadSideState;
+            sidePress = joySideState;
         }
-        if(Input.GetKeyDown("up"))
+
+        //Dpad control part
+        if (!Continue(up, down, left, right))
         {
-            up = true;
-            down = false;
-            upPress = 1;
+            if (Input.GetAxis("DpadDown") != dpadUpState)
+            {
+                dpadUpState = (int)(Input.GetAxis("DpadDown"));
+                if (dpadUpState == 1)
+                {
+                    up = true;
+                }
+                else if (dpadUpState == -1)
+                {
+                    down = true;
+                }
+                upPress = dpadUpState;
+            }
+            if (Input.GetAxis("DpadLeft") != dpadSideState)
+            {
+                dpadSideState = (int)Input.GetAxis("DpadLeft");
+                if (dpadSideState == 1)
+                {
+                    right = true;
+                }
+                else if (dpadSideState == -1)
+                {
+                    left = true;
+                }
+                sidePress = dpadSideState;
+            }
         }
-        if (Input.GetKeyDown("down"))
+
+        //keyboard control part
+        if (!Continue(up, down, left, right))
         {
-            up = false;
-            down = true;
-            upPress = -1;
+
+            if (Input.GetKeyDown("up"))
+            {
+                down = false;
+                up = true;
+                upPress = 1;
+            }
+            else if (Input.GetKeyDown("down"))
+            {
+                up = false;
+                down = true;
+                upPress = -1;
+            }
+            if (Input.GetKeyDown("left"))
+            {
+                right = false;
+                left = true;
+                sidePress = -1;
+            }
+            else if (Input.GetKeyDown("right"))
+            {
+                left = false;
+                right = true;
+                sidePress = 1;
+            }
         }
-        if (Input.GetKeyDown("left"))
+    }
+
+    bool Continue(params bool[] args )
+    {
+        foreach(bool arg in args)
         {
-            left = true;
-            right = false;
-            sidePress = -1;
+            if (arg)
+            {
+                return true;
+            }
         }
-        if (Input.GetKeyDown("right"))
-        {
-            right = true;
-            left = false;
-            sidePress = 1;
-        }
+        return false;
+    }
+
+    public void Reset()
+    {
+        right = false;
+        left = false;
+        up = false;
+        down = false;
     }
 }
