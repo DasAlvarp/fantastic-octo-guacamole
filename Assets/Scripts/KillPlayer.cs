@@ -8,13 +8,14 @@ public class KillPlayer : MonoBehaviour
     AudioSource fred;
     void Start()
     {
-        fred = gameObject.AddComponent<AudioSource>();
-        fred.playOnAwake = false;
-        fred.clip = dead;
+        
     }
 
     void OnCollisionEnter(Collision col)
     {
+        fred = gameObject.AddComponent<AudioSource>();
+        fred.playOnAwake = false;
+        fred.clip = dead;
         fred.Play();
         col.gameObject.SetActive(false);
         StartCoroutine(WaitForFred(fred));
