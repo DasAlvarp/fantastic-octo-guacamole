@@ -47,6 +47,7 @@ TagManager:
   - Global Commander 1.0
   - Lever
   - LeverWall
+  - Liquid
   layers:
   - Default
   - TransparentFX

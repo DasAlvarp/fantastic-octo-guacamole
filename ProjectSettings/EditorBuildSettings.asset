@@ -12,6 +12,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Controls.unity
   - enabled: 1
+    path: Assets/10007.unity
+  - enabled: 1
     path: Assets/_Scenes/LevelManagement/LevelEdit.unity
   - enabled: 1
     path: Assets/_Scenes/LevelManagement/LoadStage.unity

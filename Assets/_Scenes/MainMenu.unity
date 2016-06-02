@@ -180,7 +180,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Controls
+          m_StringArgument: 10007
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -467,7 +467,7 @@ MonoBehaviour:
   lastMenu: MainMenu
   buttonsRight:
   - {fileID: 1139988914}
-  - {fileID: 199012925}
+  - {fileID: 32076688}
   - {fileID: 199012925}
   buttonsLeft:
   - {fileID: 1838072122}
