@@ -34,7 +34,6 @@ public class DpadConversion : MonoBehaviour
 
         if (Mathf.RoundToInt(Input.GetAxis("Vertical")) != joyUpState)
         {
-            print("Triggered");
             joyUpState = Mathf.RoundToInt(Input.GetAxis("Vertical"));
             if (joyUpState == 1)
             {

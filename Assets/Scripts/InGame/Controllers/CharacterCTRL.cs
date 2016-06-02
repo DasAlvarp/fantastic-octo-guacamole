@@ -72,14 +72,16 @@ public class CharacterCTRL : MonoBehaviour
     void ManageUI()
     {
         if (Input.GetButtonDown("Start"))
-            if (ui.enabled == false)
+            if (ui.isActiveAndEnabled == false)
             {
                 Time.timeScale = 0;
+                ui.gameObject.SetActive(true);
                 ui.enabled = true;
             }
-            else if (ui.enabled == true)
+            else if (ui.isActiveAndEnabled == true)
             {
                 Time.timeScale = 1;
+                ui.gameObject.SetActive(false);
                 ui.enabled = false;
             }
     }

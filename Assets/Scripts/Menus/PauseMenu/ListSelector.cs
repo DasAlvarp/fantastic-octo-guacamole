@@ -21,16 +21,18 @@ public class ListSelector : MonoBehaviour
         if(gameObject.GetComponent<Canvas>().enabled)
         {
             Time.timeScale = 0;
+
+            selected -= gameObject.GetComponent<DpadConversion>().upPress;
+            if (selected == -1)
+                selected += 3;
+            selected %= 3;
+            buttonsToSelect[selected].Select();
+            if (Input.GetButtonDown("MenuSelect"))
+            {
+                buttonsToSelect[selected].onClick.Invoke();
+            }
         }
 
-        selected -= gameObject.GetComponent<DpadConversion>().upPress;
-        if (selected == -1)
-            selected += 3;
-        selected %= 3;
-        buttonsToSelect[selected].Select();
-        if(Input.GetButtonDown("MenuSelect"))
-        {
-            buttonsToSelect[selected].onClick.Invoke() ;
-        }
+        
     }
 }
