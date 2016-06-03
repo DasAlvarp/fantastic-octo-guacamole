@@ -82,11 +82,13 @@ public class ListGeneration : MonoBehaviour
         UpdateSelector();
 
 
-        //timer so selection doesnt't go 15 times every slight touch of the arrow.
-        selected -= dpad.upPress;
-        if (selected < 0)
-            selected += options.Count;
-        selected %= options.Count;
+        if (options.Count > 0)
+        {
+            selected -= dpad.upPress;
+            if (selected < 0)
+                selected += options.Count;
+            selected %= options.Count;
+        }
     }
 
     //update selecing thingy.

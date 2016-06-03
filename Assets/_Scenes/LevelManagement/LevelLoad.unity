@@ -800,11 +800,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-
-
-    +'
+  m_Text: 
 --- !u!222 &1266110761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1230,9 +1226,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Item 1
-
-    Item 2'
+  m_Text: 
 --- !u!222 &1656292008
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1445,7 +1439,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Selected Item
+  m_Text: No loadable levels
 --- !u!222 &1893334862
 CanvasRenderer:
   m_ObjectHideFlags: 0
