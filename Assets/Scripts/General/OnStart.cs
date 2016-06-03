@@ -2,7 +2,6 @@
 
 public class OnStart : MonoBehaviour
 {
-    // Use this for initialization
     public GameObject stage;
     public GameObject camCont;
     public string level;

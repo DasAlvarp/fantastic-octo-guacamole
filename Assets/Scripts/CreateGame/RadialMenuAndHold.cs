@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class RadialMenuAndHold : MonoBehaviour {
-
+public class RadialMenuAndHold : MonoBehaviour
+{
     // Use this for initialization
     public GameObject otherThing;
     public GameObject selector;

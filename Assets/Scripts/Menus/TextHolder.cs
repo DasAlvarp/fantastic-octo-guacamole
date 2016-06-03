@@ -65,7 +65,6 @@ public class TextHolder : MonoBehaviour
     }
 }
 
-
 //save for player level unlocks
 [Serializable]
 class LoadData

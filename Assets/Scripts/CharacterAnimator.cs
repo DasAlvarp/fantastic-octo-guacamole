@@ -29,8 +29,6 @@ public class CharacterAnimator : MonoBehaviour
         Walk();
 	}
 
-
-
     void Jump()
     {
         if(!jumping)

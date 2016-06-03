@@ -6,7 +6,6 @@ using System.Collections;
 
 public class ListGeneration : MonoBehaviour
 {
-
     public Text itemList;
     public Text selector;
     public Text selectedItem;
@@ -81,7 +80,6 @@ public class ListGeneration : MonoBehaviour
         }
         UpdateSelector();
 
-
         if (options.Count > 0)
         {
             selected -= dpad.upPress;
@@ -99,7 +97,6 @@ public class ListGeneration : MonoBehaviour
         {
             selector.text += "\n";
         }
-
         selector.text += "+";
         selectedItem.text = (string)options[selected];
     }

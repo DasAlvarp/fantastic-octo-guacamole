@@ -2,10 +2,8 @@
 using UnityEngine.SceneManagement;
 
 public class GoTo : MonoBehaviour
-{
-    //manages game state.
-    
-        //reloads level if not given a level.
+{  
+    //reloads level if not given a level.
     public void GoToStage()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

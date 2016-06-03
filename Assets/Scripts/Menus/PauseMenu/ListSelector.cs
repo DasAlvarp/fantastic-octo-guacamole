@@ -32,7 +32,5 @@ public class ListSelector : MonoBehaviour
                 buttonsToSelect[selected].onClick.Invoke();
             }
         }
-
-        
     }
 }

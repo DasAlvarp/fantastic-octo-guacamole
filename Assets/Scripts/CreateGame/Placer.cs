@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
 public class Placer : MonoBehaviour
 {
     //way too big of a class to place things

@@ -6,7 +6,6 @@ using System.Collections;
 
 public class ListGenerationForEdit : MonoBehaviour
 {
-
     public Text itemList;
     public Text selector;
     public Text selectedItem;
@@ -96,7 +95,6 @@ public class ListGenerationForEdit : MonoBehaviour
                 selected += options.Count;
             selected %= options.Count;
         }
-  
     }
 
     //update selecing thingy.

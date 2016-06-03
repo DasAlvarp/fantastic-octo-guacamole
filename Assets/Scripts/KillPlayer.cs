@@ -6,10 +6,6 @@ public class KillPlayer : MonoBehaviour
     //kills player and restarts level
     public AudioClip dead;
     AudioSource fred;
-    void Start()
-    {
-        
-    }
 
     void OnCollisionEnter(Collision col)
     {
