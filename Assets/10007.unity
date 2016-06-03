@@ -3885,7 +3885,7 @@ ParticleSystem:
       m_PostInfinity: 2
       m_RotationOrder: 4
     minMaxState: 0
-  speed: 0
+  speed: 1
   randomSeed: 0
   looping: 1
   prewarm: 0
@@ -8708,6 +8708,7 @@ GameObject:
   - 114: {fileID: 1234887075}
   - 82: {fileID: 1234887074}
   - 108: {fileID: 1234887082}
+  - 114: {fileID: 1234887083}
   m_Layer: 0
   m_Name: Character(Clone)
   m_TagString: Player
@@ -8931,6 +8932,45 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &1234887083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1234887072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 9900371, guid: b435991485f6c8a4f9af5ca764dd7f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EditorFoldout: 1
+  m_SolverEnabled: 1
+  m_EnableHardwareAcceleration: 1
+  m_FluidType: 1
+  m_Dimensions: 0
+  m_CullingType: 0
+  m_SmoothingDistance: 0.38125
+  m_ParticleMass: 100
+  m_Density: 10
+  m_MinimumDensity: 10
+  m_Viscosity: 2
+  m_Turbulence: 0.2
+  m_SurfaceTension: 0.728
+  m_GasConstant: 0.01
+  m_BuoyancyCoefficient: 0
+  m_SimulationScale: 1
+  m_FluidSettingsFoldoutEditor: 0
+  m_PhysicalPropertiesFoldoutEditor: 0
+  m_PluginsFoldoutEditor: 0
+  m_ColliderResolution: 4
+  m_BoundsType: 0
+  m_ColliderBounds:
+  - m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.5, y: 0.5, z: 0.5}
+  m_FillCollider: 0
+  m_VisualizeCollider: 1
+  m_AttatchedCollider: {fileID: 1234887080}
+  m_WheelColliderThickness: 0.214884
 --- !u!1001 &1237073485
 Prefab:
   m_ObjectHideFlags: 0
