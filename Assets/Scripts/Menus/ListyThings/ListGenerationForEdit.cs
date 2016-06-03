@@ -13,12 +13,14 @@ public class ListGenerationForEdit : MonoBehaviour
     float time;
     ArrayList options;
     int selected;
+    DpadConversion dpad;
 
     //sets up dropdown menus
 
     // Use this for initialization
     void Awake()
     {
+        dpad = gameObject.AddComponent<DpadConversion>();
         //coulda been OnStart.
         options = new ArrayList();
         selected = 0;
@@ -40,6 +42,7 @@ public class ListGenerationForEdit : MonoBehaviour
     // this is for dropdown moving and selecting stuff. It's still pretty voodoo to me.
     void Update()
     {
+
         //go to level.
         if (options.Count > 0)
         {
@@ -86,19 +89,12 @@ public class ListGenerationForEdit : MonoBehaviour
 
 
         //timer so selection doesnt't go 15 times every slight touch of the arrow.
-        time += Time.deltaTime;
-        if (time > .1f)
-        {
-            time = 0f;
-            if (options.Count > 0)
-            {
-                selected -= (int)Input.GetAxis("DpadDown");
+        
+                selected -= dpad.upPress;
                 if (selected < 0)
                     selected += options.Count;
                 selected %= options.Count;
-            }
-
-        }
+  
     }
 
     //update selecing thingy.

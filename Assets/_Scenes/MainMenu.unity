@@ -180,7 +180,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 10007
+          m_StringArgument: Controls
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1224,7 +1224,7 @@ GameObject:
   - 114: {fileID: 1139988914}
   - 114: {fileID: 1139988913}
   m_Layer: 5
-  m_Name: Start (1)
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
