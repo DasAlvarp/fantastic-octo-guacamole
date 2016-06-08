@@ -28,7 +28,7 @@ GameObject:
   - 222: {fileID: 22241078}
   - 114: {fileID: 11485656}
   m_Layer: 0
-  m_Name: Text
+  m_Name: OptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ GameObject:
   - 222: {fileID: 22206824}
   - 114: {fileID: 11448002}
   m_Layer: 0
-  m_Name: Image
+  m_Name: SelectionOption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
