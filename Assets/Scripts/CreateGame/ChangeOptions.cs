@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ChangeOptions : MonoBehaviour
 {
@@ -62,7 +63,7 @@ public class ChangeOptions : MonoBehaviour
             }
             else if (gameObject.tag == "Lever")
             {
-                selectionMenu.GetComponent<SetText>().TextIt(gameObject.GetComponent<OnToggle>().toggleTag);
+                selectionMenu.GetComponent<Text>().text = gameObject.GetComponent<OnToggle>().toggleTag;
 
                 //if one block wall's channel is changed, all block wall channels should be changed. Disappear after input given.
                 if (Input.GetAxis("DpadDown") == -1 || Input.GetKey("down"))
@@ -97,13 +98,17 @@ public class ChangeOptions : MonoBehaviour
         selectInstance = Instantiate(selectionMenu);
         selectInstance.transform.SetParent(GameObject.Find("Canvas").transform);
         selectInstance.transform.position = new Vector3(Screen.width / 2, Screen.height / 2);
-        selectInstance.GetComponent<SetText>().TextIt(gameObject.tag);
+        if(gameObject.tag != "Lever")
+            selectionMenu.GetComponent<Text>().text = gameObject.tag;
+        else
+            selectionMenu.GetComponent<Text>().text = gameObject.GetComponent<OnToggle>().toggleTag;
 
     }
 
     public void Disappear()
     {
-        DestroyObject(selectInstance);
         enabled = false;
+
+        DestroyObject(selectInstance);
     }
 }
