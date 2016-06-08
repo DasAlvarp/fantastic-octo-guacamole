@@ -142,7 +142,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 2359ed1e4af62a44b9d7b9c9cb4fa787, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -292,7 +292,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: e231802c1c181ba419dc0a1f50a6154f, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 21300000, guid: e231802c1c181ba419dc0a1f50a6154f, type: 3}
   keyboard: {fileID: 21300000, guid: f99f4dcc0cf7387429fc8c321cd1fd24, type: 3}
-  setme: {fileID: 41066534}
+  setme: {fileID: 239970272}
 --- !u!1 &256454958
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,6 +594,7 @@ GameObject:
   - 224: {fileID: 331413292}
   - 222: {fileID: 331413294}
   - 114: {fileID: 331413293}
+  - 114: {fileID: 331413295}
   m_Layer: 0
   m_Name: Image (1)
   m_TagString: Untagged
@@ -639,7 +640,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: f207fe04a7217724aa48486d131c5852, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -651,6 +652,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 331413291}
+--- !u!114 &331413295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 331413291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69da908686d6f94baf47da7e6190213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 21300000, guid: f207fe04a7217724aa48486d131c5852, type: 3}
+  keyboard: {fileID: 21300000, guid: 66f9e7bfcac60d74ca6f0145d37543b6, type: 3}
+  setme: {fileID: 331413293}
 --- !u!1 &499512231
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +749,7 @@ GameObject:
   - 224: {fileID: 526043976}
   - 222: {fileID: 526043978}
   - 114: {fileID: 526043977}
+  - 114: {fileID: 526043979}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -779,7 +795,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: f207fe04a7217724aa48486d131c5852, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -791,6 +807,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 526043975}
+--- !u!114 &526043979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 526043975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69da908686d6f94baf47da7e6190213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 21300000, guid: f207fe04a7217724aa48486d131c5852, type: 3}
+  keyboard: {fileID: 21300000, guid: 1d4444220fee26743a887d1a63f83c04, type: 3}
+  setme: {fileID: 526043977}
 --- !u!1 &598560600
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +878,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 3a6a5689dac91bf43a8247da76728053, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -873,7 +903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 21300000, guid: 3a6a5689dac91bf43a8247da76728053, type: 3}
   keyboard: {fileID: 21300000, guid: 9c52141acc749bb498410359ce3ed7a8, type: 3}
-  setme: {fileID: 41066534}
+  setme: {fileID: 598560602}
 --- !u!1 &599742289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,6 +1943,7 @@ GameObject:
   - 224: {fileID: 1254671162}
   - 222: {fileID: 1254671164}
   - 114: {fileID: 1254671163}
+  - 114: {fileID: 1254671165}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -1970,6 +2001,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1254671161}
+--- !u!114 &1254671165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1254671161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69da908686d6f94baf47da7e6190213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 21300000, guid: 49fa4d53f20f9444aaf03d03e4ec56d3, type: 3}
+  keyboard: {fileID: 21300000, guid: dfdca0f573dcba343b72d8b4f1defcdd, type: 3}
+  setme: {fileID: 1254671163}
 --- !u!1 &1330674675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,7 +2072,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: f207fe04a7217724aa48486d131c5852, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2051,7 +2096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 21300000, guid: f207fe04a7217724aa48486d131c5852, type: 3}
-  keyboard: {fileID: 0}
+  keyboard: {fileID: 21300000, guid: 1d4444220fee26743a887d1a63f83c04, type: 3}
   setme: {fileID: 1330674677}
 --- !u!1 &1332493721
 GameObject:
@@ -2189,7 +2234,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00def723c89444f4d994c562b722c9dd, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2214,7 +2259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 21300000, guid: 00def723c89444f4d994c562b722c9dd, type: 3}
   keyboard: {fileID: 21300000, guid: e26899998df7fa743ababa11fcf756b9, type: 3}
-  setme: {fileID: 41066534}
+  setme: {fileID: 1359220919}
 --- !u!1 &1364963837
 GameObject:
   m_ObjectHideFlags: 0

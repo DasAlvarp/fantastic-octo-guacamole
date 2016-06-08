@@ -9,8 +9,8 @@ public class SwitchOnJoystick : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        
-	    if(Input.GetJoystickNames()[0] != "")
+        print(Input.GetJoystickNames().Length);
+        if (Input.GetJoystickNames().Length > 0 &&  Input.GetJoystickNames()[0] != "")
         {
             setme.sprite = controller;
         }
