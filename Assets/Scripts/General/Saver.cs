@@ -47,7 +47,7 @@ public class Saver : MonoBehaviour
     {
         int x = 0;
         for(x = 0; File.Exists(Application.persistentDataPath + "/" + x + ".dat"); x++)
-        {
+        {//wait until the last file exists.
         }
         Load((x) + "");
     }

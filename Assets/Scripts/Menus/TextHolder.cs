@@ -11,7 +11,8 @@ public class TextHolder : MonoBehaviour
     public int unlockedAreas;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         DontDestroyOnLoad(gameObject);
         Load();
 
