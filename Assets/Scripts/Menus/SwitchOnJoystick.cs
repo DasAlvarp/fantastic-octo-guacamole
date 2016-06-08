@@ -8,8 +8,8 @@ public class SwitchOnJoystick : MonoBehaviour
     public Image setme;
 	
 	// Update is called once per frame
-	void Update () {
-        print(Input.GetJoystickNames().Length);
+	void Update ()
+    {
         if (Input.GetJoystickNames().Length > 0 &&  Input.GetJoystickNames()[0] != "")
         {
             setme.sprite = controller;
