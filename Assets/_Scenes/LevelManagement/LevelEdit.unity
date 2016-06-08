@@ -348,10 +348,10 @@ RectTransform:
   - {fileID: 1917685559}
   m_Father: {fileID: 599742290}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -263.75, y: 0}
-  m_SizeDelta: {x: -527.5, y: 600}
+  m_SizeDelta: {x: -527.5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &256454960
 CanvasRenderer:
@@ -1036,8 +1036,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.41973877, y: -157.5}
-  m_SizeDelta: {x: 1067.2, y: 315}
+  m_AnchoredPosition: {x: 0.41973877, y: -300}
+  m_SizeDelta: {x: 1067, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &671292943
 MonoBehaviour:
@@ -1657,15 +1657,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22402758, guid: e98e8989d1ac34f4bbd0b1bbc7f37921, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 22402758, guid: e98e8989d1ac34f4bbd0b1bbc7f37921, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 483.33
+      value: 478.9
       objectReference: {fileID: 0}
     - target: {fileID: 22402758, guid: e98e8989d1ac34f4bbd0b1bbc7f37921, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -250
+      value: -245.5
       objectReference: {fileID: 0}
     - target: {fileID: 22402758, guid: e98e8989d1ac34f4bbd0b1bbc7f37921, type: 2}
       propertyPath: m_SizeDelta.x
@@ -2025,7 +2025,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: The scene is missing either a player or an exit point.
+  m_Text: 
 --- !u!222 &1364963840
 CanvasRenderer:
   m_ObjectHideFlags: 0
