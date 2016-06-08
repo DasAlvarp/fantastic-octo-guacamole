@@ -20,16 +20,7 @@ public class OnPress : MonoBehaviour
             {
                 pressed = true;
                 foreach(GameObject block in blocks)
-                {
-                    if(block.activeSelf)
-                    {
-                        block.SetActive(false);
-                    }
-                    else
-                    {
-                        block.SetActive(true);
-                    }
-                }
+                    block.SetActive(!block.activeSelf);
             }
     }
 }
